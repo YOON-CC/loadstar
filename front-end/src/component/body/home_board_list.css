@@ -1,0 +1,84 @@
+.home_board_list_body{
+    position: absolute;
+    background-color: blueviolet;
+    height: 1500px;
+    width: 100%;
+    margin-top: 200px;
+    flex-wrap: wrap
+}
+
+/*카테고리*/
+.home_hashtag_body{
+    position : absolute;
+    background-color: #86c242;
+    height: 40px;
+    width: 100%;
+}
+
+.home_hashtag_container{
+    position : absolute;
+    background-color: #88ff00;
+    height: 100%;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.home_hashtag_container_c1{
+    background-color: #028cef;
+    height: 30px;
+    width: 65px;
+    margin-top: 5px;
+}
+
+.home_hashtag_container_c2{
+    background-color: #028cef;
+    height: 30px;
+    width: 65px;
+    margin-top: 5px;
+}
+
+.home_hashtag_container_c3{
+    background-color: #028cef;
+    height: 30px;
+    width: 65px;
+    margin-top: 5px;
+}
+
+.home_hashtag_container_c4{
+    background-color: #028cef;
+    height: 30px;
+    width: 290px;
+    margin-top: 5px;
+}
+/*카테고리 끝*/
+
+/*게시물 리스트 바디*/
+.board-list-container{
+    position: relative;
+    background-color: #305902;
+    width:500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.board-list{
+    width: 130px;
+    height: 130px;
+    margin-top: 20px;
+    margin-left: 14px;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(115, 21, 239);
+    background-color: #ffffff;
+    border: 9px solid;
+    border-radius: 20px;
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0px 30px 0 rgb(207, 162, 255);
+}
