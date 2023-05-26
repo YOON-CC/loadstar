@@ -1,0 +1,102 @@
+.home_header_body{
+    position : relative;
+    background-color: #c72121;
+    height: 250px;
+    width: 100%;
+}
+
+.home_header_body_1{
+    position : relative;
+    background-color: #d79494;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*로고*/
+.home_header_body_1_logo{
+    background-color: #a5a5a5;
+    height: 100%;
+    width: 150px;
+}
+
+/*로그인, 회원가입, 로그아웃, 마이페이지, 알림*/
+.home_header_body_1_form{
+    background-color: #3300ff;
+    height: 100%;
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home_header_body_1_c1{
+    background-color: #00ffee;
+    height: 40px;
+    width: 100px;
+}
+
+.home_header_body_1_c2{
+    background-color: #00ffee;
+    height: 40px;
+    width: 100px;
+}
+
+.home_header_body_1_c3{
+    background-color: #00ffee;
+    height: 40px;
+    width: 40px;
+}
+
+/*홈페이지 설명, 게시글작성, 그래프 그리기 틀*/
+.home_header_body_2{
+    position : absolute;
+    background-color: #239eab;
+    height: 90%;
+    width: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+
+.home_header_body_2_c1{
+    background-color: #165cff;
+    height: 100%;
+    width: 60%;
+}
+
+/*홈페이지 설명 텍스트*/
+.home_header_body_2_c1_text{
+    background-color: #a4c0ff;
+    height: 70%;
+    width: 100%; 
+}
+/*게시물 올리기, 그리기 버튼 컨테이너*/
+.home_header_body_2_c1_button_container{
+    background-color: #47536e;
+    height: 30%;
+    width: 100%;   
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*게시물 올리기 버튼*/
+.home_header_body_2_c1_button_container_b1{
+    background-color: #88fe00;
+    height: 60px;
+    width: 150px;
+}
+/*그래프 그리기 버튼*/
+.home_header_body_2_c1_button_container_b2{
+    background-color: #88fe00;
+    height: 60px;
+    width: 150px;
+}
+
+/*홈페이지 설명 사진*/
+.home_header_body_2_c2{
+    background-color: #8e16ff;
+    height: 100%;
+    width: 40%;
+}
