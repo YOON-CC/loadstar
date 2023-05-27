@@ -1,0 +1,106 @@
+.question-box{
+    position: absolute;
+    left: 50%;
+    width: 500px;
+    padding: 40px;
+    transform: translate(-50%);
+    background: rgba(78, 78, 78, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(83, 1, 1, 0.6);
+    border-radius: 50px;
+    margin-top: 250px;
+}
+
+.question-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+/*질문1*/
+.question_container_1{
+    background-color: antiquewhite;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.question_container_1_c1{
+    background-color: rgb(224, 139, 28);
+    height: 40px;
+    width: 60%;
+}
+
+.question_container_1_c2{
+    background-color: rgb(224, 139, 28);
+    height: 40px;
+    width: 30%;
+}
+
+/*질문2*/
+.question_container_2{
+    background-color: antiquewhite;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.question_container_2_c1{
+    background-color: rgb(224, 139, 28);
+    height: 40px;
+    width: 60%;
+}
+
+.question_container_2_c2{
+    background-color: rgb(224, 139, 28);
+    height: 40px;
+    width: 30%;
+}
+
+/*질문3*/
+.question_container_3{
+    background-color: antiquewhite;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.question_container_3_c1{
+    background-color: rgb(224, 139, 28);
+    height: 40px;
+    width: 60%;
+}
+
+.question_container_3_c2{
+    background-color: rgb(224, 139, 28);
+    height: 40px;
+    width: 30%;
+}
+
+/*버튼 컨테이너*/
+.question_button_container{
+    background-color: antiquewhite;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.question_button_container_c1{
+    background-color: rgb(181, 140, 86);
+    height: 40px;
+    width: 40%;
+}
+
+.question_button_container_c2{
+    background-color: rgb(181, 140, 86);
+    height: 40px;
+    width: 40%;
+}

@@ -1,0 +1,93 @@
+.search_pwd-box{
+    position: absolute;
+    left: 50%;
+    width: 500px;
+    padding: 30px;
+    transform: translate(-50%);
+    background: rgba(78, 78, 78, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(83, 1, 1, 0.6);
+    border-radius: 50px;
+    margin-top: 250px;
+}
+
+.search_pwd-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+
+.email-container{
+    position: relative;
+    background-color: aquamarine;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.email-box_1{
+    height: 100%;
+    width: 300px;
+    font-size: 16px;
+    color: #fff;
+    background-color: blue;
+}
+
+.email-input_text{
+    height: 40%;
+    width: 100%;
+    background-color: bisque;
+}
+
+.email-input{
+    height: 40%;
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+
+    outline: none;
+}
+
+.email-box_2{
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.email-box_send{
+    height: 40px;
+}
+
+.mail_receive_code_container{
+    background-color: beige;
+    margin-top: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.mail_receive_code{
+    height: 30px;
+    width: 200px;
+}
+
+.stop_search_pwd_container{
+    background-color: blueviolet;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stop_search_pwd_container_button_1{
+    height: 100%;
+    width: 130px;
+    background-color: rgb(40, 239, 100);
+}

@@ -1,0 +1,128 @@
+.join-box {
+    position: absolute;
+    left: 50%;
+    width: 500px;
+    padding: 30px;
+    transform: translate(-50%);
+    background: rgba(78, 78, 78, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(83, 1, 1, 0.6);
+    border-radius: 50px;
+    margin-top: 230px;
+}
+
+.join-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.join_id_container{
+    background-color: rgb(120, 120, 112);
+    height: 50px;
+    width: 100%;
+    display: flex;
+}
+
+.join_id_container_1{
+    position: relative;
+    background-color: rgb(139, 90, 90);
+    height: 50px;
+    width: 210px; 
+    margin-left: 25px;
+}
+
+.join_id_container_1_text{
+    background-color: rgb(128, 128, 22);
+    height: 40%;
+    width: 100px;
+}
+
+.join_id_container_1_input{
+    background-color: rgb(218, 218, 129);
+    height: 50%;
+    width: 80%;
+}
+
+.join_id_container_2{
+    background-color: rgb(96, 255, 75);
+    height: 50px;
+    width: 200px;  
+}
+
+/*비밀번호*/
+.join_pwd_container{
+    background-color: beige;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/*이메일*/
+.join_email_container{
+    background-color: beige;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.join_email_container_1{
+    background-color: rgb(174, 174, 105);
+    margin-left: 25px;
+    height: 50px;
+    width: 60%;
+}
+
+.join_email_container_1_text{
+    background-color: rgb(127, 184, 184);
+    width: 100%;
+}
+
+.join_email_container_1_input{
+    background-color: aqua;
+    width: 100%;  
+}
+
+.join_email_container_2{
+    background-color: rgb(174, 174, 105);
+    margin-left: 25px;
+    height: 50px;
+    width: 30%;
+}
+
+.join_email_container_2_send{
+    background-color: blueviolet;
+    width: 70%;
+    height: 50px; 
+}
+
+/*승인코드*/
+.join_code_container{
+    background-color: beige;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.join_code_container_2_send{
+    background-color: aquamarine;
+    height: 50px;
+}
+
+/*버튼*/
+.join_button_container{
+    background-color: beige;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.join_button_container div{
+    background-color: rgb(235, 235, 61);
+    width: 150px;
+}
