@@ -33,5 +33,8 @@ export default createStore(function(state, action){
     if (action.type === "MYPAGE"){
         return {...state, number:8}
     }
+    if (action.type === "BOARD_POST"){
+        return {...state, number:9}
+    }
     return state;
 })

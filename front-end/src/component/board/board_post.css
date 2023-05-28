@@ -1,0 +1,165 @@
+.board_post_container{
+    position: absolute;
+    left: 50%;
+    width: 1000px;
+    padding: 30px;
+    transform: translate(-50%);
+    background: rgba(78, 78, 78, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(83, 1, 1, 0.6);
+    border-radius: 50px;
+    margin-top: 230px;
+}
+
+.board_post_container h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.board_post_container_title{
+    position: relative;
+}
+
+/*제목*/
+.board_post_container_title input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.board_post_container_title label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.board_post_container_title input:focus ~ label,
+.board_post_container_title input:valid ~ label {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+}
+
+/*체크 컨테이너*/
+.board_post_container_check{
+    background-color: beige;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*체크 컨테이너 - 첫 체크*/
+.board_post_container_check_1{
+    background-color: rgb(235, 235, 123);
+    height: 100%;
+    width: 20%;
+}
+
+.board_post_container_check_1_title{
+    background-color: rgb(195, 195, 136);
+    height: 40%;
+    width: 100%;
+}
+
+.board_post_container_check_1_title_container{
+    background-color: rgb(75, 75, 36);
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.board_post_container_check_1_title_container div{
+    background-color: rgb(114, 105, 105);
+    height: 100%;
+    width: 40%;
+}
+
+
+/*체크 컨테이너 - 두번째 체크*/
+.board_post_container_check_2{
+    background-color: rgb(235, 235, 123);
+    height: 100%;
+    width: 20%;
+}
+
+.board_post_container_check_2_title{
+    background-color: rgb(195, 195, 136);
+    height: 40%;
+    width: 100%;
+}
+
+.board_post_container_check_2_title_container{
+    background-color: rgb(208, 111, 111);
+    height: 60%;
+    width: 40%;
+}
+
+
+/*체크 컨테이너 - 세번째 체크*/
+.board_post_container_check_3{
+    background-color: rgb(235, 235, 123);
+    height: 100%;
+    width: 50%;
+}
+
+.board_post_container_check_3_hashtag{
+    background-color: rgb(158, 255, 221);
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.board_post_container_check_3_hashtag_list{
+    background-color: rgb(0, 179, 116);
+    height: 100%;
+    width: 15%;
+}
+
+/*내용*/
+.board_post_container_detail div{
+    margin-top: 10px;
+    background-color: blueviolet;
+
+}
+.board_post_container_detail input {
+    height: 100px;
+    width: 100%;
+    
+}
+
+/*버튼 컨테이너*/
+.board_post_container_button{
+    background-color: beige ;
+    height: 40px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.board_post_container_button_post{
+    background-color: rgb(234, 234, 15) ;
+    height: 100%;
+    width: 20%;
+}
+
+.board_post_container_button_cancel{
+    background-color: rgb(234, 234, 15) ;
+    height: 100%;
+    width: 20%;
+}

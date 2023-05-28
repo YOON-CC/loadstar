@@ -26,14 +26,26 @@ export default class Home_header extends Component{
                       this.state.number === 4 || this.state.number === 5 ||
                       this.state.number === 6) && <Before_login></Before_login>} 
 
-                    {(this.state.number === 7 || this.state.number === 8) && <After_login></After_login>} 
+                    {(this.state.number === 7 || this.state.number === 8 ||
+                      this.state.number === 9) && <After_login></After_login>} 
                 </div>
 
                 <div className="home_header_body_2">
                     <div className="home_header_body_2_c1">
                         <div className="home_header_body_2_c1_text">홈페이지 설명 텍스트</div>
                         <div className="home_header_body_2_c1_button_container">
-                            <div className="home_header_body_2_c1_button_container_b1">게시글 올리기</div>
+                            {(this.state.number === 0 || this.state.number === 1 ||
+                              this.state.number === 2 || this.state.number === 3 ||
+                              this.state.number === 4 || this.state.number === 5 ||
+                              this.state.number === 6) && <div className="home_header_body_2_c1_button_container_b1">게시글 올리기</div>} 
+
+                            {(this.state.number === 7 || this.state.number === 8 ||
+                              this.state.number === 9)&& 
+                            <div className="home_header_body_2_c1_button_container_b1" onClick={function(){
+                                store.dispatch({type:'BOARD_POST'});
+                            }.bind(this)}>게시글 올리기</div>} 
+                            
+
                             <div className="home_header_body_2_c1_button_container_b2">그래프 그리기</div>
                         </div>
                     </div>
