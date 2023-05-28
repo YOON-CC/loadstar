@@ -7,6 +7,7 @@ import Search_pwd from "./component/search/search_pwd";
 import Change_pwd from "./component/change/change_pwd";
 import Join from "./component/join/join";
 import First_question from "./component/first_question/first_question";
+import Mypage from "./component/mypage/mypage";
 
 import store from "./store";
 
@@ -32,6 +33,8 @@ export default class App extends Component{
         {this.state.number === 4 && <Search_pwd></Search_pwd>} 
         {this.state.number === 5 && <Change_pwd></Change_pwd>} 
         {this.state.number === 6 && <First_question></First_question>}
+        {this.state.number === 8 && <Mypage></Mypage>}
+
       </div>
     );
   }

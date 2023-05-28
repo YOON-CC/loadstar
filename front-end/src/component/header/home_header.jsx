@@ -26,7 +26,7 @@ export default class Home_header extends Component{
                       this.state.number === 4 || this.state.number === 5 ||
                       this.state.number === 6) && <Before_login></Before_login>} 
 
-                    {this.state.number === 7 && <After_login></After_login>} 
+                    {(this.state.number === 7 || this.state.number === 8) && <After_login></After_login>} 
                 </div>
 
                 <div className="home_header_body_2">

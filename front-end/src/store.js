@@ -30,5 +30,8 @@ export default createStore(function(state, action){
     if (action.type === "AFTER_LOGIN"){
         return {...state, number:7}
     }
+    if (action.type === "MYPAGE"){
+        return {...state, number:8}
+    }
     return state;
 })

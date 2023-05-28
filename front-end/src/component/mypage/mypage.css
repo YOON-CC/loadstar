@@ -1,0 +1,116 @@
+.mypage_container{
+    position: absolute;
+    left: 50%;
+    height: 360px;
+    width: 800px;
+    padding: 5px;
+    transform: translate(-50%);
+    background: rgba(78, 78, 78);
+    margin-top: 240px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.mypage_container_1{
+    position: relative;
+    background: rgb(67, 170, 93);
+    height: 100%;
+    width: 20%;
+}
+
+.mypage_container_1_box_0{
+    background: rgb(0, 170, 255);
+    height: 50px;
+    width: 100%;
+}
+
+.mypage_container_1_box_1{
+    background: rgb(170, 211, 255);
+    height: 50px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.mypage_container_1_box_2{
+    background: rgb(201, 202, 213);
+    height: 50px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.mypage_container_1_box_3{
+    background: rgb(255, 245, 129);
+    height: 50px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.mypage_container_1_box_4{
+    background: rgb(255, 151, 151);
+    height: 50px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+/*마이페이지 내용*/
+
+.mypage_container_2{
+    background: rgb(0, 255, 60);
+    height: 100%;
+    width: 79.4%;
+}
+
+/*회원정보*/
+.mypage_0_container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 170, 255);
+}
+
+.mypage_0_container_1{
+    height: 15%;
+    width: 100%;
+    background: rgb(73, 116, 137); 
+    display: flex;
+    justify-content: space-evenly;
+}
+.mypage_0_container_1 div{
+    height: 100%;
+    width: 200px;
+    background: rgb(54, 222, 35); 
+}
+
+.mypage_0_container_2{
+    position: relative;
+    height: 85%;
+    width: 100%;
+    background: rgb(135, 163, 132); 
+
+}
+.mypage_0_container_2 div{
+    position: absolute;
+
+    height: 200px;
+    width: 200px;
+    background: rgb(54, 222, 35);
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+/*이용방법*/
+.mypage_1_container{
+    height: 100%;
+    width: 100%;
+    background: rgb(170, 211, 255);
+}
+
+/*ABOUT*/
+.mypage_2_container{
+    height: 100%;
+    width: 100%;
+    background: rgb(201, 202, 213);
+}
