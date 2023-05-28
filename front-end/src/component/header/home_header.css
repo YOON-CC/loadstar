@@ -19,27 +19,38 @@
     background-color: #a5a5a5;
     height: 100%;
     width: 90px;
+    margin-left: 10px;
 }
 
 /*로그인, 회원가입, 로그아웃, 마이페이지, 알림*/
-.home_header_body_1_form{
-    background-color: #3300ff;
+.home_header_body_1_form_before{
+    background-color: #724ffd;
     height: 100%;
-    width: 170px;
+    width: 180px;
     display: flex;
     justify-content: space-between;
+    margin-right: 10px;
+}
+
+.home_header_body_1_form_after{
+    background-color: #724ffd;
+    height: 100%;
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
 }
 
 .home_header_body_1_c1{
     background-color: #00ffee;
     height: 25px;
-    width: 60px;
+    width: 80px;
 }
 
 .home_header_body_1_c2{
     background-color: #00ffee;
     height: 25px;
-    width: 60px;
+    width: 80px;
 }
 
 .home_header_body_1_c3{

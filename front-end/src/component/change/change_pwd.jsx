@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import store from "../../store";
 
 export default class Change_pwd extends Component{
 
@@ -22,9 +23,9 @@ export default class Change_pwd extends Component{
                             변경
                         </button>
 
-                        <button className="user-button_container_cancel">
-                            Cancel
-                        </button>
+                        <div className="user-button_container_cancel" onClick={function(){
+                            store.dispatch({type:'HOME'});
+                        }.bind(this)}>Cancel</div>
                     </div>
 
                 </form>

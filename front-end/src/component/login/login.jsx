@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./login.css";
+import store from "../../store";
 
 export default class Login extends Component{
-
+    
     render() { 
         return (
             <div className="login-box">
@@ -19,23 +20,24 @@ export default class Login extends Component{
                     </div>
 
                     <div className="user-button_container">
-                        <button type="submit" className="user-button_container_login">
-                            Submit
-                        </button>
+                        <button type="submit" className="user-button_container_login" onClick={function(){
+                            store.dispatch({type:'AFTER_LOGIN'});
+                        }.bind(this)}>submit</button>
 
-                        <button className="user-button_container_cancel">
-                            Cancel
-                        </button>
+                        <div className="user-button_container_cancel" onClick={function(){
+                            store.dispatch({type:'HOME'});
+                        }.bind(this)}>Cancel</div>
+       
                     </div>
 
                     <div className="user-forget_container">
-                        <div type="submit" className="search">
-                            아이디찾기
-                        </div>
+                        <div type="submit" className="search" onClick={function(){
+                            store.dispatch({type:'SEARCH_ID'});
+                        }.bind(this)}>아이디찾기</div>
 
-                        <div className="search">
-                            비밀번호찾기
-                        </div>
+                        <div className="search" onClick={function(){
+                            store.dispatch({type:'SEARCH_PWD'});
+                        }.bind(this)}>비밀번호 찾기</div>
                     </div>
 
                 </form>

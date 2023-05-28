@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./first_question.css";
+import store from "../../store";
 
 export default class First_question extends Component{
 
@@ -36,12 +37,12 @@ export default class First_question extends Component{
                     </div>
 
                     <div className="question_button_container">
-                        <div className="question_button_container_c1">
+                        <button className="question_button_container_c1">
                             확인
-                        </div>
-                        <div className="question_button_container_c2">
-                            건너뛰기
-                        </div>
+                        </button>
+                        <div className="question_button_container_c2" onClick={function(){
+                                store.dispatch({type:'HOME'});
+                            }.bind(this)}>건너뛰기</div>
                     </div>
 
                 </form>

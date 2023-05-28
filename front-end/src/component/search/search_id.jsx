@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./search_id.css";
+import store from "../../store";
 
 export default class Search_id extends Component{
 
@@ -22,7 +23,9 @@ export default class Search_id extends Component{
                     </div>
 
                     <div className="stop_search_id_container">
-                        <div className="stop_search_id_container_button">확인/돌아가기</div>
+                        <div className="stop_search_id_container_button"onClick={function(){
+                            store.dispatch({type:'HOME'});
+                        }.bind(this)}>확인/돌아가기</div>
                     </div>
 
                 </form>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import store from "../../store";
 import "./join.css";
 
 
@@ -80,15 +81,15 @@ export default class Join extends Component{
 
                     <div className="join_button_container">
                         <div className="join_button_container_1">
-                            <button className="join_button_container_1_join">
-                                확인
-                            </button>
+                            <button className="join_button_container_1_join"onClick={function(){
+                                store.dispatch({type:'FIRST_QUESTION'});
+                            }.bind(this)}>확인</button>
                         </div>
 
                         <div className="join_button_container_2">
-                            <div className="join_button_container_2_cancel">
-                                취소
-                            </div>
+                            <div className="join_button_container_2_cancel" onClick={function(){
+                                store.dispatch({type:'HOME'});
+                            }.bind(this)}>Cancel</div>
                         </div>
                     </div>
 

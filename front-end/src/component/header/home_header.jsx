@@ -1,7 +1,18 @@
 import React, { Component } from "react";
+import Before_login from "./before_login"
+import After_login from "./after_login";
 import "./home_header.css";
 
+import store from "../../store.js";
+
 export default class Home_header extends Component{
+    state = {number:store.getState().number} 
+    constructor(props){
+      super(props);
+      store.subscribe(function(){
+        this.setState({number:store.getState().number});
+      }.bind(this));
+    }
 
     render() { 
         return (
@@ -9,11 +20,13 @@ export default class Home_header extends Component{
                 
                 <div className="home_header_body_1">
                     <div className="home_header_body_1_logo">로고</div>
-                    <div className="home_header_body_1_form">
-                        <div className="home_header_body_1_c1">로그인, 로그아웃</div>
-                        <div className="home_header_body_1_c2">회원가입, 마이페이지</div>
-                        <div className="home_header_body_1_c3">알림</div>
-                    </div>
+
+                    {(this.state.number === 0 || this.state.number === 1 ||
+                      this.state.number === 2 || this.state.number === 3 ||
+                      this.state.number === 4 || this.state.number === 5 ||
+                      this.state.number === 6) && <Before_login></Before_login>} 
+
+                    {this.state.number === 7 && <After_login></After_login>} 
                 </div>
 
                 <div className="home_header_body_2">

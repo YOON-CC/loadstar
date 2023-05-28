@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./search_pwd.css";
+import store from "../../store";
 
 export default class Search_pwd extends Component{
 
@@ -26,8 +27,13 @@ export default class Search_pwd extends Component{
                     </div>
 
                     <div className="stop_search_pwd_container">
-                        <div className="stop_search_pwd_container_button_1">확인</div>
-                        <div className="stop_search_pwd_container_button_1">취소</div>
+                        <div className="stop_search_pwd_container_button_1" onClick={function(){
+                            store.dispatch({type:'CHANGE_PWD'});
+                        }.bind(this)}>비밀번호 변경</div>
+
+                        <div className="stop_search_pwd_container_button_1" onClick={function(){
+                            store.dispatch({type:'HOME'});
+                        }.bind(this)}>취소</div>
                     </div>
 
                 </form>
