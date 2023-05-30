@@ -10,7 +10,7 @@ export default class Join extends Component{
             <div className="join-box">
                 <h2>회원가입</h2>
                 <form>
-
+                    
                     <div className="join_id_container">
                         <div className="join_id_container_1">
                             <div className="join_id_container_1_text">

@@ -101,16 +101,23 @@
     transform: translate(-50%, -50%); 
 }
 
-/*이용방법*/
+/*내가 쓴글*/
 .mypage_1_container{
     height: 100%;
     width: 100%;
     background: rgb(170, 211, 255);
 }
 
-/*ABOUT*/
+/*이용방법*/
 .mypage_2_container{
     height: 100%;
     width: 100%;
     background: rgb(201, 202, 213);
+}
+
+/*ABOUT*/
+.mypage_3_container{
+    height: 100%;
+    width: 100%;
+    background: rgb(255, 245, 129);
 }

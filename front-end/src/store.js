@@ -6,7 +6,6 @@ export default createStore(function(state, action){
     if(action.type === "HOME"){
         return {...state, number:0}
     }
-
     if (action.type === "LOGIN"){
         return {...state, number:1}
     }
