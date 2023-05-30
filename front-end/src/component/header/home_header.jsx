@@ -19,7 +19,9 @@ export default class Home_header extends Component{
             <div className="home_header_body">
                 
                 <div className="home_header_body_1">
-                    <div className="home_header_body_1_logo">로고</div>
+                    <div className="home_header_body_1_logo">
+                      <img className="home_header_body_1_logo_img" src="image/logo.png"></img>
+                    </div>
 
                     {(this.state.number === 0 || this.state.number === 1 ||
                       this.state.number === 2 || this.state.number === 3 ||
@@ -32,24 +34,44 @@ export default class Home_header extends Component{
 
                 <div className="home_header_body_2">
                     <div className="home_header_body_2_c1">
-                        <div className="home_header_body_2_c1_text">홈페이지 설명 텍스트</div>
+                        <div className="home_header_body_2_c1_text">
+                          <div className="home_header_body_2_c1_text_1">DRAW AND SHOW</div>
+                          <div className="home_header_body_2_c1_text_2">YOUR DREAM</div>
+                          <div className="home_header_body_2_c1_text_3"></div>
+                          <div className="home_header_body_2_c1_text_4">당신의 길라잡이 LOADSTAR</div>
+
+
+                        </div>
+
                         <div className="home_header_body_2_c1_button_container">
                             {(this.state.number === 0 || this.state.number === 1 ||
                               this.state.number === 2 || this.state.number === 3 ||
                               this.state.number === 4 || this.state.number === 5 ||
-                              this.state.number === 6) && <div className="home_header_body_2_c1_button_container_b1">게시글 올리기</div>} 
+                              this.state.number === 6) && 
+                              <div className="home_header_body_2_c1_button_container_b1">
+                                <div className="b1_img"><img src="image/post.png"></img></div>
+                                <div className="b1_text">게시글 올리기</div>
+                              </div>} 
 
                             {(this.state.number === 7 || this.state.number === 8 ||
                               this.state.number === 9)&& 
                             <div className="home_header_body_2_c1_button_container_b1" onClick={function(){
                                 store.dispatch({type:'BOARD_POST'});
-                            }.bind(this)}>게시글 올리기</div>} 
+                              }.bind(this)}>
+                              <div className="b1_img"><img src="image/post.png"></img></div>
+                              <div className="b1_text">게시글 올리기</div>
+                            </div>} 
                             
-
-                            <div className="home_header_body_2_c1_button_container_b2">그래프 그리기</div>
+                            <div className="home_header_body_2_c1_button_container_b2">
+                              <div className="b2_img"><img src="image/drawing.png"></img></div>
+                              <div className="b2_text">그래프 그리기</div>
+                            </div>
                         </div>
+                        
                     </div>
-                    <div className="home_header_body_2_c2">이미지</div>
+                    <div className="home_header_body_2_c2">
+                      <img className="home_header_body_1_logo_img" src="image/logo.png"></img>
+                    </div>
                 </div>
             </div>
         )

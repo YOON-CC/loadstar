@@ -24,7 +24,9 @@ export default class After_login extends Component{
                     store.dispatch({type:"MYPAGE"});
                 }.bind(this)}>마이페이지</div>
 
-                <div className="home_header_body_1_c3"  onClick={() => this.setState({ alarm: this.state.alarm + 1 })}>알림</div>
+                <div className="home_header_body_1_c3"  onClick={() => this.setState({ alarm: this.state.alarm + 1 })}>
+                    <img src="image/alarm.png"></img>
+                </div>
                 {this.state.alarm % 2 === 1 && <Alarm></Alarm>}
             </div>
         )

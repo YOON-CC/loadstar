@@ -1,6 +1,6 @@
 .home_board_list_body{
     position: absolute;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     height: 1500px;
     width: 100%;
     margin-top: 200px;
@@ -10,50 +10,54 @@
 /*카테고리*/
 .home_hashtag_body{
     position : absolute;
-    background-color: #86c242;
+    /* background-color: #86c242; */
     height: 40px;
     width: 100%;
 }
 
 .home_hashtag_container{
     position : absolute;
-    background-color: #88ff00;
+    /* background-color: #88ff00; */
     height: 100%;
     width: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    justify-content: space-between;
 }
 
 .home_hashtag_container_c1{
-    background-color: #028cef;
+    background-color: #4a3b8b;
     height: 30px;
-    width: 65px;
+    width: 70px;
     margin-top: 5px;
+
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+
 }
 
 .home_hashtag_container_c2{
-    background-color: #028cef;
+    background-color: #FFED48;
     height: 30px;
-    width: 65px;
+    width: 270px;
     margin-top: 5px;
+
+    border-radius: 10px;
+    color: #4a3b8b;
+    font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.home_hashtag_container_c3{
-    background-color: #028cef;
-    height: 30px;
-    width: 65px;
-    margin-top: 5px;
-}
-
-.home_hashtag_container_c4{
-    background-color: #028cef;
-    height: 30px;
-    width: 290px;
-    margin-top: 5px;
-}
 /*카테고리 끝*/
 
 /*게시물 리스트 바디*/

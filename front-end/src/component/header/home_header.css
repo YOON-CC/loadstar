@@ -1,6 +1,6 @@
 .home_header_body{
     position : fixed;
-    background-color: #c72121;
+    background: linear-gradient(135deg, #2F2853, #4a3b8b, #4a3b8b, #2F2853, #2F2853);
     height: 200px;
     width: 100%;
     z-index: 1;
@@ -8,7 +8,7 @@
 
 .home_header_body_1{
     position : relative;
-    background-color: #d79494;
+    /* background-color: #2F2853; */
     height: 30%;
     display: flex;
     justify-content: space-between;
@@ -16,99 +16,229 @@
 
 /*로고*/
 .home_header_body_1_logo{
-    background-color: #a5a5a5;
+    /* background-color: #2F2853; */
     height: 100%;
-    width: 90px;
+    width: 75px;
     margin-left: 10px;
+}
+
+.home_header_body_1_logo_img{
+    width: 100%;
+    height: 100%;
 }
 
 /*로그인, 회원가입, 로그아웃, 마이페이지, 알림*/
 .home_header_body_1_form_before{
-    background-color: #724ffd;
+    /* background-color: #ff0000; */
     height: 100%;
     width: 180px;
     display: flex;
     justify-content: space-between;
     margin-right: 10px;
+    margin-top: 7px;
 }
 
 .home_header_body_1_form_after{
-    background-color: #724ffd;
+    /* background-color: #724ffd; */
     height: 100%;
-    width: 230px;
+    width: 220px;
     display: flex;
     justify-content: space-between;
     margin-right: 10px;
+    margin-top: 7px;
+
 }
 
 .home_header_body_1_c1{
-    background-color: #00ffee;
-    height: 25px;
+    height: 20px;
     width: 80px;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: #ffffff;
+
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 80%;
+
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
 }
 
 .home_header_body_1_c2{
-    background-color: #00ffee;
-    height: 25px;
+    height: 20px;
     width: 80px;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: #ffffff;
+
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 80%;
+
+
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
 }
 
 .home_header_body_1_c3{
-    background-color: #00ffee;
+    /* background-color: #00ffee; */
     height: 25px;
     width: 25px;
 }
 
+.home_header_body_1_c3 img{
+    width: 100%;
+    height: 100%;
+}
+
+
 /*홈페이지 설명, 게시글작성, 그래프 그리기 틀*/
 .home_header_body_2{
     position : absolute;
-    background-color: #239eab;
     height: 180px;
     width: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .home_header_body_2_c1{
-    background-color: #165cff;
+    /* background-color: #00ff08; */
     height: 100%;
-    width: 60%;
+    width: 52%;
 }
 
 /*홈페이지 설명 텍스트*/
 .home_header_body_2_c1_text{
-    background-color: #a4c0ff;
+    /* background-color: #2F2853; */
     height: 80%;
     width: 100%; 
 }
+
+.home_header_body_2_c1_text_1{
+    /* background-color: #88fe00; */
+    width: 100%;
+    height: 20%;
+
+    color: #ffffff;
+    font-size: 29px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+.home_header_body_2_c1_text_2{
+    /* background-color: #88fe00; */
+    width: 100%;
+    height: 20%;
+
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+.home_header_body_2_c1_text_3{
+    /* background-color: #88fe00; */
+    width: 100%;
+    height: 1%;
+    background-color: #ffffff;
+}
+.home_header_body_2_c1_text_4{
+    color: #e2e2e2;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 20px;  
+    animation: blinking 3s infinite;
+}
+
+@keyframes blinking {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 /*게시물 올리기, 그리기 버튼 컨테이너*/
 .home_header_body_2_c1_button_container{
-    background-color: #47536e;
+    /* background-color: #3564d3; */
     height: 20%;
     width: 100%;   
+    display: flex;
+    justify-content: space-between;
+}
+
+/*게시물 올리기, 그래프 그리기 버튼*/
+.home_header_body_2_c1_button_container_b1{
+    background: linear-gradient(135deg, #FFED48, #fff384, #FFED48);
+    height: 35px;
+    width: 125px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-evenly;
 }
 
-/*게시물 올리기 버튼*/
-.home_header_body_2_c1_button_container_b1{
-    background-color: #88fe00;
-    height: 35px;
-    width: 130px;
+.b1_img{
+    height: 100%;
+    width: 20px;
 }
-/*그래프 그리기 버튼*/
+
+.b1_img img{
+    width: 20px;
+    height: 20px;
+    margin-top: 7px;
+}
+
+.b1_text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: bold;
+    color: #2F2853;
+}
+
 .home_header_body_2_c1_button_container_b2{
-    background-color: #88fe00;
+    background: linear-gradient(135deg, #FFED48, #fff384, #FFED48);
     height: 35px;
-    width: 130px;
+    width: 125px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.b2_img{
+    height: 100%;
+    width: 20px;
+}
+
+.b2_img img{
+    width: 20px;
+    height: 20px;
+    margin-top: 7px;
+}
+
+.b2_text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: bold;
+    color: #2F2853;
 }
 
 /*홈페이지 설명 사진*/
 .home_header_body_2_c2{
-    background-color: #8e16ff;
+    /* background-color: #FFED48; */
+    margin-top: 10px;
     height: 100%;
-    width: 40%;
+    width: 46%;
 }

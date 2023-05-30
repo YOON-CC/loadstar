@@ -45,9 +45,12 @@ export default class Home_board_list extends Component{
                 <div className="home_hashtag_body">
                     <div className="home_hashtag_container">
                         <div className="home_hashtag_container_c1">전체</div>
-                        <div className="home_hashtag_container_c2">Q&A</div>
-                        <div className="home_hashtag_container_c3">카테고리</div>
-                        <div className="home_hashtag_container_c4">카테고리 저장</div>
+                        <div className="home_hashtag_container_c1">참고글</div>
+                        <div className="home_hashtag_container_c1">질문글</div>
+
+                        <div className="home_hashtag_container_c2">
+                            해시테그 고르기
+                        </div >
                     </div>
                 </div>
                 

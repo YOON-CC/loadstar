@@ -1,17 +1,20 @@
 .alarm_container{
     position: absolute;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     height: 500px;
-    width: 220px;
-    margin-top: 30px;
+    width: 210px;
+    margin-top: 35px;
     z-index: 1;
     padding-right: 5px;
     padding-left: 5px;
+    border-radius: 10px;
 }
 
 .alarm_item{
-    background-color: rgb(3, 112, 112);
+    background-color: rgb(79, 79, 79);
     height: 50px;
     width: 100%;
     margin-top: 5px;
+    border-radius: 10px;
+
 }
