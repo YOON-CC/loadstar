@@ -6,6 +6,12 @@ import "./join.css";
 export default class Join extends Component{
 
     render() { 
+        
+        //여기서 회원가입 가능 여부를 판단해야 한다.
+        const handleJoin = () => {
+            store.dispatch({ type: 'WELCOME' });
+        };
+
         return (
             <div className="join-box">
                 <h2>회원가입</h2>
@@ -60,9 +66,7 @@ export default class Join extends Component{
                     {/* @@@ */}
 
                     <div className="newbtn-container">
-                        <button className="newbtn-container_1" onClick={function(){
-                            store.dispatch({type:'FIRST_QUESTION'});
-                        }.bind(this)}>JOIN</button>
+                        <button className="newbtn-container_1" onClick={handleJoin}>JOIN</button>
                         <div className="newbtn-container_2" onClick={function(){
                             store.dispatch({type:'HOME'});
                         }.bind(this)}>CANCEL</div>          

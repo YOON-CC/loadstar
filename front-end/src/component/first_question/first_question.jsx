@@ -7,32 +7,28 @@ export default class First_question extends Component{
     render() { 
         return (
             <div className="question-box">
-                <h2>question</h2>
+                <h2>QUESTION</h2>
                 <form>
-                    <div className="question_container_1">
-                        <div className="question_container_1_c1">
-                            질문1
+                    <div className="question_container">
+                        <div className="question">QUESTION 1</div>
+                        <div className="answer_1">
+                            <label><input type="checkbox" name="color" value="blue"></input>현직자</label>
+                            <label><input type="checkbox" name="color" value="blue"></input>비현직자</label>
                         </div>
-                        <div className="question_container_1_c2">
-                            해시테그1
+                        <div className="question">QUESTION 2</div>
+                        <div className="answer_2">
+                            <label><input type="checkbox" name="color" value="blue"></input>전공자</label>
+                            <label><input type="checkbox" name="color" value="blue"></input>비전공자</label>
                         </div>
-                    </div>
-
-                    <div className="question_container_2">
-                        <div className="question_container_2_c1">
-                            질문2
+                        <div className="question">QUESTION 3</div>
+                        <div className="answer_3">
+                            <label><input type="checkbox" name="color" value="blue"></input>프론트엔드</label>
+                            <label><input type="checkbox" name="color" value="blue"></input>백엔드</label>
                         </div>
-                        <div className="question_container_2_c2">
-                            해시테그2
-                        </div>
-                    </div>
-
-                    <div className="question_container_3">
-                        <div className="question_container_3_c1">
-                            질문3
-                        </div>
-                        <div className="question_container_3_c2">
-                            해시테그3
+                        <div className="question">QUESTION 4</div>
+                        <div className="answer_4">
+                            <div className="answer_4_year">YEAR</div>
+                            <div className="answer_4_month">MONTH</div>
                         </div>
                     </div>
 

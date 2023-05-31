@@ -1,0 +1,131 @@
+.welcome_container{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
+    /* margin-top : 270px; */
+    z-index : 1;
+}
+
+.text1{
+    position: absolute;
+    /* background-color: rgb(111, 255, 0); */
+    height: 100px;
+    width: 100%;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+
+    animation: text_animation 0.3s;
+    /* animation-delay: 5s; */
+}
+
+.text2{
+    position: absolute;
+    /* background-color: rgb(111, 255, 0); */
+    height: 100px;
+    width: 100%;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+
+    animation: text_animation 0.3s;
+    animation-delay: 0.3s;
+}
+
+.text3{
+    position: absolute;
+    /* background-color: rgb(111, 255, 0); */
+    height: 100px;
+    width: 100%;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+
+    animation: text_animation 1s;
+    animation-delay: 0.6s;
+}
+
+.text3{
+    position: absolute;
+    /* background-color: rgb(111, 255, 0); */
+    height: 100px;
+    width: 100%;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+
+    animation: text_animation 1s;
+    animation-delay: 0.6s;
+}
+
+.welcome_img{
+    position: absolute;
+    height: 350px;
+    width:380px;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+
+    animation: img_animation 1.5s linear;
+    animation-delay: 1.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes text_animation {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}
+
+@keyframes img_animation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}

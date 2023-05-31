@@ -9,6 +9,7 @@ import Join from "./component/join/join";
 import First_question from "./component/first_question/first_question";
 import Mypage from "./component/mypage/mypage";
 import Board_post from "./component/board/board_post";
+import Welcome from "./component/welcome/welcome";
 
 import store from "./store";
 
@@ -36,7 +37,10 @@ export default class App extends Component{
         {this.state.number === 3 && <Search_id></Search_id>} 
         {this.state.number === 4 && <Search_pwd></Search_pwd>} 
         {this.state.number === 5 && <Change_pwd></Change_pwd>} 
-        {this.state.number === 6 && <First_question></First_question>}
+        {this.state.number === 6 && <Welcome></Welcome>}
+        {this.state.number === 10 && <First_question></First_question>}
+        
+
         {this.state.number === 8 && <Mypage></Mypage>}
         {this.state.number === 9 && <Board_post></Board_post>}
       </div>

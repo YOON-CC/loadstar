@@ -21,8 +21,11 @@ export default createStore(function(state, action){
     if (action.type === "CHANGE_PWD"){
         return {...state, number:5}
     }
-    if (action.type === "FIRST_QUESTION"){
+    if (action.type === "WELCOME"){
         return {...state, number:6}
+    }
+    if (action.type === "FIRST_QUESTION"){
+        return {...state, number:10}
     }
     
     // 로그인 이후
