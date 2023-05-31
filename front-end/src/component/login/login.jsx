@@ -11,7 +11,7 @@ export default class Login extends Component{
                 <form>
                     <div className="user-box">
                         <input type="text"></input>
-                        <label>Username</label>
+                        <label>Id</label>
                     </div>
 
                     <div className="user-box">
@@ -22,11 +22,11 @@ export default class Login extends Component{
                     <div className="user-button_container">
                         <button type="submit" className="user-button_container_login" onClick={function(){
                             store.dispatch({type:'AFTER_LOGIN'});
-                        }.bind(this)}>submit</button>
+                        }.bind(this)}>SUBMIT</button>
 
                         <div className="user-button_container_cancel" onClick={function(){
                             store.dispatch({type:'HOME'});
-                        }.bind(this)}>Cancel</div>
+                        }.bind(this)}>CANCEL</div>
        
                     </div>
 

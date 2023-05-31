@@ -39,7 +39,28 @@ export default class Home_board_list extends Component{
           BoardRows.push(tempboard);
         }
 
+        const default_count = 6;
+
+        const divElements = [];
+        for (let i = 0; i < default_count; i++) {
+          divElements.push(
+           <div key={i} className="board-list">                        
+                <div className="board-list_c1">
+                    <div className="board-list_c1_img">
+                        <img className="home_header_body_1_logo_img" src="image/logo.png"></img>
+                        </div>
+                    <div className="board-list_c1_tag"></div>
+                </div>
+                <div className="board-list_c2">프론트엔드가 꿈인 같이 성장하는..</div>
+                <div className="board-list_c3">
+                    <div className="board-list_c3_tag">전공자</div>
+                    <div className="board-list_c3_tag">front-end</div>
+                    <div className="board-list_c3_tag_end">...</div>
+                </div>
+            </div>);
+        }
         return (
+            
             <div className="home_board_list_body">
 
                 <div className="home_hashtag_body">
@@ -55,18 +76,7 @@ export default class Home_board_list extends Component{
                 </div>
                 
                 <div className="board-list-container">
-                    <div key={0} className="board-list">board {0}</div>
-                    <div key={1} className="board-list">board {1}</div>
-                    <div key={2} className="board-list">board {2}</div>
-                    <div key={3} className="board-list">board {3}</div>
-                    <div key={4} className="board-list">board {4}</div>
-                    <div key={5} className="board-list">board {5}</div>
-                    <div key={6} className="board-list">board {6}</div>
-                    <div key={7} className="board-list">board {7}</div>
-                    <div key={8} className="board-list">board {8}</div>
-                    <div key={9} className="board-list">board {9}</div>
-                    <div key={10} className="board-list">board {10}</div>
-                    <div key={11} className="board-list">board {11}</div>
+                    {divElements}
                     {BoardRows}
                 </div>
                 

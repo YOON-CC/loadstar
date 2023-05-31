@@ -17,13 +17,16 @@ export default class Search_pwd extends Component{
                         </div>
                         <div className="email-box_2">
                             <button type="submit" className="email-box_send">
-                                이메일 보내기
+                                보내기
                             </button>
                         </div>
                     </div>
 
                     <div className="mail_receive_code_container">
-                        <input className="mail_receive_code"></input>
+                        <input className="mail_receive_code" placeholder="code"></input>
+                        <button type="submit" className="mail_receive_code_send">
+                                확인
+                            </button>
                     </div>
 
                     <div className="stop_search_pwd_container">

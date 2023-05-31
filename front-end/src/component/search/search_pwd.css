@@ -4,9 +4,9 @@
     width: 500px;
     padding: 30px;
     transform: translate(-50%);
-    background: rgba(78, 78, 78, 0.5);
+    background: rgb(111, 111, 111);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(83, 1, 1, 0.6);
+    box-shadow: 0px 0px 50px 0px rgba(30, 1, 83, 0.6);
     border-radius: 50px;
     margin-top: 250px;
 }
@@ -18,76 +18,58 @@
     text-align: center;
 }
 
-
-.email-container{
-    position: relative;
-    background-color: aquamarine;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.email-box_1{
-    height: 100%;
-    width: 300px;
-    font-size: 16px;
-    color: #fff;
-    background-color: blue;
-}
-
-.email-input_text{
-    height: 40%;
-    width: 100%;
-    background-color: bisque;
-}
-
-.email-input{
-    height: 40%;
-    width: 100%;
-    font-size: 16px;
-    color: #fff;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #fff;
-
-    outline: none;
-}
-
-.email-box_2{
-    background-color: blueviolet;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.email-box_send{
-    height: 40px;
-}
-
 .mail_receive_code_container{
-    background-color: beige;
+    /* background-color: beige; */
     margin-top: 10px;
     height: 40px;
     display: flex;
-    justify-content: center;
 }
 
 .mail_receive_code{
     height: 30px;
-    width: 200px;
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    background-color: rgb(59, 59, 59)  ;
+    outline: none;
+    /* background-color: rgb(255, 183, 94); */
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 165px;
+}
+
+.mail_receive_code_send{
+    height: 32px;
+    width: 40px;
+    background-color: rgb(59, 59, 59)  ;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 10px;
 }
 
 .stop_search_pwd_container{
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     height: 40px;
     display: flex;
     justify-content: space-evenly;
 }
 
 .stop_search_pwd_container_button_1{
+    height: 40px;
+    width: 120px;
+    background: linear-gradient(135deg, #969696, #969696, #969696);
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    width: 130px;
-    background-color: rgb(40, 239, 100);
+    margin-top: 5px;
 }
