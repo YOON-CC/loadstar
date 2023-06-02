@@ -1,0 +1,59 @@
+.Hashtag_modal_container {
+    /* 모달창 크기 */
+    width: 300px;
+    height: 500px;
+      
+    /* 중앙 배치 */
+    /* top, bottom, left, right 는 브라우저 기준으로 작동한다. */
+    /* translate는 본인의 크기 기준으로 작동한다. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    /* 모달창 디자인 */
+    background: rgb(111, 111, 111);
+    box-shadow: 0px 0px 50px 0px rgba(30, 1, 83, 0.6);
+
+    border: none;
+    border-radius: 10px;
+
+    margin-top: 234px;
+    margin-left: 420px;
+    
+    justify-content: center;
+}
+  
+/* 모달창 내부 X버튼 */
+.Hashtag_modal_container_close {
+    position: absolute;
+    right: 10px;
+    width: 265px;
+    height: 32px;
+    margin-right: 313px;
+    /* background: none; */
+    border: none;
+}
+
+.Hashtag_modal_container_tag{
+    background-color:#FFED48;
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.hastag_btn{
+    height: 30px;
+    width: 100px;
+    background-color: rgb(59, 59, 59)  ;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 20px;
+    
+}

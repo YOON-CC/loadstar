@@ -1,0 +1,9 @@
+.board_view_container{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    color: white;
+    margin-top: -200px;
+}

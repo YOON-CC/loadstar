@@ -1,0 +1,15 @@
+.hashtag_container{
+    background-color: #FFED48;
+    height: 30px;
+    width: 270px;
+    margin-top: 5px;
+
+    border-radius: 10px;
+    color: #4a3b8b;
+    font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}

@@ -24,7 +24,7 @@ export default class First_question extends Component{
                     <div className="mypage_container_1_box_4" onClick={function(){
                             store.dispatch({type:'AFTER_LOGIN'});
                         }.bind(this)}>나가기</div>
-                    <div className="mypage_container_1_box_4">이미지</div>
+                    <div className="mypage_container_1_box_5">이미지</div>
                 </div>
                 <div className="mypage_container_2">
                     {this.state.mypage_num === 0 && <Mypage_0></Mypage_0>}
