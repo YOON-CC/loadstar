@@ -29,8 +29,36 @@ function Board_view({ view, board_View }) {
 
     return (
         <div className="board_view_container">
-            <div></div>
-            <button className = "b2 "onClick={close_board}>해제</button>
+            <div className="board_view_container_1">
+                <div className="board_view_header">
+                    <div className="board_view_header_box1">
+                        <button className = "board_view_b1 "onClick={close_board}>돌아가기</button>
+                    </div>
+
+                    <div className="board_view_header_title">프론트엔드가 꿈인 같이 성장하는 개발자입니다! 참고하세요!</div>
+
+                    <div className="board_view_header_box2">
+                        <button className = "board_view_b2 "onClick={close_board}>게시글 수정</button>
+                        <button className = "board_view_b3 "onClick={close_board}>게시글 삭제</button>
+                    </div>
+                </div>
+
+                <div className="board_view_body">
+                    <div className="board_view_body_1">
+                        
+                        <div className="board_view_body_1_container">
+                            <div className="board_view_body_1_graph">그래프</div>
+                        </div>
+                        <div className="board_view_body_1_context">내용</div>
+                    </div>
+                    <div className="board_view_body_2"></div>
+                </div>
+
+                <div className="board_view_footer">해시테그들</div>
+                
+            </div>
+            
+            
         </div>
     );
 }
