@@ -15,8 +15,6 @@ const Join = () => {
     //아이디 중복환인
     const [can_use_newid, setCan_use_newid] = useState('중복확인이 필요합니다!'); //아이디
 
-    //비밀번호 일치여부
-    const [can_use_newpwd, setCan_use_newpwd] = useState('X');
 
     //회원가입 버튼 전, 다른 버튼보내는 상태
     const [sendid, setSendId] = useState(0); //아이디 중복 버튼
@@ -36,11 +34,6 @@ const Join = () => {
 
     const handlenewpassword_againgChange = (event) => {//비밀번호찾기
         setnewPassword_again(event.target.value)
-        if (newpassword === newpassword_again ){
-            setCan_use_newpwd('O')
-        }else{
-            setCan_use_newpwd('X')
-        }
     };
 
     const handlenewemailgChange = (event) => {//이메일
@@ -209,7 +202,6 @@ const Join = () => {
                         <div className="newpwd-input_text2">Password_again</div>
                         <input type="text" value={newpassword_again} onChange={handlenewpassword_againgChange} className="newpwd-input2"></input>
                     </div>
-                    <div className="newpwd-input_correct">{can_use_newpwd}</div>           
                 </div>
                 {/* @@@ */}
 
