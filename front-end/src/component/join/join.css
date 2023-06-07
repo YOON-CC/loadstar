@@ -92,6 +92,31 @@
     color: rgb(0, 149, 255);
 }
 
+.newid-box_4{
+    width: 210px;
+    /* background-color: aqua; */
+
+    font-size: 10px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 242, 0);
+}
+.newid-box_5{
+    width: 210px;
+    /* background-color: aqua; */
+
+    font-size: 10px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 0, 0);
+}
+
 /*비밀번호*/
 .newpwd-container{
     position: relative;
@@ -162,6 +187,13 @@
     /* background-color: rgb(255, 183, 94); */
     padding-bottom: 5px;
 
+}
+
+.newpwd-input_correct{
+    margin-top: 10px;
+    margin-left: 30px;
+    color: rgb(0, 255, 76);
+    font-size: 10px;
 }
 
 
@@ -294,6 +326,23 @@
     border-radius: 10px;
     border: none;
     color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newbtn-container_3{
+    position: relative;
+    width: 180px;
+    height: 45px;  
+
+    background: rgb(84, 84, 84);
+    border-radius: 10px;
+    border: none;
+    color: #676767;
     font-size: 13px;
     font-weight: bold;
 
