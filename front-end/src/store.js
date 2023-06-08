@@ -19,7 +19,7 @@ export default createStore(function(state, action){
         return {...state, number:4}
     }
     if (action.type === "CHANGE_PWD"){
-        return {...state, number:5}
+        return {...state, number: action.payload.number, userId: action.payload.userId}
     }
     if (action.type === "WELCOME"){
         return {...state, number: action.payload.number, userId: action.payload.userId};

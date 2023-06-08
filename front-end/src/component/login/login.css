@@ -112,3 +112,21 @@
     align-items: center;
     justify-content: center;
 }
+
+/*비밀번호 변경 비활성화*/
+.user-button_container_login_2 {
+    position: relative;
+    width: 180px;
+    height: 45px;  
+
+    background: rgb(84, 84, 84);
+    border-radius: 10px;
+    border: none;
+    color: #676767;
+    font-size: 13px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

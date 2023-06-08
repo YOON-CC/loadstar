@@ -22,18 +22,26 @@ const Search_id = () => {
     const handlejoinSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post("http://13.125.16.222/emails/check-email", {
-                email: newemail
-            }, {
+            const response = await axios.get("http://13.125.16.222/users/find-id", {
+                params: {
+                    email: newemail
+                },
                 headers: {
-                "Content-Type": "application/json"
+                    "Content-Type": "application/json"
                 }
             });
 
             console.log(response.data);
+            setShowId(response.data.message)
         }
         catch (error) {
-
+            if (error.response && error.response.status === 400) {
+                // 400 에러 처리
+                setShowId("해당 이메일로 가입한 아이디가 없습니다.")
+            } else {
+                // 네트워크 오류 등의 예외 처리
+                console.error('API 요청 중 오류 발생:', error);
+            }    
         }
     }
 

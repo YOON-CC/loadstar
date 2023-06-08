@@ -8,7 +8,7 @@ const Join = () => {
     //input 변화 상태
     const [newid, setnewId] = useState(''); //아이디
     const [newpassword, setnewPassword] = useState(''); //비밀번호
-    const [newpassword_again, setnewPassword_again] = useState(''); //비밀번호찾기
+    const [newpassword_again, setnewPassword_again] = useState(''); //비밀번호확인
     const [newemail, setnewemail] = useState(''); //이메일
     const [newcode, setnewcode] = useState(''); //승인코드
 
@@ -32,7 +32,7 @@ const Join = () => {
         setnewPassword(event.target.value)
     };
 
-    const handlenewpassword_againgChange = (event) => {//비밀번호찾기
+    const handlenewpassword_againgChange = (event) => {//비밀번호확인
         setnewPassword_again(event.target.value)
     };
 
