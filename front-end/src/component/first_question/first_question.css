@@ -95,6 +95,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    text-align: center;
+    border: none;
+    outline: none;
 }
 .answer_4_month{
     position: relative;
@@ -110,6 +114,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    text-align: center;
+    border: none;
+    outline: none;
 }
 /*버튼 컨테이너*/
 .question_button_container{

@@ -5,8 +5,15 @@ import store from "../../store";
 export default class Welcome extends Component{
 
     render() { 
+
+        const { number, userId } = store.getState();
+
+
         setTimeout(() => {
-            store.dispatch({ type: 'FIRST_QUESTION' });
+            store.dispatch({ type: 'FIRST_QUESTION', payload: {
+                number: 10,
+                userId: userId
+            }});
         }, 5000);
         return (
             <div className="welcome_container">

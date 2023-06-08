@@ -22,10 +22,10 @@ export default createStore(function(state, action){
         return {...state, number:5}
     }
     if (action.type === "WELCOME"){
-        return {...state, number:6}
+        return {...state, number: action.payload.number, userId: action.payload.userId};
     }
     if (action.type === "FIRST_QUESTION"){
-        return {...state, number:10}
+        return {...state, number: action.payload.number, userId: action.payload.userId}
     }
     
     // 로그인 이후
