@@ -31,6 +31,7 @@ const Login = () => {
                 });
           
                 console.log(response.data);
+                store.dispatch({type:'AFTER_LOGIN'});
             }
             catch (error) {
                 console.error(error);

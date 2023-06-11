@@ -33,7 +33,6 @@ export default class App extends Component{
     return (
       <div className="App">
         <Home_header></Home_header>
-
         {(this.state.number === 0 || this.state.number === 7) && <Home_board_list></Home_board_list>} 
         {this.state.number === 1 && <Login></Login>} 
         {this.state.number === 2 && <Join></Join>} 
