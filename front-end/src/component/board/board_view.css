@@ -23,7 +23,7 @@
 
 /*헤더*/
 .board_view_header{
-    background-color: rgb(236, 236, 236);
+    /* background-color: rgb(236, 236, 236); */
     width: 100%;
     height: 50px;
     display: flex;
@@ -42,7 +42,12 @@
 .board_view_header_title{
     height: 50px;
     width: 1000px;
-    background-color: rgb(54, 104, 18); 
+    /* background-color: rgb(54, 104, 18);  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
 }
 .board_view_header_box2{
     /* background-color: rgb(228, 83, 83); */
@@ -59,7 +64,7 @@
     height: 50px;  
 
     background: linear-gradient(135deg, #515151, #515151, #515151);
-    border-radius: 10px;
+    border-radius: 30px;
     border: none;
     color: #fff;
     font-size: 13px;
@@ -76,7 +81,7 @@
     height: 30px;  
 
     background: linear-gradient(135deg, #515151, #515151, #515151);
-    border-radius: 10px;
+    border-radius: 30px;
     border: none;
     color: #fff;
     font-size: 13px;
@@ -94,7 +99,7 @@
     height: 30px;  
 
     background: linear-gradient(135deg, #515151, #515151, #515151);
-    border-radius: 10px;
+    border-radius: 30px;
     border: none;
     color: #fff;
     font-size: 13px;
@@ -108,48 +113,68 @@
 
 /*바디*/
 .board_view_body{
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px); 
+
     position: absolute;
     height: 550px;
     width: 1300px;
-    background-color: rgb(247, 148, 19);
     display: flex;
     justify-content: space-between;
 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 5px;
+    border-radius: 20px;
+
+    box-shadow: 0px 0px 20px 0px rgba(89, 0, 255, 0.6);
 }
 
 /*바디의 좌측*/
 .board_view_body_1{
     height: 550px;
     width: 65%;
-    background-color: rgb(95, 209, 13); 
+    /* background-color: rgb(95, 209, 13);  */
 }
 .board_view_body_1_container{
     height: 400px;
     width: 100%;
-    background-color: rgb(0, 255, 234); 
+    /* background-color: rgb(0, 255, 234);  */
     display: flex;
     justify-content: center;
 }
 .board_view_body_1_graph{
     height: 100%;
     width: 100%;
-    background-color: rgb(0, 179, 255); 
+    /* background-color: rgb(0, 179, 255);  */
+}
+.board_view_body_1_graph_img{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px 0px 0px 0px;
 }
 .board_view_body_1_context{
+    background-color: rgba(246, 244, 244, 0.1);
+    backdrop-filter: blur(3px); 
+
     height: 150px;
     width: 100%;
-    background-color: rgb(232, 170, 255); 
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 0px 15px;
 }
 
 
 .board_view_body_2{
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px); 
+    
     height: 550px;
     width: 34.5%;
-    background-color: rgb(95, 209, 13); 
+    border-radius: 0px 15px 15px 0px ;
 }
 
 
@@ -157,5 +182,21 @@
 .board_view_footer{
     height: 50px;
     width: 100%;
-    background-color: rgb(25, 165, 114);
+    /* background-color: rgb(25, 165, 114); */
+    display: flex;
+    justify-content: space-evenly;
+}
+.board_view_footer div{
+    margin-top: 10px;
+    background-color: #2F2853;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0px 0px 20px 0px rgba(89, 0, 255, 0.6);
 }

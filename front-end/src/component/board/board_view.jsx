@@ -47,14 +47,27 @@ function Board_view({ view, board_View }) {
                     <div className="board_view_body_1">
                         
                         <div className="board_view_body_1_container">
-                            <div className="board_view_body_1_graph">그래프</div>
+                            <div className="board_view_body_1_graph">
+                                <img className="board_view_body_1_graph_img" src="image/faviconlogo.png"></img>
+                            </div>
                         </div>
-                        <div className="board_view_body_1_context">내용</div>
+                        <div className="board_view_body_1_context">
+                            안녕하세요! 저는 25살이되는 프론트엔드가 꿈인 ooo이라고 합니다. <br/>여러분들이 가시는 길에 조금이라도 도움이 될 수 있도록 
+                            제 로드맵을 참고하시기를 바라며 글을 작성했습니다. <br/>
+                            질문은 댓글로 남겨주세요~~^^!
+                        </div>
                     </div>
                     <div className="board_view_body_2"></div>
                 </div>
 
-                <div className="board_view_footer">해시테그들</div>
+                <div className="board_view_footer">
+                    <div>프론트엔드</div>
+                    <div>전공자</div>
+                    <div>비현직자</div>
+                    <div>PYTHON</div>
+                    <div>REACT</div>
+                    <div>부스트캠프</div>
+                </div>
                 
             </div>
             

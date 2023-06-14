@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import "./login.css";
 import store from "../../store";
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 
 const Login = () => {
+
+        const [cookies, setCookie] = useCookies(['refreshToken']);
+
+        // 토큰을 저장하는 함수
+        const saveRefreshTokenToCookie = (refreshToken) => {
+            setCookie('refreshToken', refreshToken, { path: '/' });
+        };
     
         const [id, setId] = useState('');
         const [password, setPassword] = useState('');
@@ -20,19 +28,33 @@ const Login = () => {
         const handleSubmit = async (event) => {
             event.preventDefault();
 
+            //로그인 이후 이동 - 임시 코드
+            store.dispatch({type:'AFTER_LOGIN'});
+
             try {
+                // const response = await axios.post("http://13.125.16.222/users/login", {
                 const response = await axios.post("http://13.125.16.222/users/login", {
                     username: id,
                     password: password
                 }, {
                     headers: {
                     "Content-Type": "application/json"
-                    }
+                    },
+                    // withCredentials: true // 쿠키를 포함한 요청 설정
+
                 });
-          
+                // const refreshToken = response.headers['authorization'];
+                // console.log(refreshToken);
+                // saveRefreshTokenToCookie(refreshToken);
+
+                console.log(response.headers)
+                const headerValue = response.headers['X-ACCESS-TOKEN'];
+
+                console.log(headerValue);
+
+
                 console.log(response.data);
-                store.dispatch({type:'AFTER_LOGIN'});
-            }
+            }   
             catch (error) {
                 console.error(error);
             }
