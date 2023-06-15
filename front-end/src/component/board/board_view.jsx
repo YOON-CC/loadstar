@@ -57,7 +57,63 @@ function Board_view({ view, board_View }) {
                             질문은 댓글로 남겨주세요~~^^!
                         </div>
                     </div>
-                    <div className="board_view_body_2"></div>
+                    <div className="board_view_body_2">
+                        <form>
+                            <div className = "board_view_body_2_form">
+                                <div className="board_view_body_2_form_1">
+                                    <div className="board_view_body_2_form_1_text">댓글작성</div>
+                                    <input type="text" className="board_view_body_2_form_1_text_input"></input>
+                                </div>
+                                <div className="board_view_body_2_form_2">
+                                    <button type="submit" className="newid-box_send">
+                                        작성
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div className="comments_container">
+                            <div className="comments_container_list">
+                                <div className="comments_container_list_title">아이디1</div>
+                                <div className="comments_container_list_comment">댓글내용1</div>
+                            </div>
+
+                            <div className="comments_container_list">
+                                <div className="comments_container_list_title">아이디2</div>
+                                <div className="comments_container_list_comment">댓글내용2</div>
+                            </div>
+
+                            <div className="comments_container_list">
+                                <div className="comments_container_list_title">아이디3</div>
+                                <div className="comments_container_list_comment">댓글내용3</div>
+                            </div>
+
+                            <div className="comments_container_list">
+                                <div className="comments_container_list_title">아이디4</div>
+                                <div className="comments_container_list_comment">댓글내용4</div>
+                            </div>
+
+                            <div className="comments_container_list">
+                                <div className="comments_container_list_title">아이디5</div>
+                                <div className="comments_container_list_comment">댓글내용5</div>
+                            </div>
+
+                            <div className="comments_container_list">
+                                <div className="comments_container_list_title">아이디6</div>
+                                <div className="comments_container_list_comment">댓글내용6</div>
+                            </div>
+
+                            <div className="comments_container_list">
+                                <div className="comments_container_list_title">아이디7</div>
+                                <div className="comments_container_list_comment">댓글내용7</div>
+                            </div>
+
+                            <div className="comments_container_list">
+                                <div className="comments_container_list_title">아이디8</div>
+                                <div className="comments_container_list_comment">댓글내용8</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="board_view_footer">
