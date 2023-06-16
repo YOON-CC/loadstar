@@ -182,6 +182,8 @@
     border-radius: 5px;
     display: flex;
     justify-content: space-evenly;
+    cursor: pointer;
+
 }
 
 .b1_img{
@@ -212,6 +214,7 @@
     border-radius: 5px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .b2_img{

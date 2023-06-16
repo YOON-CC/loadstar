@@ -5,6 +5,7 @@
     width: 100%;
     margin-top: 200px;
     flex-wrap: wrap;
+    
 }
 
 /*카테고리*/
@@ -40,7 +41,10 @@
     align-items: center;
     justify-content: center;
     margin-right: 8px;
-
+    cursor: pointer;
+}
+.home_hashtag_container_c1:hover{
+    background-color: #2f2659;
 }
 
 /*카테고리 끝*/
@@ -55,6 +59,7 @@
     margin-top: 25px;
     left: 50%;
     transform: translate(-50%);
+    
 }
 
 .board-list{
@@ -70,6 +75,10 @@
     border-radius: 10px;
     border: none;
     animation: board_blinking 5s infinite;
+    cursor: pointer;
+}
+.board-list:hover{
+    filter: brightness(80%);
 }
 
 @keyframes board_blinking {
@@ -77,7 +86,7 @@
         box-shadow: 0 0px 10px 0 rgb(163, 163, 163);
     }
     50% {
-        box-shadow: 0 0px 10px 0 rgb(56, 0, 167);
+        box-shadow: 0 0px 10px 0 rgb(0, 0, 0);
     }
     100% {
         box-shadow: 0 0px 10px 0 rgb(163, 163, 163);
