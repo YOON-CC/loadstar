@@ -31,15 +31,17 @@ function Board_view({ view, board_View }) {
         <div className="board_view_container">
             <div className="board_view_container_1">
                 <div className="board_view_header">
-                    <div className="board_view_header_box1">
-                        <button className = "board_view_b1 "onClick={close_board}>돌아가기</button>
-                    </div>
+                    <div className="board_view_header_container">
+                        <div className="board_view_header_box1">
+                            <button className = "board_view_b1 "onClick={close_board}>돌아가기</button>
+                        </div>
 
-                    <div className="board_view_header_title">프론트엔드가 꿈인 같이 성장하는 개발자입니다! 참고하세요!</div>
+                        <div className="board_view_header_title">프론트엔드가 꿈인 같이 성장하는 개발자입니다! 참고하세요!</div>
 
-                    <div className="board_view_header_box2">
-                        <button className = "board_view_b2 "onClick={close_board}>게시글 수정</button>
-                        <button className = "board_view_b3 "onClick={close_board}>게시글 삭제</button>
+                        <div className="board_view_header_box2">
+                            <button className = "board_view_b2 "onClick={close_board}>게시글 수정</button>
+                            <button className = "board_view_b3 "onClick={close_board}>게시글 삭제</button>
+                        </div>
                     </div>
                 </div>
 
@@ -48,7 +50,7 @@ function Board_view({ view, board_View }) {
                         
                         <div className="board_view_body_1_container">
                             <div className="board_view_body_1_graph">
-                                <img className="board_view_body_1_graph_img" src="image/faviconlogo.png"></img>
+                                <img className="board_view_body_1_graph_img" src="image/그래프_사진.png"></img>
                             </div>
                         </div>
                         <div className="board_view_body_1_context">
@@ -117,12 +119,14 @@ function Board_view({ view, board_View }) {
                 </div>
 
                 <div className="board_view_footer">
-                    <div>프론트엔드</div>
-                    <div>전공자</div>
-                    <div>비현직자</div>
-                    <div>PYTHON</div>
-                    <div>REACT</div>
-                    <div>부스트캠프</div>
+                    <div className="board_view_footer_container">
+                        <div>프론트엔드</div>
+                        <div>전공자</div>
+                        <div>비현직자</div>
+                        <div>PYTHON</div>
+                        <div>REACT</div>
+                        <div>부스트캠프</div>
+                    </div>
                 </div>
                 
             </div>

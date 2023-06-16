@@ -31,17 +31,23 @@
     width: 265px;
     height: 32px;
     margin-right: 313px;
-    /* background: none; */
+    background: none;
     border: none;
 }
 
 .Hashtag_modal_container_tag{
-    background-color:#FFED48;
+    background-color:#2e2e2e;
     height: 30px;
-    width: 200px;
+    width: 230px;
     border-radius: 5px;
-    margin-left: 50px;
+    margin-left: 36px;
     margin-top: 20px;
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0), 0px 0px 5px 0px rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 13px;
 }
 
 .hastag_btn{
@@ -55,5 +61,5 @@
     font-weight: bold;
     margin-left: 100px;
     margin-top: 20px;
-    
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0), 0px 0px 5px 0px rgb(87, 87, 87);
 }

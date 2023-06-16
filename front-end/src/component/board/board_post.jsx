@@ -31,11 +31,11 @@ export default class Login extends Component{
 
                         <div className="board_post_container_check_3">
                             <div className="board_post_container_check_3_hashtag">
-                                <div className="board_post_container_check_3_hashtag_list">1</div>
-                                <div className="board_post_container_check_3_hashtag_list">2</div>
-                                <div className="board_post_container_check_3_hashtag_list">3</div>
-                                <div className="board_post_container_check_3_hashtag_list">4</div>
-                                <div className="board_post_container_check_3_hashtag_list">5</div>
+                                <div className="board_post_container_check_3_hashtag_list">카테고리1</div>
+                                <div className="board_post_container_check_3_hashtag_list">카테고리2</div>
+                                <div className="board_post_container_check_3_hashtag_list">카테고리3</div>
+                                <div className="board_post_container_check_3_hashtag_list">카테고리4</div>
+                                <div className="board_post_container_check_3_hashtag_list">카테고리5</div>
                             </div>
                         </div>
 
