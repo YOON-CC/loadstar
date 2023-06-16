@@ -2,17 +2,9 @@ import React, { useState } from 'react';
 import "./login.css";
 import store from "../../store";
 import axios from 'axios';
-import { useCookies } from 'react-cookie';
-
+import Cookies from 'js-cookie';
 
 const Login = () => {
-
-        const [cookies, setCookie] = useCookies(['refreshToken']);
-
-        // 토큰을 저장하는 함수
-        const saveRefreshTokenToCookie = (refreshToken) => {
-            setCookie('refreshToken', refreshToken, { path: '/' });
-        };
     
         const [id, setId] = useState('');
         const [password, setPassword] = useState('');
@@ -29,7 +21,7 @@ const Login = () => {
             event.preventDefault();
 
             //로그인 이후 이동 - 임시 코드
-            store.dispatch({type:'AFTER_LOGIN'});
+            // store.dispatch({type:'AFTER_LOGIN'});
 
             try {
                 // const response = await axios.post("http://13.125.16.222/users/login", {
@@ -43,17 +35,25 @@ const Login = () => {
                     // withCredentials: true // 쿠키를 포함한 요청 설정
 
                 });
-                // const refreshToken = response.headers['authorization'];
-                // console.log(refreshToken);
-                // saveRefreshTokenToCookie(refreshToken);
+                if (response.status === 200) {
+                    // 상태 코드가 200일 때 처리할 로직을 작성합니다.
+                    console.log('로그인 요청이 성공하였습니다.');
+                    const access_token = response.headers['x-access-token']
+                    const refresh_token = response.headers['cookie']
+                    const user_Id = response.data.userId
+    
+    
+                    Cookies.set('X-REFRESH-TOKEN', refresh_token);
+                    localStorage.setItem('access-token', access_token)
+                    localStorage.setItem('user_Id', user_Id)
 
-                console.log(response.headers)
-                const headerValue = response.headers['X-ACCESS-TOKEN'];
-
-                console.log(headerValue);
 
 
-                console.log(response.data);
+                    console.log(access_token, refresh_token)
+                    console.log(response.data);
+
+                    store.dispatch({type:'AFTER_LOGIN'});
+                }
             }   
             catch (error) {
                 console.error(error);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
-const Mypage_0 = () => {
+const Mypage_0 = (props) => {
 
     return (
         
@@ -10,8 +10,8 @@ const Mypage_0 = () => {
             <div className="cover1">아이디 보기</div>
             <div className="cover2">이메일 보기</div>
             <div className="mypage_0_container_1">
-                <div>아이디</div>
-                <div>이메일</div>
+                <div>{props.value1}</div>
+                <div>{props.value2}</div>
             </div>
             
             <div className="mypage_0_container_2">
