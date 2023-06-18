@@ -5,17 +5,17 @@
     width: 500px;
     padding: 30px;
     transform: translate(-50%);
-    background: rgb(111, 111, 111);
+    background: rgb(255, 255, 255);
     box-sizing: border-box;
-    box-shadow: 0px 0px 50px 0px rgba(30, 1, 83, 0.6);
-    border-radius: 50px;
+    box-shadow: 0px 0px 10px 0px rgb(136, 136, 136), 0px 0px 10px 0px rgb(22, 0, 78);
+    border-radius: 30px;
     margin-top: 250px;
 }
 
 .join-box h2 {
     margin: 0 0 30px;
     padding: 0;
-    color: #fff;
+    color: #4a3b8b;
     text-align: center;
 }
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -31,7 +31,7 @@
     height: 90%;
     width: 150px;
     font-size: 16px;
-    color: #fff;
+    color: #4a3b8b;
     /* background-color: blue; */
     margin-left: 12px;
 }
@@ -47,10 +47,10 @@
     height: 40%;
     width: 100%;
     font-size: 16px;
-    color: #fff;
+    color: #4a3b8b;
     border: none;
     background: transparent;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #4a3b8b;
     margin-top: 15px;
     outline: none;
     /* background-color: rgb(255, 183, 94); */
@@ -70,13 +70,14 @@
 .newid-box_send{
     height: 32px;
     width: 60px;
-    background: linear-gradient(135deg, #969696, #969696, #969696);
+    background: linear-gradient(135deg, #13074b, #372978, #13074b);
     border-radius: 5px;
     border: none;
     color: #fff;
     font-size: 12px;
     font-weight: bold;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .newid-box_3{
@@ -102,7 +103,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(255, 242, 0);
+    color: rgb(100, 100, 100);
 }
 .newid-box_5{
     width: 210px;
@@ -131,7 +132,7 @@
     height: 90%;
     width: 150px;
     font-size: 16px;
-    color: #fff;
+    color: #4a3b8b;
     /* background-color: blue; */
     margin-left: 12px;
 }
@@ -147,10 +148,10 @@
     height: 40%;
     width: 100%;
     font-size: 16px;
-    color: #fff;
+    color: #4a3b8b;
     border: none;
     background: transparent;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #4a3b8b;
     margin-top: 15px;
     outline: none;
     /* background-color: rgb(255, 183, 94); */
@@ -162,7 +163,7 @@
     height: 90%;
     width: 150px;
     font-size: 16px;
-    color: #fff;
+    color: #4a3b8b;
     /* background-color: blue; */
     margin-left: 50px;
 }
@@ -178,10 +179,10 @@
     height: 40%;
     width: 100%;
     font-size: 16px;
-    color: #fff;
+    color: #4a3b8b;
     border: none;
     background: transparent;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #4a3b8b;
     margin-top: 15px;
     outline: none;
     /* background-color: rgb(255, 183, 94); */
@@ -212,7 +213,7 @@
     height: 90%;
     width: 350px;
     font-size: 16px;
-    color: #fff;
+    color: #4a3b8b;
     /* background-color: blue; */
     margin-left: 12px;
 }
@@ -228,10 +229,10 @@
     height: 40%;
     width: 100%;
     font-size: 16px;
-    color: #fff;
+    color: #4a3b8b;
     border: none;
     background: transparent;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #4a3b8b;
     margin-top: 15px;
     outline: none;
     /* background-color: rgb(255, 183, 94); */
@@ -251,13 +252,17 @@
 .newemail-box_send{
     height: 32px;
     width: 60px;
-    background: linear-gradient(135deg, #969696, #969696, #969696);
+    background: linear-gradient(135deg, #13074b, #372978, #13074b);
     border-radius: 5px;
     border: none;
     color: #fff;
     font-size: 12px;
     font-weight: bold;
     margin-left: 10px;
+    cursor: pointer;
+}
+.newemail-box_send:hover{
+    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
 }
 
 /*승인*/
@@ -278,7 +283,7 @@
     background-color: rgb(59, 59, 59)  ;
     outline: none;
     /* background-color: rgb(255, 183, 94); */
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
     margin-left: 165px;
 }
@@ -293,6 +298,7 @@
     font-size: 12px;
     font-weight: bold;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 /*버튼*/
@@ -310,19 +316,23 @@
     width: 180px;
     height: 45px;  
 
-    background: linear-gradient(135deg, #969696, #969696, #969696);
+    background: linear-gradient(135deg, #13074b, #372978, #13074b);
     border-radius: 10px;
     border: none;
     color: #fff;
     font-size: 13px;
     font-weight: bold;
 }
+.newbtn-container_1:hover{
+    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+    cursor: pointer;
+}
 .newbtn-container_2{
     position: relative;
     width: 180px;
     height: 45px;  
 
-    background: linear-gradient(135deg, #969696, #969696, #969696);
+    background: linear-gradient(135deg, #13074b, #372978, #13074b);
     border-radius: 10px;
     border: none;
     color: #fff;
@@ -333,16 +343,20 @@
     align-items: center;
     justify-content: center;
 }
+.newbtn-container_2:hover{
+    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+    cursor: pointer;
+}
 
 .newbtn-container_3{
     position: relative;
     width: 180px;
     height: 45px;  
 
-    background: rgb(84, 84, 84);
+    background: rgb(205, 205, 205);
     border-radius: 10px;
     border: none;
-    color: #676767;
+    color: #acacac;
     font-size: 13px;
     font-weight: bold;
 

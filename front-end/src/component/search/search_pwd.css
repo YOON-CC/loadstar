@@ -4,17 +4,17 @@
     width: 500px;
     padding: 30px;
     transform: translate(-50%);
-    background: rgb(111, 111, 111);
+    background: rgb(255, 255, 255);
     box-sizing: border-box;
-    box-shadow: 0px 0px 50px 0px rgba(30, 1, 83, 0.6);
-    border-radius: 50px;
+    box-shadow: 0px 0px 10px 0px rgb(136, 136, 136), 0px 0px 10px 0px rgb(22, 0, 78);
+    border-radius: 30px;
     margin-top: 250px;
 }
 
 .search_pwd-box h2 {
     margin: 0 0 30px;
     padding: 0;
-    color: #fff;
+    color: #4a3b8b;
     text-align: center;
 }
 
@@ -34,7 +34,7 @@
     background-color: rgb(59, 59, 59)  ;
     outline: none;
     /* background-color: rgb(255, 183, 94); */
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
     margin-left: 165px;
 }
@@ -49,6 +49,7 @@
     font-size: 12px;
     font-weight: bold;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .stop_search_pwd_container{
@@ -61,7 +62,7 @@
 .stop_search_pwd_container_button_1{
     height: 40px;
     width: 120px;
-    background: linear-gradient(135deg, #969696, #969696, #969696);
+    background: linear-gradient(135deg, #13074b, #372978, #13074b);
     border-radius: 10px;
     border: none;
     color: #fff;
@@ -73,14 +74,18 @@
     height: 100%;
     margin-top: 5px;
 }
+.stop_search_pwd_container_button_1:hover{
+    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+    cursor: pointer;
+}
 
 .stop_search_pwd_container_button_2{
     height: 40px;
     width: 120px;
-    background: rgb(84, 84, 84);
+    background: rgb(205, 205, 205);
     border-radius: 10px;
     border: none;
-    color: #676767;
+    color: #acacac;
     font-size: 12px;
     font-weight: bold;
     display: flex;

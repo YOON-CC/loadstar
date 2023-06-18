@@ -1,6 +1,6 @@
 .board_view_container{
     position: fixed;
-    background-color: rgba(27, 26, 26, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(2px); 
     height: 100%;
     width: 100%;
@@ -78,7 +78,7 @@
     width: 200px;
     height: 40px;  
 
-    background-color: rgba(164, 164, 164, 0.1);
+    background: linear-gradient(135deg, #13074b, #372978, #13074b);
     border-radius: 10px;
     border: none;
     color: #fff;
@@ -89,6 +89,10 @@
     align-items: center;
     justify-content: center;
     margin-top: 5px;
+    cursor: pointer;
+}
+.board_view_b1:hover{
+    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
 }
 
 .board_view_b2{
@@ -96,7 +100,7 @@
     width: 100px;
     height: 30px;  
 
-    background-color: rgba(164, 164, 164, 0.1);
+    background: linear-gradient(135deg, #13074b, #372978, #13074b);
     border-radius: 10px;
     border: none;
     color: #fff;
@@ -107,14 +111,19 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    cursor: pointer;
 }
+.board_view_b2:hover{
+    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+}
+
 
 .board_view_b3{
     position: relative;
     width: 100px;
     height: 30px;  
 
-    background-color: rgba(164, 164, 164, 0.1);
+    background: linear-gradient(135deg, #13074b, #372978, #13074b);
     border-radius: 10px;
     border: none;
     color: #fff;
@@ -125,7 +134,12 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    cursor: pointer;
 }
+.board_view_b3:hover{
+    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+}
+
 
 /*바디*/
 .board_view_body{
@@ -224,7 +238,7 @@
 }
 .board_view_footer_container div{
     margin-top: 10px;
-    background: linear-gradient(135deg, #2a292c, #1f1f1f, #2a292c);
+    background: linear-gradient(135deg, #13074b, #372978, #13074b);
     width: 120px;
     height: 30px;
     display: flex;
@@ -283,6 +297,9 @@
     width: 100px;
     margin-left: 195px;
     margin-top: 10px;
+}
+.newid-box_send{
+    cursor: pointer;
 }
 
 /*댓글 스크롤*/

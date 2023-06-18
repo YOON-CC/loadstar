@@ -70,7 +70,7 @@ export default class Home_header extends Component{
                         
                     </div>
                     <div className="home_header_body_2_c2">
-                      <img className="home_header_body_1_logo_img" src="image/logo.png"></img>
+                      <img className="home_header_body_2_main_image" src="image/main_image.png"></img>
                     </div>
                 </div>
             </div>

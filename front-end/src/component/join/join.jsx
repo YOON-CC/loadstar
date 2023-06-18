@@ -171,7 +171,7 @@ const Join = () => {
         }
     };
 
-    // //여기서 회원가입 가능 여부를 판단해야 한다.
+    //여기서 회원가입 가능 여부를 판단해야 한다.
     // const handleJoin = () => {
     //     store.dispatch({type:'WELCOME', payload: {
     //         number: 6,
@@ -204,11 +204,11 @@ const Join = () => {
                 <div className="newpwd-container">
                     <div className="newpwd-box_1">
                         <div className="newpwd-input_text">Password</div>
-                        <input type="text" value={newpassword} onChange={handlenewpasswordChange} className="newpwd-input"></input>
+                        <input type="password" value={newpassword} onChange={handlenewpasswordChange} className="newpwd-input"></input>
                     </div>
                     <div className="newpwd-box_2">
                         <div className="newpwd-input_text2">Password_again</div>
-                        <input type="text" value={newpassword_again} onChange={handlenewpassword_againgChange} className="newpwd-input2"></input>
+                        <input type="password" value={newpassword_again} onChange={handlenewpassword_againgChange} className="newpwd-input2"></input>
                     </div>
                 </div>
                 {/* @@@ */}

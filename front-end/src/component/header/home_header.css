@@ -4,6 +4,8 @@
     height: 200px;
     width: 100%;
     z-index: 1;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0), 0px 0px 5px rgb(72, 72, 72);
+
 }
 
 .home_header_body_1{
@@ -63,6 +65,7 @@
     display: flex;
     justify-content: center;
     padding-top: 3px;
+    cursor: pointer;
 }
 
 .home_header_body_1_c2{
@@ -80,6 +83,7 @@
     display: flex;
     justify-content: center;
     padding-top: 3px;
+    cursor: pointer;
 }
 
 .home_header_body_1_c3{
@@ -91,6 +95,7 @@
 .home_header_body_1_c3 img{
     width: 100%;
     height: 100%;
+    cursor: pointer;
 }
 
 
@@ -244,4 +249,11 @@
     margin-top: 10px;
     height: 100%;
     width: 46%;
+}
+
+.home_header_body_2_main_image{
+    /* background-color: rgb(66, 5, 218); */
+    margin-top: 15px;
+    height: 85%;
+    width: 100%;
 }
