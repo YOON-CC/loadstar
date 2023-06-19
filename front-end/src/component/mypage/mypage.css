@@ -241,9 +241,123 @@
 
 /*내가 쓴글*/
 .mypage_1_container{
+    height: 340px;
+    width: 615px;
+    /* background: rgb(170, 211, 255); */
+    padding : 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+/*내가 쓴글*/
+.mypage_1_container_1{
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0), 0px 0px 5px 0px rgb(0, 0, 0);
+
     height: 100%;
-    width: 100%;
-    background: rgb(170, 211, 255);
+    width: 48%;
+    border-radius: 15px;
+
+}
+.mypage_1_container_1_title{
+    height: 30px;
+    width: 130px;
+    border-radius: 10px;
+    margin-left: 80px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    color: #ffffff;
+}
+.mypage_1_container_1_content{
+    background-color: #2b283b;
+    height: 265px;
+    width: 270px;
+    border-radius: 15px;
+    margin-left: 12px;
+    margin-top: 10px;
+    overflow: auto; /* 스크롤을 표시하도록 설정 */
+    overflow-x: hidden;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    padding-bottom: 10px;
+}
+.mypage_1_container_1_content::-webkit-scrollbar {
+    display: none;
+}
+.mypage_1_container_1_content div{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.132);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    height: 50px;
+    width: 250px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 10px; 
+}
+.mypage_1_container_1_content div:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.232);
+}
+
+/*북마크*/
+.mypage_1_container_2{
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0), 0px 0px 5px 0px rgb(0, 0, 0);
+
+    height: 100%;
+    width: 48%;
+    border-radius: 15px;
+
+}
+.mypage_1_container_2_title{
+    height: 30px;
+    width: 130px;
+    border-radius: 10px;
+    margin-left: 80px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    color: #ffffff;
+}
+.mypage_1_container_2_content{
+    background-color: #2b283b;
+    height: 265px;
+    width: 270px;
+    border-radius: 15px;
+    margin-left: 12px;
+    margin-top: 10px;
+    overflow: auto; /* 스크롤을 표시하도록 설정 */
+    overflow-x: hidden;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    padding-bottom: 10px;
+}
+.mypage_1_container_2_content::-webkit-scrollbar {
+    display: none;
+}
+.mypage_1_container_2_content div{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.132);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    height: 50px;
+    width: 250px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.mypage_1_container_2_content div:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.232);
 }
 
 /*이용방법*/

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 import store from "../../store";
 import "./board_view.css";
 
@@ -27,6 +27,9 @@ function Board_view({ view, board_View }) {
         window.scrollTo(0, -scrollTop);
     };
 
+    //즐겨찾기 상태
+    const [bookmark, setBookmark] = useState(0);
+    console.log(bookmark)
     return (
         <div className="board_view_container">
             <div className="board_view_container_1">
@@ -41,6 +44,10 @@ function Board_view({ view, board_View }) {
                         <div className="board_view_header_box2">
                             <button className = "board_view_b2 "onClick={close_board}>게시글 수정</button>
                             <button className = "board_view_b3 "onClick={close_board}>게시글 삭제</button>
+                            <div className = "board_view_b4" onClick={() => setBookmark(bookmark+1)}>
+                                {bookmark % 2 === 0 && <img className="star" src="image/star_1.png"></img>} 
+                                {bookmark % 2 === 1 && <img className="star" src="image/star_2.png"></img>} 
+                            </div>
                         </div>
                     </div>
                 </div>

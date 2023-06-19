@@ -71,7 +71,7 @@ const Login = () => {
 
                     <div className="user-box">
                         {/* password */}
-                        <input type="text" value={password} onChange={handlePasswordChange}></input> 
+                        <input type="password" value={password} onChange={handlePasswordChange}></input> 
                         <label>Password</label>
                     </div>
 

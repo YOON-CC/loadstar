@@ -62,7 +62,7 @@ const First_question = () => {
         <div className="mypage_container">
             <div className="mypage_container_1">
                 <div className="mypage_container_1_box_0" onClick={() => setMypagenum(0)}>회원정보</div>
-                <div className="mypage_container_1_box_1" onClick={() => setMypagenum(1)}>내가쓴글</div>
+                <div className="mypage_container_1_box_1" onClick={() => setMypagenum(1)}>나의활동</div>
                 <div className="mypage_container_1_box_2" onClick={() => setMypagenum(2)}>이용방법</div>
                 <div className="mypage_container_1_box_3" onClick={() => setMypagenum(3)}>ABOUT</div>
                 <div className="mypage_container_1_box_4" onClick={function(){

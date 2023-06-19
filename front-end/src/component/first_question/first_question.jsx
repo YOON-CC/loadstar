@@ -118,7 +118,7 @@ const First_question = () => {
                     </div>
                     <div className="question">QUESTION 2</div>
                     <div className="answer_2">   
-                        <label><input type="checkbox" name="color" value="blue" checked={checkbox3Checked} onChange={handleCheckbox3Change}></input>프론트엔드</label>
+                        <label><input type="checkbox" name="color" value="blue" checked={checkbox3Checked} onChange={handleCheckbox3Change}></input>프론트</label>
                         <label><input type="checkbox" name="color" value="blue" checked={checkbox4Checked} onChange={handleCheckbox4Change}></input>백엔드</label>
                     </div>
                     <div className="question">QUESTION 3</div>
