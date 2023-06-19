@@ -1,6 +1,5 @@
 import React, { Component, useEffect, useState} from "react";
 import "./home_board_list.css";
-import Hashtag from "../hashtag/hashtag";
 import Board_view from "../board/board_view";
 import store from "../../store";
 
@@ -10,7 +9,8 @@ export default class Home_board_list extends Component{
         super(props);
         this.state = {
             boards: [],
-            view : false
+            view : false,
+            show : false
         };
         
     }
@@ -35,6 +35,11 @@ export default class Home_board_list extends Component{
     //게시물 보기
     board_View = () => {
         this.setState({ view: !this.state.view });
+    };
+
+    //헤시테그 카테고리 보기
+    hashtag_Show = () => {
+        this.setState({ show: !this.state.show });
     };
 
     
@@ -107,11 +112,69 @@ export default class Home_board_list extends Component{
                         <div className="home_hashtag_container_c1">전체</div>
                         <div className="home_hashtag_container_c1">참고글</div>
                         <div className="home_hashtag_container_c1">질문글</div>
-
-                        <Hashtag></Hashtag>
+                        <div className="hashtag" onClick={this.hashtag_Show}>해시태그 고리기</div>
                     </div>
                 </div>
-                
+
+                {this.state.show && 
+                    <div className="home_hashtag_container_view">
+                        <div className="home_hashtag_container_view_container">
+                            <div className = "list_1_container">
+                                <div className = "hashtag_title">기본설정</div>
+                                <div className = "list_1">
+                                    <div>전공자</div>
+                                    <div>비전공자</div>
+                                    <div>현직자</div>
+                                    <div>비현직자</div>
+                                    <div>프론트엔드</div>
+                                    <div>백엔드</div>
+                                </div>
+                            </div>
+                            <div className = "list_2_container">
+                                <div className = "hashtag_title">프로그래밍 언어</div>
+                                <div className = "list_2">
+                                    <div>HTML</div>
+                                    <div>CSS</div>
+                                    <div>javascript</div>
+                                    <div>Typescript</div>
+                                    <div>node.js</div>
+                                    <div>react</div>
+                                </div>
+                                <div className = "list_2">
+                                    <div>redux</div>
+                                    <div>next.js</div>
+                                    <div>graphQL</div>
+                                    <div>Python</div>
+                                </div>
+                            </div>
+                            <div className = "list_3_container">
+                                <div className = "hashtag_title">CS</div>
+                                <div className = "list_3">
+                                    <div>운영체제</div>
+                                    <div>네트워크</div>
+                                    <div>자료구조</div>
+                                    <div>컴퓨터구조</div>
+                                    <div>컴파일러</div>
+                                    <div>알고리즘</div>
+                                </div>
+                                <div className = "list_3">
+                                    <div>데이터베이스</div>
+                                </div>
+                            </div>
+                            <div className = "list_4_container">
+                                <div className = "hashtag_title">활동</div>
+                                <div className = "list_4">
+                                    <div>부트캠프</div>
+                                    <div>개발외주</div>
+                                </div>
+                            </div>
+                            <div className = "hashtag_btn_container">
+                                <div>적용하기</div>
+                                <div onClick={this.hashtag_Show}>취소</div>
+                            </div>
+                        </div>
+                    </div>}
+
                 <div className="board-list-container">
                     {divElements}
                     {BoardRows}
