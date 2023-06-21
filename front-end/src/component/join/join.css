@@ -1,366 +1,728 @@
-.join-box {
-    position: absolute;
-    height: 420px;
-    left: 50%;
-    width: 500px;
-    padding: 30px;
-    transform: translate(-50%);
-    background: rgb(255, 255, 255);
-    box-sizing: border-box;
-    box-shadow: 0px 0px 10px 0px rgb(136, 136, 136), 0px 0px 10px 0px rgb(22, 0, 78);
-    border-radius: 30px;
-    margin-top: 250px;
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@---------반응형---------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (min-width: 901px) { /*175 이전*/
+    .join-box {
+        position: absolute;
+        height: 420px;
+        left: 50%;
+        width: 500px;
+        padding: 30px;
+        transform: translate(-50%);
+        background: rgb(255, 255, 255);
+        box-sizing: border-box;
+        box-shadow: 0px 0px 10px 0px rgb(136, 136, 136), 0px 0px 10px 0px rgb(22, 0, 78);
+        border-radius: 30px;
+        margin-top: 250px;
+    }
+
+    .join-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #4a3b8b;
+        text-align: center;
+    }
+    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+    .newid-container{
+        position: relative;
+        /* background-color: aquamarine; */
+        height: 40px;
+        width: 100%;
+        display: flex;
+    }
+
+    .newid-box_1{
+        height: 90%;
+        width: 150px;
+        font-size: 16px;
+        color: #4a3b8b;
+        /* background-color: blue; */
+        margin-left: 12px;
+    }
+
+    .newid-input_text{
+        height: 10px;
+        width: 100%;
+        font-size: 13px;
+        /* background-color: rgb(255, 183, 94); */
+    }
+
+    .newid-input{
+        height: 40%;
+        width: 100%;
+        font-size: 16px;
+        color: #4a3b8b;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid #4a3b8b;
+        margin-top: 15px;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        padding-bottom: 5px;
+
+    }
+
+
+    .newid-box_2{
+        /* background-color: blueviolet; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .newid-box_send{
+        height: 32px;
+        width: 60px;
+        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .newid-box_3{
+        width: 210px;
+        /* background-color: aqua; */
+
+        font-size: 10px;
+        font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(0, 149, 255);
+    }
+
+    .newid-box_4{
+        width: 210px;
+        /* background-color: aqua; */
+
+        font-size: 10px;
+        font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(100, 100, 100);
+    }
+    .newid-box_5{
+        width: 210px;
+        /* background-color: aqua; */
+
+        font-size: 10px;
+        font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 0, 0);
+    }
+
+    /*비밀번호*/
+    .newpwd-container{
+        position: relative;
+        /* background-color: aquamarine; */
+        height: 40px;
+        width: 100%;
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .newpwd-box_1{
+        height: 90%;
+        width: 150px;
+        font-size: 16px;
+        color: #4a3b8b;
+        /* background-color: blue; */
+        margin-left: 12px;
+    }
+
+    .newpwd-input_text{
+        height: 10px;
+        width: 100%;
+        font-size: 13px;
+        /* background-color: rgb(255, 183, 94); */
+    }
+
+    .newpwd-input{
+        height: 40%;
+        width: 100%;
+        font-size: 16px;
+        color: #4a3b8b;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid #4a3b8b;
+        margin-top: 15px;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        padding-bottom: 5px;
+
+    }
+
+    .newpwd-box_2{
+        height: 90%;
+        width: 150px;
+        font-size: 16px;
+        color: #4a3b8b;
+        /* background-color: blue; */
+        margin-left: 50px;
+    }
+
+    .newpwd-input_text2{
+        height: 10px;
+        width: 100%;
+        font-size: 13px;
+        /* background-color: rgb(255, 183, 94); */
+    }
+
+    .newpwd-input2{
+        height: 40%;
+        width: 100%;
+        font-size: 16px;
+        color: #4a3b8b;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid #4a3b8b;
+        margin-top: 15px;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        padding-bottom: 5px;
+
+    }
+
+    .newpwd-input_correct{
+        margin-top: 10px;
+        margin-left: 30px;
+        color: rgb(0, 255, 76);
+        font-size: 10px;
+    }
+
+
+    /*이메일*/
+    .newemail-container{
+        position: relative;
+        /* background-color: aquamarine; */
+        height: 40px;
+        width: 100%;
+        display: flex;
+        margin-top: 30px;
+        padding-bottom: 10px;
+    }
+
+    .newemail-box_1{
+        height: 90%;
+        width: 350px;
+        font-size: 16px;
+        color: #4a3b8b;
+        /* background-color: blue; */
+        margin-left: 12px;
+    }
+
+    .newemail-input_text{
+        height: 10px;
+        width: 100%;
+        font-size: 13px;
+        /* background-color: rgb(255, 183, 94); */
+    }
+
+    .newemail-input{
+        height: 40%;
+        width: 100%;
+        font-size: 16px;
+        color: #4a3b8b;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid #4a3b8b;
+        margin-top: 15px;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        padding-bottom: 5px;
+
+    }
+
+
+    .newemail-box_2{
+        /* background-color: blueviolet; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .newemail-box_send{
+        height: 32px;
+        width: 60px;
+        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .newemail-box_send:hover{
+        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+    }
+
+    /*승인*/
+
+    .newmail_receive_code_container{
+        /* background-color: beige; */
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+    }
+
+    .newmail_receive_code{
+        height: 30px;
+        width: 100px;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        background-color: rgb(59, 59, 59)  ;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        border-radius: 5px;
+        text-align: center;
+        margin-left: 165px;
+    }
+
+    .newmail_receive_code_send{
+        height: 32px;
+        width: 40px;
+        background-color: rgb(59, 59, 59)  ;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    /*버튼*/
+    .newbtn-container{
+        position: relative;
+        /* background-color: aquamarine; */
+        height: 45px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10px;
+    }
+    .newbtn-container_1{
+        position: relative;
+        width: 180px;
+        height: 45px;  
+
+        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .newbtn-container_1:hover{
+        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+        cursor: pointer;
+    }
+    .newbtn-container_2{
+        position: relative;
+        width: 180px;
+        height: 45px;  
+
+        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-size: 13px;
+        font-weight: bold;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .newbtn-container_2:hover{
+        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+        cursor: pointer;
+    }
+
+    .newbtn-container_3{
+        position: relative;
+        width: 180px;
+        height: 45px;  
+
+        background: rgb(205, 205, 205);
+        border-radius: 10px;
+        border: none;
+        color: #acacac;
+        font-size: 13px;
+        font-weight: bold;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@---------반응형---------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (max-width: 900px) { /*175 이후*/
+    .join-box {
+        position: absolute;
+        left: 50%;
+        width: 270px;
+        padding: 20px;
+        transform: translate(-50%);
+        background: rgb(255, 255, 255);
+        box-sizing: border-box;
+        box-shadow: 0px 0px 10px 0px rgb(136, 136, 136), 0px 0px 10px 0px rgb(22, 0, 78);
+        border-radius: 15px;
+        margin-top: 140px;
+    }
 
-.join-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #4a3b8b;
-    text-align: center;
-}
-/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-.newid-container{
-    position: relative;
-    /* background-color: aquamarine; */
-    height: 40px;
-    width: 100%;
-    display: flex;
-}
+    .join-box h2 {
+        font-size: 20px;
+        color: #4a3b8b;
+        text-align: center;
+    }
+    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+    .newid-container{
+        position: relative;
+        /* background-color: aquamarine; */
+        height: 40px;
+        width: 100%;
+        display: flex;
+        
+    }
+    .newid-box_1{
+        height: 15px;
+        width: 95px;
+        font-size: 10px;
+        color: #4a3b8b;
+    }
 
-.newid-box_1{
-    height: 90%;
-    width: 150px;
-    font-size: 16px;
-    color: #4a3b8b;
-    /* background-color: blue; */
-    margin-left: 12px;
-}
+    .newid-input_text{
+        height: 10px;
+        width: 100%;
+        font-size: 10px;
+        /* background-color: rgb(255, 183, 94); */
+    }
 
-.newid-input_text{
-    height: 10px;
-    width: 100%;
-    font-size: 13px;
-    /* background-color: rgb(255, 183, 94); */
-}
-
-.newid-input{
-    height: 40%;
-    width: 100%;
-    font-size: 16px;
-    color: #4a3b8b;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #4a3b8b;
-    margin-top: 15px;
-    outline: none;
-    /* background-color: rgb(255, 183, 94); */
-    padding-bottom: 5px;
-
-}
-
-
-.newid-box_2{
-    /* background-color: blueviolet; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.newid-box_send{
-    height: 32px;
-    width: 60px;
-    background: linear-gradient(135deg, #13074b, #372978, #13074b);
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-.newid-box_3{
-    width: 210px;
-    /* background-color: aqua; */
-
-    font-size: 10px;
-    font-weight: bold;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 149, 255);
-}
-
-.newid-box_4{
-    width: 210px;
-    /* background-color: aqua; */
-
-    font-size: 10px;
-    font-weight: bold;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(100, 100, 100);
-}
-.newid-box_5{
-    width: 210px;
-    /* background-color: aqua; */
-
-    font-size: 10px;
-    font-weight: bold;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(255, 0, 0);
-}
-
-/*비밀번호*/
-.newpwd-container{
-    position: relative;
-    /* background-color: aquamarine; */
-    height: 40px;
-    width: 100%;
-    display: flex;
-    margin-top: 30px;
-}
-
-.newpwd-box_1{
-    height: 90%;
-    width: 150px;
-    font-size: 16px;
-    color: #4a3b8b;
-    /* background-color: blue; */
-    margin-left: 12px;
-}
-
-.newpwd-input_text{
-    height: 10px;
-    width: 100%;
-    font-size: 13px;
-    /* background-color: rgb(255, 183, 94); */
-}
-
-.newpwd-input{
-    height: 40%;
-    width: 100%;
-    font-size: 16px;
-    color: #4a3b8b;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #4a3b8b;
-    margin-top: 15px;
-    outline: none;
-    /* background-color: rgb(255, 183, 94); */
-    padding-bottom: 5px;
-
-}
-
-.newpwd-box_2{
-    height: 90%;
-    width: 150px;
-    font-size: 16px;
-    color: #4a3b8b;
-    /* background-color: blue; */
-    margin-left: 50px;
-}
-
-.newpwd-input_text2{
-    height: 10px;
-    width: 100%;
-    font-size: 13px;
-    /* background-color: rgb(255, 183, 94); */
-}
-
-.newpwd-input2{
-    height: 40%;
-    width: 100%;
-    font-size: 16px;
-    color: #4a3b8b;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #4a3b8b;
-    margin-top: 15px;
-    outline: none;
-    /* background-color: rgb(255, 183, 94); */
-    padding-bottom: 5px;
-
-}
-
-.newpwd-input_correct{
-    margin-top: 10px;
-    margin-left: 30px;
-    color: rgb(0, 255, 76);
-    font-size: 10px;
-}
+    .newid-input{
+        height: 40%;
+        width: 100%;
+        font-size: 10px;
+        color: #4a3b8b;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid #4a3b8b;
+        margin-top: 13px;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        padding-bottom: 5px;
+    }
 
 
-/*이메일*/
-.newemail-container{
-    position: relative;
-    /* background-color: aquamarine; */
-    height: 40px;
-    width: 100%;
-    display: flex;
-    margin-top: 30px;
-    padding-bottom: 10px;
-}
+    .newid-box_2{
+        /* background-color: blueviolet; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 60px;
+        margin-left: 10px;
+    }
 
-.newemail-box_1{
-    height: 90%;
-    width: 350px;
-    font-size: 16px;
-    color: #4a3b8b;
-    /* background-color: blue; */
-    margin-left: 12px;
-}
+    .newid-box_send{
+        height: 25px;
+        width: 100%;
+        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-.newemail-input_text{
-    height: 10px;
-    width: 100%;
-    font-size: 13px;
-    /* background-color: rgb(255, 183, 94); */
-}
+    .newid-box_3{
+        width: 75px;
+        /* background-color: aqua; */
 
-.newemail-input{
-    height: 40%;
-    width: 100%;
-    font-size: 16px;
-    color: #4a3b8b;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid #4a3b8b;
-    margin-top: 15px;
-    outline: none;
-    /* background-color: rgb(255, 183, 94); */
-    padding-bottom: 5px;
+        font-size: 10px;
+        font-weight: bold;
 
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(0, 149, 255);
+        margin-left: 5px;
+    }
+
+    .newid-box_4{
+        width: 75px;
+        /* background-color: aqua; */
+
+        font-size: 10px;
+        font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(100, 100, 100);
+        margin-left: 5px;
+
+    }
+    .newid-box_5{
+        width: 75px;
+        /* background-color: aqua; */
+
+        font-size: 10px;
+        font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 0, 0);
+        margin-left: 5px;
+    }
+
+    /*비밀번호*/
+    .newpwd-container{
+        position: relative;
+        /* background-color: aquamarine; */
+        height: 40px;
+        width: 100%;
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .newpwd-box_1{
+        height: 15px;
+        width: 90px;
+        font-size: 10px;
+        color: #4a3b8b;
+        /* background-color: #0000ff; */
+    }
+
+    .newpwd-input_text{
+        height: 10px;
+        width: 100%;
+        font-size: 10px;
+        /* background-color: rgb(255, 183, 94); */
+    }
+
+    .newpwd-input{
+        height: 40%;
+        width: 100%;
+        font-size: 10px;
+        color: #4a3b8b;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid #4a3b8b;
+        margin-top: 13px;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        padding-bottom: 5px;
+    }
+
+    .newpwd-box_2{
+        height: 15px;
+        width: 90px;
+        font-size: 10px;
+        color: #4a3b8b;
+        /* background-color: #0000ff; */
+        margin-left: 43px;
+    }
+
+    .newpwd-input_text2{
+        height: 10px;
+        width: 100%;
+        font-size: 10px;
+        /* background-color: rgb(255, 183, 94); */
+    }
+
+    .newpwd-input2{
+        height: 40%;
+        width: 100%;
+        font-size: 10px;
+        color: #4a3b8b;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid #4a3b8b;
+        margin-top: 13px;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        padding-bottom: 5px;
+
+    }
+
+    /*이메일*/
+    .newemail-container{
+        position: relative;
+        /* background-color: aquamarine; */
+        height: 40px;
+        width: 100%;
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .newemail-box_1{
+        height: 15px;
+        width: 160px;
+        font-size: 10px;
+        color: #4a3b8b;
+    }
+
+    .newemail-input_text{
+        height: 10px;
+        width: 100%;
+        font-size: 10px;
+        /* background-color: rgb(255, 183, 94); */
+    }
+
+    .newemail-input{
+        height: 40%;
+        width: 100%;
+        font-size: 10px;
+        color: #4a3b8b;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid #4a3b8b;
+        margin-top: 13px;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        padding-bottom: 5px;
+    }
 
 
-.newemail-box_2{
-    /* background-color: blueviolet; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
+    .newemail-box_2{
+        /* background-color: blueviolet; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 60px;
+        margin-left: 10px;
+    }
 
-.newemail-box_send{
-    height: 32px;
-    width: 60px;
-    background: linear-gradient(135deg, #13074b, #372978, #13074b);
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 10px;
-    cursor: pointer;
-}
-.newemail-box_send:hover{
-    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
-}
+    .newemail-box_send{
+        height: 25px;
+        width: 100%;
+        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .newemail-box_send:hover{
+        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+    }
 
-/*승인*/
+    /*승인*/
+    .newmail_receive_code_container{
+        /* background-color: beige; */
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+    }
 
-.newmail_receive_code_container{
-    /* background-color: beige; */
-    margin-top: 10px;
-    height: 40px;
-    display: flex;
-}
+    .newmail_receive_code{
+        height: 25px;
+        width: 70px;
+        font-size: 10px;
+        color: #fff;
+        border: none;
+        background-color: rgb(59, 59, 59)  ;
+        outline: none;
+        /* background-color: rgb(255, 183, 94); */
+        border-radius: 5px;
+        text-align: center;
+        margin-left: 70px;
+    }
 
-.newmail_receive_code{
-    height: 30px;
-    width: 100px;
-    font-size: 16px;
-    color: #fff;
-    border: none;
-    background-color: rgb(59, 59, 59)  ;
-    outline: none;
-    /* background-color: rgb(255, 183, 94); */
-    border-radius: 5px;
-    text-align: center;
-    margin-left: 165px;
-}
+    .newmail_receive_code_send{
+        height: 27px;
+        width: 35px;
+        background-color: rgb(59, 59, 59)  ;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        font-size: 10px;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+    }
 
-.newmail_receive_code_send{
-    height: 32px;
-    width: 40px;
-    background-color: rgb(59, 59, 59)  ;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 10px;
-    cursor: pointer;
-}
+    /*버튼*/
+    .newbtn-container{
+        /* background-color: blueviolet; */
+        height: 40px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .newbtn-container_1{
+        height: 35px;
+        width: 100px;
+        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .newbtn-container_1:hover{
+        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+        cursor: pointer;
+    }
+    .newbtn-container_2{
+        height: 35px;
+        width: 100px;
+        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .newbtn-container_2:hover{
+        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+        cursor: pointer;
+    }
 
-/*버튼*/
-.newbtn-container{
-    position: relative;
-    /* background-color: aquamarine; */
-    height: 45px;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10px;
-}
-.newbtn-container_1{
-    position: relative;
-    width: 180px;
-    height: 45px;  
-
-    background: linear-gradient(135deg, #13074b, #372978, #13074b);
-    border-radius: 10px;
-    border: none;
-    color: #fff;
-    font-size: 13px;
-    font-weight: bold;
-}
-.newbtn-container_1:hover{
-    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
-    cursor: pointer;
-}
-.newbtn-container_2{
-    position: relative;
-    width: 180px;
-    height: 45px;  
-
-    background: linear-gradient(135deg, #13074b, #372978, #13074b);
-    border-radius: 10px;
-    border: none;
-    color: #fff;
-    font-size: 13px;
-    font-weight: bold;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.newbtn-container_2:hover{
-    background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
-    cursor: pointer;
-}
-
-.newbtn-container_3{
-    position: relative;
-    width: 180px;
-    height: 45px;  
-
-    background: rgb(205, 205, 205);
-    border-radius: 10px;
-    border: none;
-    color: #acacac;
-    font-size: 13px;
-    font-weight: bold;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .newbtn-container_3{
+        height: 35px;
+        width: 100px;
+        background: rgb(205, 205, 205);
+        border-radius: 10px;
+        border: none;
+        color: #acacac;
+        font-size: 12px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

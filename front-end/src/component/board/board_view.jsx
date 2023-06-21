@@ -30,6 +30,7 @@ function Board_view({ view, board_View }) {
     //즐겨찾기 상태
     const [bookmark, setBookmark] = useState(0);
     console.log(bookmark)
+    
     return (
         <div className="board_view_container">
             <div className="board_view_container_1">
