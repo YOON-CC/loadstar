@@ -61,7 +61,7 @@ export default class Home_board_list extends Component{
            <div key={i} className="board-list" onClick={this.board_View}>                        
                 <div className="board-list_c1">
                     <div className="board-list_c1_img">
-                        <img className="home_header_body_1_logo_img" src="image/그래프_사진.png"></img>
+                        <img className="home_header_body_1_graph_img" src="image/그래프_사진.png"></img>
                         </div>
                     <div className="board-list_c1_tag"></div>
                 </div>
