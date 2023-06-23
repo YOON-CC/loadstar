@@ -34,6 +34,7 @@ function Board_view({ view, board_View }) {
     return (
         <div className="board_view_container">
             <div className="board_view_container_1">
+                {/* 헤더 */}
                 <div className="board_view_header">
                     <div className="board_view_header_container">
                         <div className="board_view_header_box1">
@@ -53,90 +54,65 @@ function Board_view({ view, board_View }) {
                     </div>
                 </div>
 
+                {/* 바디 */}
                 <div className="board_view_body">
-                    <div className="board_view_body_1">
-                        
-                        <div className="board_view_body_1_container">
-                            <div className="board_view_body_1_graph">
-                                <img className="board_view_body_1_graph_img" src="image/그래프_사진.png"></img>
-                            </div>
-                        </div>
-                        <div className="board_view_body_1_context">
-                            안녕하세요! 저는 25살이되는 프론트엔드가 꿈인 ooo이라고 합니다. <br/>여러분들이 가시는 길에 조금이라도 도움이 될 수 있도록 
-                            제 로드맵을 참고하시기를 바라며 글을 작성했습니다. <br/>
-                            질문은 댓글로 남겨주세요~~^^!
-                        </div>
-                    </div>
-                    <div className="board_view_body_2">
-                        <form>
-                            <div className = "board_view_body_2_form">
-                                <div className="board_view_body_2_form_1">
-                                    <div className="board_view_body_2_form_1_text">댓글작성</div>
-                                    <input type="text" className="board_view_body_2_form_1_text_input"></input>
-                                </div>
-                                <div className="board_view_body_2_form_2">
-                                    <button type="submit" className="newid-box_send">
-                                        작성
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
 
-                        <div className="comments_container">
-                            <div className="comments_container_list">
-                                <div className="comments_container_list_title">아이디1</div>
-                                <div className="comments_container_list_comment">댓글내용1</div>
-                            </div>
-
-                            <div className="comments_container_list">
-                                <div className="comments_container_list_title">아이디2</div>
-                                <div className="comments_container_list_comment">댓글내용2</div>
-                            </div>
-
-                            <div className="comments_container_list">
-                                <div className="comments_container_list_title">아이디3</div>
-                                <div className="comments_container_list_comment">댓글내용3</div>
-                            </div>
-
-                            <div className="comments_container_list">
-                                <div className="comments_container_list_title">아이디4</div>
-                                <div className="comments_container_list_comment">댓글내용4</div>
-                            </div>
-
-                            <div className="comments_container_list">
-                                <div className="comments_container_list_title">아이디5</div>
-                                <div className="comments_container_list_comment">댓글내용5</div>
-                            </div>
-
-                            <div className="comments_container_list">
-                                <div className="comments_container_list_title">아이디6</div>
-                                <div className="comments_container_list_comment">댓글내용6</div>
-                            </div>
-
-                            <div className="comments_container_list">
-                                <div className="comments_container_list_title">아이디7</div>
-                                <div className="comments_container_list_comment">댓글내용7</div>
-                            </div>
-
-                            <div className="comments_container_list">
-                                <div className="comments_container_list_title">아이디8</div>
-                                <div className="comments_container_list_comment">댓글내용8</div>
-                            </div>
+                    <div className="board_view_body_1_hashtag">
+                        <div className="board_view_body_1_hashtag_list_container">
+                            <div>현직자</div>
+                            <div>전공자</div>
+                            <div>프론트엔드</div>
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>javascript</div>
+                            <div>Typescript</div>
+                            <div>node.js</div>
+                            <div>react</div>
+                            <div>redux</div>
+                            <div>next.js</div>
+                            <div>graphQL</div>
+                            <div>Python</div>
                         </div>
                     </div>
+
+                    <div className="board_view_body_1_graph">
+                        <img className="board_view_body_1_graph_img" src="image/그래프_사진.png"></img>
+                    </div>
+
+                    <div className="board_view_body_1_context">
+                        안녕하세요! 저는 25살이되는 프론트엔드가 꿈인 ooo이라고 합니다. <br/>여러분들이 가시는 길에 조금이라도 도움이 될 수 있도록 
+                        제 로드맵을 참고하시기를 바라며 글을 작성했습니다. <br/>
+                        질문은 댓글로 남겨주세요~~^^!
+                    </div>
+
                 </div>
 
-                <div className="board_view_footer">
-                    <div className="board_view_footer_container">
-                        <div>프론트엔드</div>
-                        <div>전공자</div>
-                        <div>비현직자</div>
-                        <div>PYTHON</div>
-                        <div>REACT</div>
-                        <div>부스트캠프</div>
-                    </div>
-                </div>
-                
+                {/* 댓글 */}
+                <div className="board_view_comment">
+                    <form>
+                        <div className="board_view_comment_container">
+                            <div className="board_view_comment_container_1">
+                                <div className="board_view_comment_container_1_text">댓글작성</div>
+                                <input type="text" className="board_view_comment_container_1_input"></input>
+                            </div>
+                            <div className="board_view_comment_container_2">
+                                <button type="submit" className="board_view_comment_container_2_send">
+                                    작성
+                                </button>
+                            </div>
+                        </div >
+
+                        <div className="board_view_review_container">
+                            <div className="board_view_review_container_list"></div>
+                            <div className="board_view_review_container_list"></div>
+                            <div className="board_view_review_container_list"></div>
+                            <div className="board_view_review_container_list"></div>
+                            <div className="board_view_review_container_list"></div>
+                            <div className="board_view_review_container_list"></div>
+                        </div>
+                    </form>   
+                </div>               
+
             </div>
             
             

@@ -62,7 +62,7 @@
 
     /*체크 컨테이너*/
     .board_post_container_check{
-        background-color: beige;
+        /* background-color: beige; */
         height: 80px;
         width: 100%;
         display: flex;
