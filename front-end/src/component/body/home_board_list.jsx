@@ -133,18 +133,18 @@ export default class Home_board_list extends Component{
                             <div className = "list_2_container">
                                 <div className = "hashtag_title">프로그래밍 언어</div>
                                 <div className = "list_2">
-                                    <div>HTML</div>
-                                    <div>CSS</div>
+                                    <div>html</div>
+                                    <div>css</div>
                                     <div>javascript</div>
-                                    <div>Typescript</div>
-                                    <div>node.js</div>
+                                    <div>typescript</div>
                                     <div>react</div>
+                                    <div>java</div>
                                 </div>
                                 <div className = "list_2">
-                                    <div>redux</div>
-                                    <div>next.js</div>
-                                    <div>graphQL</div>
-                                    <div>Python</div>
+                                    <div>python</div>
+                                    <div>spring</div>
+                                    <div>springboot</div>
+                                    <div>node.js</div>
                                 </div>
                             </div>
                             <div className = "list_3_container">

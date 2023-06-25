@@ -11,9 +11,13 @@ import Cookies from 'js-cookie';
 const First_question = () => {
 
     const [mypagenum, setMypagenum] = useState(0);
+
     //userId와 이메일 받아오기
     const [mypage_userId, setMypage_userId] = useState('');
     const [mypage_email, setMypage_email] = useState('');
+
+    //작성글 제목 받아오기
+    const [mypage_boardtitle, setMypage_boardtitle] = useState([]);
 
     //데이터 받아오기 
     const handleMypage_user_info = async () => {
@@ -48,7 +52,8 @@ const First_question = () => {
 
             if (response.status === 200) {
                 setMypage_userId(response.data.username);
-                setMypage_email(response.data.email);    
+                setMypage_email(response.data.email);
+                setMypage_boardtitle(response.data.boards)
             }
 
         } catch (error) {
@@ -72,7 +77,7 @@ const First_question = () => {
             </div>
             <div className="mypage_container_2">
                 {mypagenum === 0 && <Mypage_0 value1={mypage_userId} value2={mypage_email}></Mypage_0>}
-                {mypagenum === 1 && <Mypage_1></Mypage_1>}
+                {mypagenum === 1 && <Mypage_1 value_title={boards}></Mypage_1>}
                 {mypagenum === 2 && <Mypage_2></Mypage_2>}
                 {mypagenum === 3 && <Mypage_3></Mypage_3>}
             </div>
