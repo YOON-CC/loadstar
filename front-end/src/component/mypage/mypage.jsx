@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import "./mypage.css";
 import Mypage_0 from "./mypage_0";
 import Mypage_1 from "./mypage_1";
@@ -61,7 +61,10 @@ const First_question = () => {
         }
     };
 
-    handleMypage_user_info();
+    useEffect(() => {
+        // 페이지가 로드될 때 한 번만 호출되는 로직
+        handleMypage_user_info();
+    }, []);
 
     return (
         <div className="mypage_container">
@@ -77,7 +80,7 @@ const First_question = () => {
             </div>
             <div className="mypage_container_2">
                 {mypagenum === 0 && <Mypage_0 value1={mypage_userId} value2={mypage_email}></Mypage_0>}
-                {mypagenum === 1 && <Mypage_1 value_title={boards}></Mypage_1>}
+                {mypagenum === 1 && <Mypage_1 value_title={mypage_boardtitle}></Mypage_1>}
                 {mypagenum === 2 && <Mypage_2></Mypage_2>}
                 {mypagenum === 3 && <Mypage_3></Mypage_3>}
             </div>
