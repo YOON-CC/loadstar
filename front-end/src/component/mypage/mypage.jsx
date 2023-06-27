@@ -53,7 +53,8 @@ const First_question = () => {
             if (response.status === 200) {
                 setMypage_userId(response.data.username);
                 setMypage_email(response.data.email);
-                setMypage_boardtitle(response.data.boards)
+                const mypage_boardTitles = response.data.boards.map(boards => boards.title);
+                setMypage_boardtitle(mypage_boardTitles);
             }
 
         } catch (error) {

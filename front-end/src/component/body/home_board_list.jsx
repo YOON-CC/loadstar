@@ -8,14 +8,17 @@ const Home_board_list = () => {
     const [view, setView] = useState(false);
     const [show, setShow] = useState(false);
     const [page, setPage] = useState(0);
-    const [first_Title, setFirst_Title] = useState([]);
-    const [first_Tag, setFirst_Tag] = useState([]);
     const [divElements, setDivElements] = useState([]);
 
+    //서버에서 받은 데이터 
+    const [board_data, setBoard_data] = useState([]);
+
+    //보드(게시물) 들어가기
     const board_View = () => {
         setView(!view);
     };
 
+    //헤시태그 고르기
     const hashtag_Show = () => {
         setShow(!show);
     };
@@ -33,11 +36,18 @@ const Home_board_list = () => {
             });
         
             if (response.status === 200) {
-                const temp_title = response.data.map(item => item.title);
-                setFirst_Title(prevTitle => [...prevTitle, ...temp_title]);
+                console.log(response.data)
 
-                const temp_tag = response.data.map(item => item.hashtags);
-                setFirst_Tag(prevTag => [...prevTag, ...temp_tag]);
+                //튜플로 합치기 (boardId, 그래프 보여주기, Q&A여부 ,제목, 해시테그)
+                const combinedArray = response.data.map(item => [item.boardId, item.careerImage, item.qna, item.title, item.hashtags]);
+                setBoard_data(prevTitle => {
+                    const existingIds = prevTitle.map(item => item[0]);
+                    const newItems = combinedArray.filter(item => !existingIds.includes(item[0]));
+                    return [...prevTitle, ...newItems];
+                });
+                
+                console.log(board_data)
+
             }
             } catch (error) {
             // 에러 처리
@@ -66,9 +76,9 @@ const Home_board_list = () => {
     
     useEffect(() => {
         const updatedDivElements = [];
-        for (let i = 0; i < first_Title.length; i++) {
-            const title = first_Title[i];
-            const hash_tag = first_Tag[i];
+        for (let i = 0; i < board_data.length; i++) {
+            const title = board_data[i][3];
+            const hash_tag = board_data[i][4];
 
             updatedDivElements.push(
             <div key={i} className="board-list" onClick={board_View}>
@@ -96,7 +106,7 @@ const Home_board_list = () => {
         }
         
         setDivElements(updatedDivElements);
-    }, [first_Title, first_Tag]);
+    }, [board_data]);
 
     return (
         <div className="home_board_list_body">
