@@ -24,7 +24,7 @@ const Board_post = () => {
     console.log("그래프 보여주기 여부",showgraph)
 
     //게시물 종류(참고글 or 질문글)
-    const [posttype, setPosttype] = useState('');
+    const [posttype, setPosttype] = useState(0);
     console.log("게시글 종류",posttype)
     
     //제목
@@ -39,8 +39,6 @@ const Board_post = () => {
         setContent(event.target.value)
     };
 
-    
-    
     //해시테그
     const [h1, setH1] = useState(0);
     const [h2, setH2] = useState(0);
@@ -67,13 +65,13 @@ const Board_post = () => {
     const allTags = [
         h1, h2, h3, h4, h5, h6, h7, h8, h9, h10,
         cs1, cs2, cs3, cs4, cs5, cs6, cs7,
-        e1, e2
-      ].filter(tag => tag !== 0);
+        e1, e2, posttype
+    ].filter(tag => tag !== 0);
 
 
     console.log("유저아이디:", userId, "토큰:",access_token,refresh_token)
     console.log("title:", title, "content:",content)
-    console.log("showgraph:", showgraph, "qna:",posttype)
+    console.log("showgraph:", showgraph)
     console.log("hashtag:", allTags)
 
 
@@ -86,7 +84,6 @@ const Board_post = () => {
                 userId : userId,
                 title : title,
                 showGraph : showgraph,
-                qna : posttype,
                 hashtags : allTags,
                 content : content,
             }, 
@@ -134,15 +131,12 @@ const Board_post = () => {
                     </div>
 
                     <div className="board_post_container_check_2">
-                        <div className="board_post_container_check_2_title">what is the post type?</div>
+                        <div className="board_post_container_check_2_title">Is it a question?</div>
                         <div className="board_post_container_check_1_title_container">
-                            <div className ="show_or_not_graph_container" onClick={() => setPosttype("y")}>
-                                {(posttype === "n" || posttype === '') && <div className ="show_or_not_graph_container_default">참고글</div>}
-                                {posttype === "y" && <div className ="show_or_not_graph_container_check">참고글</div>}
-                            </div>  
-                            <div className ="show_or_not_graph_container" onClick={() => setPosttype("n")}>
-                                {(posttype === "y" || posttype === '') && <div className ="show_or_not_graph_container_default">질문글</div>}
-                                {posttype === "n" && <div className ="show_or_not_graph_container_check">질문글</div>}
+                            <div className ="show_or_not_graph_container">
+                                {posttype === 0 && <div className ="show_or_not_graph_container_default" onClick={() => setPosttype("질문글")}>질문글</div>}
+                                {posttype !== 0 && <div className ="show_or_not_graph_container_check" onClick={() => setPosttype(0)}>질문글</div>}
+
                             </div>
                         </div>
                     </div>

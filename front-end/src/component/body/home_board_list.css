@@ -52,6 +52,8 @@
         justify-content: center;
         margin-right: 8px;
         cursor: pointer;
+        border: none;
+
     }
     .home_hashtag_container_c1:hover{
         background-color: #2f2659;
@@ -180,7 +182,7 @@
     .hashtag{
         background: linear-gradient(135deg, #FFED48, #fff384, #FFED48);
         height: 30px;
-        width: 350px;
+        width: 500px;
         margin-top: 5px;
 
         border-radius: 10px;
@@ -195,21 +197,22 @@
     .home_hashtag_container_view{
         position: relative;
         /* background-color: #FFED48; */
-        height: 400px;
+        height: 460px;
         width: 500px;
-        top: 244px;
+        top: 275px;
         left: 50%;
         transform: translate(-50%, -50%);
-
+        padding-bottom: 9px;
     }
     .home_hashtag_container_view_container{
         position: absolute;
         /* background: linear-gradient(135deg, #fff06d, rgb(252, 243, 164), #fff06d); */
         background: linear-gradient(135deg, #e2e2e2, #ffffff, #e2e2e2);
-        height: 395px;
+        height: 460px;
         width: 100%;
         border-radius: 10px;
         box-shadow: 0 0px 10px 0 rgb(178, 178, 178);
+        margin-top: 6px;
     }
     .hashtag_title{
         /* background-color: #0000000a; */
@@ -225,6 +228,60 @@
         justify-content: center;
         align-items: center;
         border-radius: 5px;
+    }
+    .none_click_list_tag{
+        background: #b2b2b246;
+        width: 70px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        
+        color: #fff;
+        font-weight: bold;
+        font-size: 10px;
+
+        margin-left: 8.5px;
+        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
+        cursor: pointer;
+    }
+    .click_list_tag{
+        background: linear-gradient(135deg, #2f2659, #614eb7, #2f2659);
+        width: 70px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        
+        color: #fff;
+        font-weight: bold;
+        font-size: 10px;
+
+        margin-left: 8.5px;
+        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
+        cursor: pointer;
+    }
+    /*1번줄*/
+    .list_0_container{
+        background: #0000001f;
+        height: 50px;
+        width: 480px;
+        border-radius: 5px;
+        margin-left: 10px;
+        box-shadow: 0 0 4px 0 rgb(141, 141, 141);
+        /* overflow: auto; */
+        padding-bottom: 8px;
+    }
+    .list_0{
+        height: 35px;
+        width: 480px;
+        border-radius: 5px;
+        flex-wrap: wrap;
+        display: flex;
+        /* overflow: auto; */
+        padding-bottom: 8px;
     }
     .list_1_container{
         background: #0000001f;
@@ -246,23 +303,6 @@
         padding-bottom: 8px;
     }
 
-    .list_1 div{
-        background: #b2b2b246;
-        width: 70px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        
-        color: #fff;
-        font-weight: bold;
-        font-size: 10px;
-
-        margin-left: 8.5px;
-        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
-        cursor: pointer;
-    }
     .list_2_container{
         background: #0000001f;
         height: 85px;
@@ -282,23 +322,6 @@
         /* overflow: auto; */
     }
 
-    .list_2 div{
-        background: #b2b2b246;
-        width: 70px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        
-        color: #fff;
-        font-weight: bold;
-        font-size: 10px;
-
-        margin-left: 8.5px;
-        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
-        cursor: pointer;
-    }
 
     .list_3_container{
         background: #1e1d1d1f;
@@ -318,25 +341,6 @@
         display: flex;
         /* overflow: auto; */
     }
-
-    .list_3 div{
-        background: #b2b2b246;
-        width: 70px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        
-        color: #fff;
-        font-weight: bold;
-        font-size: 10px;
-
-        margin-left: 8.5px;
-        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
-        cursor: pointer;
-
-    }
     .list_4_container{
         background: #0000001f;
         height: 50px;
@@ -354,25 +358,6 @@
         flex-wrap: wrap;
         display: flex;
         /* overflow: auto; */
-    }
-
-    .list_4 div{
-        background: #b2b2b246;
-        width: 70px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        
-        color: #fff;
-        font-weight: bold;
-        font-size: 10px;
-
-        margin-left: 8.5px;
-        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
-        cursor: pointer;
-
     }
     .hashtag_btn_container{
         /* background-color: #13074b; */
@@ -444,7 +429,7 @@
     .home_hashtag_container_c1{
         background: linear-gradient(135deg, #13074b, #372978, #13074b);
         height: 20px;
-        width: 40px;
+        width: 45px;
         border-radius: 5px;
         color: #ffffff;
         font-weight: bold;
@@ -454,6 +439,8 @@
         justify-content: center;
         margin-right: 8px;
         cursor: pointer;
+        border: none;
+
     }
     .home_hashtag_container_c1:hover{
         background-color: #2f2659;
@@ -580,7 +567,7 @@
     .hashtag{
         background: linear-gradient(135deg, #FFED48, #fff384, #FFED48);
         height: 20px;
-        width: 126px;
+        width: 270px;
 
         border-radius:5px;
         color: #000000;
@@ -594,17 +581,17 @@
     .home_hashtag_container_view{
         position: relative;
         /* background-color: #FFED48; */
-        height: 340px;
+        height: 395px;
         width: 270px;
-        top: 203px;
+        top: 231px;
         left: 50%;
         transform: translate(-50%, -50%);
-
+        padding-bottom: 5px;
     }
     .home_hashtag_container_view_container{
         position: absolute;
         background: linear-gradient(135deg, #e2e2e2, #ffffff, #e2e2e2);
-        height: 330px;
+        height: 395px;
         width: 100%;
         border-radius: 10px;
         box-shadow: 0 0px 10px 0 rgb(178, 178, 178);
@@ -623,6 +610,75 @@
         align-items: center;
         border-radius: 5px;
     }
+    .none_click_list_tag{
+        background: #b2b2b246;
+        width: 72px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        
+        color: #fff;
+        font-weight: bold;
+        font-size: 10px;
+
+        margin-left: 8.5px;
+        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
+        cursor: pointer;
+    }
+    .click_list_tag{
+        background: #1f1f1f46;
+        width: 72px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        
+        color: #fff;
+        font-weight: bold;
+        font-size: 10px;
+
+        margin-left: 8.5px;
+        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
+        cursor: pointer;
+    }
+    .list_0_container{
+        background: #0000001f;
+        height: 60px;
+        width: 250px;
+        border-radius: 3px;
+        margin-left: 10px;
+        box-shadow: 0 0 4px 0 rgb(141, 141, 141);
+        overflow-x: hidden;
+        /* padding-bottom: 8px; */
+        margin-top: 10px;
+
+    }
+    .list_0_container::-webkit-scrollbar {
+        width: 2px;
+    }
+    .list_0_container::-webkit-scrollbar-thumb {
+        background-color: #757575;
+        border-radius: 10px;
+        border: 1px solid transparent;
+    }
+    .list_0_container::-webkit-scrollbar-track {
+        border-radius: 50px;
+        /* box-shadow: inset 0px 0px 5px rgb(106, 93, 93); */
+    }
+
+    .list_0{
+        /* background-color: #13074b; */
+        height: 55px;
+        width: 270px;
+        border-radius: 5px;
+        flex-wrap: wrap;
+        display: flex;
+        /* overflow: auto; */
+    }
+
     .list_1_container{
         background: #0000001f;
         height: 60px;
@@ -657,23 +713,7 @@
         display: flex;
         /* overflow: auto; */
     }
-    .list_1 div{
-        background: #b2b2b246;
-        width: 72px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        
-        color: #fff;
-        font-weight: bold;
-        font-size: 10px;
 
-        margin-left: 8.5px;
-        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
-        cursor: pointer;
-    }
     .list_2_container{
         background: #0000001f;
         height: 60px;
@@ -708,23 +748,7 @@
         display: flex;
         /* overflow: auto; */
     }
-    .list_2 div{
-        background: #b2b2b246;
-        width: 72px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        
-        color: #fff;
-        font-weight: bold;
-        font-size: 10px;
 
-        margin-left: 8.5px;
-        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
-        cursor: pointer;
-    }
 
     .list_3_container{
         background: #0000001f;
@@ -760,23 +784,7 @@
         display: flex;
         /* overflow: auto; */
     }
-    .list_3 div{
-        background: #b2b2b246;
-        width: 72px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        
-        color: #fff;
-        font-weight: bold;
-        font-size: 10px;
 
-        margin-left: 8.5px;
-        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
-        cursor: pointer;
-    }
     .list_4_container{
         background: #0000001f;
         height: 60px;
@@ -811,23 +819,7 @@
         display: flex;
         /* overflow: auto; */
     }
-    .list_4 div{
-        background: #b2b2b246;
-        width: 72px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        
-        color: #fff;
-        font-weight: bold;
-        font-size: 10px;
 
-        margin-left: 8.5px;
-        box-shadow: 0 0 2px 0 rgb(148, 148, 148);
-        cursor: pointer;
-    }
     .hashtag_btn_container{
         /* background-color: #13074b; */
         height: 25px;
