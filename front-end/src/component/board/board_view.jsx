@@ -1,6 +1,7 @@
-import React, { useState, Component } from "react";
+import React, { useState, Component, useEffect } from "react";
 import store from "../../store";
 import "./board_view.css";
+import axios from 'axios';
 
 function Board_view({ view, board_View }) {
 
@@ -30,7 +31,77 @@ function Board_view({ view, board_View }) {
     //즐겨찾기 상태
     const [bookmark, setBookmark] = useState(0);
     console.log(bookmark)
-    
+
+    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@api 받아오기@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+    //게시글 아이디, 게시글 유저인덱스, 제목, 내용,  그래프이미지, 해시테그, 댓글 목록
+    const [boardview_boardId, setBoardview_boardId] = useState('');
+    const [boardview_userId, setBoardview_userId] = useState('');
+    const [boardview_title, setBoardview_title] = useState('');
+    const [boardview_content, setBoardview_content] = useState('');
+    const [boardview_graph, setBoardview_graph] = useState('');
+    const [boardview_hashtags, setBoardview_hashtags] = useState([]);
+    const [boardview_comment, setBoardview_comment] = useState([]);
+    const [boardview_createAt, setBoardview_createAt] = useState('');
+    const [boardview_modifiedAt, setBoardview_modifiedAt] = useState('');
+
+    const handleBoardView = async () => {
+
+        //로컬스토리지 추출
+        const access_token = localStorage.getItem('access-token');
+        
+        //쿠키에서 세션 추출 
+        const cookieString  = document.cookie.match('(^|;)\\s*' + 'X-REFRESH-TOKEN' + '\\s*=\\s*([^;]+)').pop();
+        const prefix = 'X-REFRESH-TOKEN=';
+        const extractedValue = cookieString.substring(cookieString.indexOf(prefix) + prefix.length);
+        const endIndex = extractedValue.indexOf("%");
+        const refresh_token = extractedValue.slice(0, endIndex);
+        
+        //콘솔로 확인
+        console.log("access_token입니다. : ", access_token)
+        
+        console.log("refresh_token입니다. : ",refresh_token);
+
+        try {   
+            const response = await axios.get(`http://13.125.16.222/boards/${view}`, {
+                headers: {
+                    'X-ACCESS-TOKEN': access_token,
+                    'X-REFRESH-TOKEN': refresh_token
+                }
+            });
+          
+            console.log(response.data);
+
+            if (response.status === 200) {
+                setBoardview_boardId(response.data.boardId);
+                setBoardview_userId(response.data.userId);
+                setBoardview_title(response.data.title);
+                setBoardview_content(response.data.content);
+                setBoardview_graph(response.data.careerImage);
+                setBoardview_hashtags(response.data.hashtags);
+                setBoardview_comment(response.data.comments);
+                setBoardview_createAt(response.data.createdAt);
+                setBoardview_modifiedAt(response.data.modifiedAt);
+            }
+
+        } catch (error) {
+
+        }
+    };
+
+    useEffect(() => {
+        // 페이지가 로드될 때 한 번만 호출되는 로직
+        handleBoardView();
+    }, []);
+
+    const hashtagElements = boardview_hashtags.map((hashtag, index) => (
+        <div key={index}>{hashtag}</div>
+    ));
+
+    console.log(boardview_boardId, boardview_userId, boardview_title, boardview_content, boardview_graph, 
+    boardview_hashtags, boardview_comment, boardview_createAt, boardview_modifiedAt)
+
     return (
         <div className="board_view_container">
             <div className="board_view_container_1">
@@ -41,7 +112,7 @@ function Board_view({ view, board_View }) {
                             <button className = "board_view_b1 "onClick={close_board}>돌아가기</button>
                         </div>
 
-                        <div className="board_view_header_title">프론트엔드가 꿈인 같이 성장하는 개발자입니다! 참고하세요!</div>
+                        <div className="board_view_header_title">{boardview_title}</div>
 
                         <div className="board_view_header_box2">
                             <button className = "board_view_b2 "onClick={close_board}>게시글 수정</button>
@@ -59,19 +130,7 @@ function Board_view({ view, board_View }) {
 
                     <div className="board_view_body_1_hashtag">
                         <div className="board_view_body_1_hashtag_list_container">
-                            <div>현직자</div>
-                            <div>전공자</div>
-                            <div>프론트엔드</div>
-                            <div>HTML</div>
-                            <div>CSS</div>
-                            <div>javascript</div>
-                            <div>Typescript</div>
-                            <div>node.js</div>
-                            <div>react</div>
-                            <div>redux</div>
-                            <div>next.js</div>
-                            <div>graphQL</div>
-                            <div>Python</div>
+                            {hashtagElements}
                         </div>
                     </div>
 
@@ -80,9 +139,7 @@ function Board_view({ view, board_View }) {
                     </div>
 
                     <div className="board_view_body_1_context">
-                        안녕하세요! 저는 25살이되는 프론트엔드가 꿈인 ooo이라고 합니다. <br/>여러분들이 가시는 길에 조금이라도 도움이 될 수 있도록 
-                        제 로드맵을 참고하시기를 바라며 글을 작성했습니다. <br/>
-                        질문은 댓글로 남겨주세요~~^^!
+                        {boardview_content}
                     </div>
 
                 </div>

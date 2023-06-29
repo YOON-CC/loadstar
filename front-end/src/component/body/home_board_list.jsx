@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef  } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./home_board_list.css";
 import Board_view from "../board/board_view";
 import axios from 'axios';
@@ -119,16 +119,16 @@ const Home_board_list = () => {
     const [board_data, setBoard_data] = useState([]);
 
     //보드(게시물) 들어가기
-    const board_View = () => {
-        setView(!view);
+    const board_View = (boardId) => {
+        setView(boardId);
     };
+      
 
     //헤시태그 고르기 버튼 들어가기
 
     const hashtag_Show = () => {
-        const temp = [...allTags]
+        console.log(board_data[0][0])
         setShow(!show);
-        console.log(temp)
     };
 
     // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -191,9 +191,10 @@ const Home_board_list = () => {
         for (let i = 0; i < board_data.length; i++) {
             const title = board_data[i][2];
             const hash_tag = board_data[i][3];
+            const board_Id = board_data[i][0];
 
             updatedDivElements.push(
-            <div key={i} className="board-list" onClick={board_View}>
+            <div key={i} className="board-list" onClick={() => board_View(board_Id)}>
                 <div className="board-list_c1">
                     <div className="board-list_c1_img">
                         <img className="home_header_body_1_graph_img" src="image/그래프_사진.png" alt="그래프 사진" />
@@ -219,7 +220,7 @@ const Home_board_list = () => {
         
         setDivElements(updatedDivElements);
     },[board_data]);
-    
+
     return (
         <div className="home_board_list_body">
         {view && <Board_view view={view} board_View={board_View}></Board_view>}
