@@ -5,7 +5,7 @@ import React, { Component } from "react";
 const Mypage_1 = (props) => {
 
     const title_arr = props.value_title;
-
+    const bookmark_arr = props.value_bookmark
 
     return (
         <div className="mypage_1_container">
@@ -21,12 +21,9 @@ const Mypage_1 = (props) => {
             <div className="mypage_1_container_2">
                 <div className="mypage_1_container_2_title">BOOK MARK</div>
                 <div className="mypage_1_container_2_content">
-                    <div>글1</div>
-                    <div>글2</div>
-                    <div>글3</div>
-                    <div>글4</div>
-                    <div>글5</div>
-                    <div>글6</div>
+                    {bookmark_arr.map((text, index) => (
+                        <div key={index}>{text.length > 6 ? text.slice(0, 6) + "..." : text}</div>
+                    ))}
                 </div>
             </div>
         </div>

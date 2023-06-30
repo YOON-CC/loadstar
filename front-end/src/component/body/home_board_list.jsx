@@ -127,7 +127,7 @@ const Home_board_list = () => {
     //헤시태그 고르기 버튼 들어가기
 
     const hashtag_Show = () => {
-        console.log(board_data[0][0])
+        // console.log(board_data[0][0])
         setShow(!show);
     };
 

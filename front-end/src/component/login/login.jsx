@@ -49,7 +49,8 @@ const Login = () => {
 
 
 
-                    console.log(access_token, refresh_token)
+                    console.log("토큰들",access_token, refresh_token)
+                    console.log("유저인덱스",user_Id)
                     console.log(response.data);
 
                     store.dispatch({type:'AFTER_LOGIN'});

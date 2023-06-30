@@ -19,6 +19,9 @@ const First_question = () => {
     //작성글 제목 받아오기
     const [mypage_boardtitle, setMypage_boardtitle] = useState([]);
 
+    //작성글 제목 받아오기
+    const [mypage_boardbookmark, setMypage_boardbookmark] = useState([]);
+
     //데이터 받아오기 
     const handleMypage_user_info = async () => {
 
@@ -55,6 +58,9 @@ const First_question = () => {
                 setMypage_email(response.data.email);
                 const mypage_boardTitles = response.data.boards.map(boards => boards.title);
                 setMypage_boardtitle(mypage_boardTitles);
+
+                const mypage_boardbookmark = response.data.bookmarks.map(bookmarks => bookmarks.title);
+                setMypage_boardbookmark(mypage_boardbookmark);
             }
 
         } catch (error) {
@@ -81,7 +87,7 @@ const First_question = () => {
             </div>
             <div className="mypage_container_2">
                 {mypagenum === 0 && <Mypage_0 value1={mypage_userId} value2={mypage_email}></Mypage_0>}
-                {mypagenum === 1 && <Mypage_1 value_title={mypage_boardtitle}></Mypage_1>}
+                {mypagenum === 1 && <Mypage_1 value_title={mypage_boardtitle} value_bookmark={mypage_boardbookmark}></Mypage_1>}
                 {mypagenum === 2 && <Mypage_2></Mypage_2>}
                 {mypagenum === 3 && <Mypage_3></Mypage_3>}
             </div>

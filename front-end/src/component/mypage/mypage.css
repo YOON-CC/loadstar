@@ -368,7 +368,13 @@
         width: 250px;
         border-radius: 10px;
         margin-left: 10px;
-        margin-top: 10px;
+        margin-top: 10px; 
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        font-size: 12px;
     }
     .mypage_1_container_2_content div:hover{
         cursor: pointer;
@@ -852,6 +858,12 @@
         border-radius: 5px;
         margin-left: 5px;
         margin-top: 5px; 
+        font-size: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
         font-size: 10px;
     }
     .mypage_1_container_2_content div:hover{
