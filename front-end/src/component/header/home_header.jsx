@@ -54,7 +54,7 @@ export default class Home_header extends Component{
                               </div>} 
 
                             {(this.state.number === 7 || this.state.number === 8 ||
-                              this.state.number === 9)&& 
+                              this.state.number === 9 || this.state.number === 11)&& 
                             <div className="home_header_body_2_c1_button_container_b1" onClick={function(){
                                 store.dispatch({type:'BOARD_POST'});
                               }.bind(this)}>

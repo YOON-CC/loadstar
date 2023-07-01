@@ -80,7 +80,7 @@ const Board_post = () => {
         event.preventDefault();
         
         try {
-            const response = await axios.post("http://13.125.16.222/boards/new", {
+            const response = await axios.post("http://13.125.16.222/boards", {
                 userId : userId,
                 title : title,
                 showGraph : showgraph,

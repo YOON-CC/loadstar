@@ -13,19 +13,24 @@ function Board_view({ view, board_View }) {
     document.body.style.top = `-${scrollTop}px`;
     
 
-    const close_board = () => {
+    const close_board = (p) => {
         // 자식 컴포넌트에서 부모 컴포넌트의 toggleView 함수 호출
-        board_View();
+        if (p == "close"){
+            store.dispatch({type:'DELETE_ANIMATION'});
+        }
+        else{
+            board_View();
 
-        const scrollTop = parseInt(document.body.style.top || '0', 10);
+            const scrollTop = parseInt(document.body.style.top || '0', 10);
+            
+            // 고정된 스크롤 위치를 원래대로 되돌리고, body의 스크롤 스타일을 초기화
+            document.body.style.overflow = '';
+            // document.body.style.position = '';
+            document.body.style.top = '';
         
-        // 고정된 스크롤 위치를 원래대로 되돌리고, body의 스크롤 스타일을 초기화
-        document.body.style.overflow = '';
-        // document.body.style.position = '';
-        document.body.style.top = '';
-    
-        // 스크롤 위치를 원래대로 복원
-        window.scrollTo(0, -scrollTop);
+            // 스크롤 위치를 원래대로 복원
+            window.scrollTo(0, -scrollTop);
+        }
     };
 
     /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -74,7 +79,7 @@ function Board_view({ view, board_View }) {
     const handleBoardView = async () => {
 
         try {   
-            const response = await axios.get(`http://13.125.16.222/boards/${user_Id}/${view}`, {
+            const response = await axios.get(`http://13.125.16.222/boards/${view}`, {
                 headers: {
                     'X-ACCESS-TOKEN': access_token,
                     'X-REFRESH-TOKEN': refresh_token
@@ -140,7 +145,7 @@ function Board_view({ view, board_View }) {
             
         //댓글작성
         try {
-            const response = await axios.post("http://13.125.16.222/comments/new", {
+            const response = await axios.post("http://13.125.16.222/comments", {
                 boardId : boardview_boardId,
                 userId : user_Id,
                 content : boardview_comment_content_change,
@@ -175,7 +180,7 @@ function Board_view({ view, board_View }) {
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
     const handleBoardBookmark_1 = async () => {
         try {
-            const response = await axios.post("http://13.125.16.222/bookmarks/new", {
+            const response = await axios.post("http://13.125.16.222/bookmarks", {
                 userId: user_Id,
                 boardId: boardview_boardId,
             }, 
@@ -197,7 +202,7 @@ function Board_view({ view, board_View }) {
     }
     const handleBoardBookmark_2 = async () => {
         try {
-            const response = await axios.delete(`http://13.125.16.222/bookmarks/${user_Id}/${boardview_boardId}`,{
+            const response = await axios.delete(`http://13.125.16.222/bookmarks/${boardview_boardId}`,{
                 headers: {
                     'X-ACCESS-TOKEN': access_token,
                     'X-REFRESH-TOKEN': refresh_token
@@ -218,7 +223,7 @@ function Board_view({ view, board_View }) {
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
     const handleBoarddelete = async () => {
         try {
-            const response = await axios.delete(`http://13.125.16.222/boards/${user_Id}/${boardview_boardId}`,{
+            const response = await axios.delete(`http://13.125.16.222/boards/${boardview_boardId}`,{
                 headers: {
                     'X-ACCESS-TOKEN': access_token,
                     'X-REFRESH-TOKEN': refresh_token
@@ -226,8 +231,7 @@ function Board_view({ view, board_View }) {
             });
             
             if (response.status === 200) {
-                close_board();
-                store.dispatch({type:'AFTER_LOGIN'});
+                close_board("close");
             }
         }
         catch (error) {

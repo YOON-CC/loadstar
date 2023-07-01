@@ -16,6 +16,9 @@ const First_question = () => {
     const [mypage_userId, setMypage_userId] = useState('');
     const [mypage_email, setMypage_email] = useState('');
 
+    //작성글 보드idx 받아오기 
+    const [mypage_boardId, setMypage_boardId] = useState([]);
+
     //작성글 제목 받아오기
     const [mypage_boardtitle, setMypage_boardtitle] = useState([]);
 
@@ -44,7 +47,7 @@ const First_question = () => {
         console.log("refresh_token입니다. : ",refresh_token);
 
         try {   
-            const response = await axios.get(`http://13.125.16.222/users/mypage/${user_Id}`, {
+            const response = await axios.get("http://13.125.16.222/users/my-page", {
                 headers: {
                     'X-ACCESS-TOKEN': access_token,
                     'X-REFRESH-TOKEN': refresh_token
@@ -56,6 +59,10 @@ const First_question = () => {
             if (response.status === 200) {
                 setMypage_userId(response.data.username);
                 setMypage_email(response.data.email);
+
+                const mypage_boardId = response.data.boards.map(boards => boards.boardId);
+                setMypage_boardId(mypage_boardId);
+
                 const mypage_boardTitles = response.data.boards.map(boards => boards.title);
                 setMypage_boardtitle(mypage_boardTitles);
 
@@ -87,7 +94,7 @@ const First_question = () => {
             </div>
             <div className="mypage_container_2">
                 {mypagenum === 0 && <Mypage_0 value1={mypage_userId} value2={mypage_email}></Mypage_0>}
-                {mypagenum === 1 && <Mypage_1 value_title={mypage_boardtitle} value_bookmark={mypage_boardbookmark}></Mypage_1>}
+                {mypagenum === 1 && <Mypage_1  value_boardId={mypage_boardId} value_title={mypage_boardtitle} value_bookmark={mypage_boardbookmark}></Mypage_1>}
                 {mypagenum === 2 && <Mypage_2></Mypage_2>}
                 {mypagenum === 3 && <Mypage_3></Mypage_3>}
             </div>

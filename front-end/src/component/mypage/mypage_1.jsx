@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-
-
+import React, { useState } from "react";
+import Board_view from "../board/board_view";
 
 const Mypage_1 = (props) => {
 
+    const boardId_arr = props.value_boardId
     const title_arr = props.value_title;
     const bookmark_arr = props.value_bookmark
 
