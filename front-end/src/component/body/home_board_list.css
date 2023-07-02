@@ -106,7 +106,7 @@
 
     .board-list_c1{
         height: 130px;
-        width: 100%;
+        width: 242px;
         display: flex;
         justify-content: space-between;
         border-radius: 10px 10px 0px 0px;
@@ -115,11 +115,10 @@
 
     .home_header_body_1_graph_img{
         height: 100%;
-        width: 100%;
+        width: 242px;
         /* background-color: #4a3b8b; */
         border-radius: 10px 10px 0px 0px;
         border: none; 
-        margin-left: 0.4px;
     }
 
     .board-list_c2{

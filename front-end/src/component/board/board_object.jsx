@@ -238,7 +238,7 @@ const Board_object = () => {
 
                     <Link to="/mypage"><div className="board_object_header_c2_b2">마이페이지</div></Link>
 
-                    <div className="board_object_header_c2_b3"  onClick={() => this.setState({ alarm: this.state.alarm + 1 })}>
+                    <div className="board_object_header_c2_b3">
                         <img src="/image/alarm.png"></img>
                     </div>
                 </div>

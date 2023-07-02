@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Board_view from "../board/board_view";
 import { Link } from 'react-router-dom';
 
 

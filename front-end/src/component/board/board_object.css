@@ -253,7 +253,7 @@
         transform: translate(-50%); 
     }
     .board_view_review_container_list{
-        background-color: #ffffff11;
+        background-color: #15004011;
         /* height:65px; */
         width: 100%;
 
@@ -266,9 +266,9 @@
         /* justify-content: space-evenly; */
     }
     .board_view_review_container_list_1{
-        background-color: #13121270;
+        background-color: #240b55f5;
         width: 100px;
-        height:25px;
+        height:20px;
         border-radius: 5px 0px 0px 0px;        
         display: flex;
         justify-content: center;
@@ -278,9 +278,9 @@
 
     }
     .board_view_review_container_list_2{
-        background-color: #39393970;
+        background-color: #433264f5;
         width: 200px;
-        height:25px;
+        height:20px;
 
         display: flex;
         justify-content: center;
@@ -289,9 +289,9 @@
         color: #ffffff;
     }
     .board_view_review_container_list_3{
-        background-color: #39393970;
+        background-color: #433264f5;
         width: 200px;
-        height:25px;     
+        height:20px;     
 
         display: flex;
         justify-content: center;
@@ -301,9 +301,9 @@
 
     }
     .board_view_review_container_list_container_b1{
-        background-color: #13121270;
+        background-color: #240b55f5;
         width: 50px;
-        height:25px;     
+        height:20px;     
         border: none;
         display: flex;
         justify-content: center;
@@ -312,13 +312,13 @@
         color: #ffffff;
     }
     .board_view_review_container_list_container_b1:hover{
-        background-color: #131212ad;
+        background-color: #0e0422f5;
         cursor: pointer;
     }
     .board_view_review_container_list_container_b2{
-        background-color: #13121270;
+        background-color: #240b55f5;
         width: 50px;
-        height:25px;     
+        height:20px;     
         border: none;
         display: flex;
         justify-content: center;
@@ -328,7 +328,7 @@
         border-radius: 0px 5px 0px 0px;
     }
     .board_view_review_container_list_container_b2:hover{
-        background-color: #131212ad;
+        background-color: #0e0422f5;
         cursor: pointer;
     }
     .board_view_review_container_list_4{
@@ -705,7 +705,7 @@
         transform: translate(-50%); 
     }
     .board_view_review_container_list{
-        background-color: #ffffff11;
+        background-color: #15004011;
         /* height:65px; */
         width: 100%;
 
@@ -718,7 +718,7 @@
         /* justify-content: space-evenly; */
     }
     .board_view_review_container_list_1{
-        background-color: #13121270;
+        background-color: #433264f5;
         width: 270px;
         height:25px;
         border-radius: 5px 5px 0px 0px;        
@@ -730,7 +730,7 @@
 
     }
     .board_view_review_container_list_2{
-        background-color: #39393970;
+        background-color: #240b55f5;
         width: 270px;
         height:25px;
 
@@ -741,7 +741,7 @@
         color: #ffffff;
     }
     .board_view_review_container_list_3{
-        background-color: #39393970;
+        background-color: #240b55f5;
         width: 270px;
         height:25px;     
 
@@ -753,7 +753,7 @@
 
     }
     .board_view_review_container_list_container_b1{
-        background-color: #13121270;
+        background-color: #433264f5;
         width: 270px;
         height:25px;     
         border: none;
@@ -764,11 +764,11 @@
         color: #ffffff;
     }
     .board_view_review_container_list_container_b1:hover{
-        background-color: #131212ad;
+        background-color: #0e0422f5;
         cursor: pointer;
     }
     .board_view_review_container_list_container_b2{
-        background-color: #13121270;
+        background-color: #433264f5;
         width: 270px;
         height:25px;     
         border: none;
@@ -779,7 +779,7 @@
         color: #ffffff;
     }
     .board_view_review_container_list_container_b2:hover{
-        background-color: #131212ad;
+        background-color: #0e0422f5;
         cursor: pointer;
     }
     .board_view_review_container_list_4{

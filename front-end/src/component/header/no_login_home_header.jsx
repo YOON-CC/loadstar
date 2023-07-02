@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BeforeLogin from "./before_login";
-import AfterLogin from "./after_login";
 import "./no_login_home_header.css";
-
 import store from "../../store.js";
-import { Link } from "react-router-dom";
 
 const NoLoginHomeHeader = () => {
     const [number, setNumber] = useState(store.getState().number);

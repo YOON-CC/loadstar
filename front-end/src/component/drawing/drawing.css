@@ -1,0 +1,108 @@
+.chart_body{
+    background: linear-gradient(135deg, #2b197d, #4c3b9b, #4c3b9b, #4c3b9b, #2b197d);
+    height: 100vh; /* 화면 높이에 맞게 설정합니다 */
+    width: 100%;
+}
+/*차트 헤더*/
+.chart_header{
+    /* background: linear-gradient(135deg, #2b197d, #4c3b9b, #4c3b9b, #4c3b9b, #2b197d); */
+    height: 50px;
+    width: 100%;
+
+    display : flex;
+    justify-content: space-between;
+}
+.chart_header_c1{
+    /* background-color: aqua; */
+    height: 100%;
+    width: 65px;
+    margin-left: 10px;
+}
+.chart_header_c1_logo{
+    height: 100%;
+    width: 100%;
+}
+.chart_header_c2{
+    /* background-color: aqua; */
+    width: 220px;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-right: 10px;
+}
+.chart_header_c2_b1{
+    height: 20px;
+    width: 80px;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: #ffffff;
+
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 80%;
+
+    display: flex;
+    justify-content: center;
+    margin-top: 11px;
+    padding-top: 3px;
+    cursor: pointer;
+}
+.chart_header_c2_b2{
+    height: 20px;
+    width: 80px;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: #ffffff;
+
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 80%;
+
+    display: flex;
+    justify-content: center;
+    margin-top: 11px;
+    padding-top: 3px;
+    cursor: pointer;
+}
+.chart_header_c2_b3{
+    height: 25px;
+    width: 25px;
+    margin-top: 12px;
+}
+.chart_header_c2_b3 img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+/*차트*/
+.chart_container{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.018);
+    border-radius: 20px;
+    width: 1200px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 1px rgb(0, 0, 0);
+}
+/*초반 질문*/
+.chart_question{
+    position: absolute;
+    /* background: linear-gradient(135deg, #2b197d, #4c3b9b, #4c3b9b, #4c3b9b, #2b197d); */
+    /* background-color: rgba(0, 0, 0, 0.27); */
+    height: 250px;
+    width: 100%;
+    margin-top: 430px;
+}
+.chart_question_container{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.27);
+    height: 100%;
+    width: 1500px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

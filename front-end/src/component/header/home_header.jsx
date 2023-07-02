@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Before_login from "./before_login"
 import After_login from "./after_login";
 import "./home_header.css";
 
@@ -42,11 +41,13 @@ export default class Home_header extends Component{
                             <div className="b1_text">게시글 올리기</div>
                           </div>
                         </Link>
-                          
-                        <div className="home_header_body_2_c1_button_container_b2">
-                          <div className="b2_img"><img src="/image/drawing.png"></img></div>
-                          <div className="b2_text">그래프 그리기</div>
-                        </div>
+                        
+                        <Link to="/drawing"> 
+                          <div className="home_header_body_2_c1_button_container_b2">
+                            <div className="b2_img"><img src="/image/drawing.png"></img></div>
+                            <div className="b2_text">그래프 그리기</div>
+                          </div>
+                        </Link>
                       </div>
                     </div>
                     <div className="home_header_body_2_c2">

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import "./home_board_list.css";
-import Board_view from "../board/board_view";
 import Home_header from '../header/home_header';
 import axios from 'axios';
 import store from "../../store";

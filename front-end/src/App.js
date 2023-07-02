@@ -11,9 +11,9 @@ import First_question from "./component/first_question/first_question";
 import Mypage from "./component/mypage/mypage";
 import Board_post from "./component/board/board_post";
 import Welcome from "./component/welcome/welcome";
-import Board_view from "./component/board/board_view";
 import Board_object from "./component/board/board_object";
 import Board_delete_animation from "./component/board_delete_animation/board_delete_animation"
+import Drawing from "./component/drawing/drawing";
 import store from "./store";
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 
@@ -57,6 +57,7 @@ export default class App extends Component{
             <Route path="/mypage" element={<Mypage></Mypage>}></Route>
             <Route path="/boardwrite" element={<Board_post></Board_post>}></Route>
             <Route path="/delete" element={<Board_delete_animation></Board_delete_animation>}></Route>
+            <Route path="/drawing" element={<Drawing></Drawing>}></Route>
           </Routes>
         </BrowserRouter>
       );
