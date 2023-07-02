@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import "./home_board_list.css";
 import Board_view from "../board/board_view";
+import Home_header from '../header/home_header';
 import axios from 'axios';
 import store from "../../store";
-
+import { Link } from 'react-router-dom';
 
 const Home_board_list = () => {
 
 
-    //게시물 보기, 해시테그 보기
-    const [view, setView] = useState(false);
+    //해시테그 보기
     const [show, setShow] = useState(false);
 
     //해시테그의 적용 또는 초기화
@@ -118,12 +118,6 @@ const Home_board_list = () => {
     //서버에서 받은 데이터 
     const [board_data, setBoard_data] = useState([]);
 
-    //보드(게시물) 들어가기
-    const board_View = (boardId) => {
-        setView(boardId);
-    };
-      
-
     //헤시태그 고르기 버튼 들어가기
 
     const hashtag_Show = () => {
@@ -194,27 +188,29 @@ const Home_board_list = () => {
             const board_Id = board_data[i][0];
 
             updatedDivElements.push(
-            <div key={i} className="board-list" onClick={() => board_View(board_Id)}>
-                <div className="board-list_c1">
-                    <div className="board-list_c1_img">
-                        <img className="home_header_body_1_graph_img" src="image/그래프_사진.png" alt="그래프 사진" />
+                <Link to={`/board/${board_Id}`} key={board_Id}>
+                    <div className="board-list" onClick={() => localStorage.setItem('board_Id', board_Id)}>
+                        <div className="board-list_c1">
+                            <div className="board-list_c1_img">
+                                <img className="home_header_body_1_graph_img" src="image/그래프_사진.png" alt="그래프 사진" />
+                            </div>
+                            <div className="board-list_c1_tag"></div>
+                        </div>
+                        <div className="board-list_c2">{title}</div>
+                        {hash_tag && hash_tag.length === 1 && (
+                        <div className="board-list_c3">
+                            <div className="board-list_c3_tag">{hash_tag[0]}</div>
+                        </div>
+                        )}
+                        {hash_tag && hash_tag.length > 1 && (
+                        <div className="board-list_c3">
+                            <div className="board-list_c3_tag">{hash_tag[0]}</div>
+                            <div className="board-list_c3_tag">{hash_tag[1]}</div>
+                            <div className="board-list_c3_tag_end">...</div>
+                        </div>
+                        )}
                     </div>
-                    <div className="board-list_c1_tag"></div>
-                </div>
-                <div className="board-list_c2">{title}</div>
-                {hash_tag && hash_tag.length === 1 && (
-                <div className="board-list_c3">
-                    <div className="board-list_c3_tag">{hash_tag[0]}</div>
-                </div>
-                )}
-                {hash_tag && hash_tag.length > 1 && (
-                <div className="board-list_c3">
-                    <div className="board-list_c3_tag">{hash_tag[0]}</div>
-                    <div className="board-list_c3_tag">{hash_tag[1]}</div>
-                    <div className="board-list_c3_tag_end">...</div>
-                </div>
-                )}
-            </div>
+                </Link>
             );
         }
         
@@ -222,9 +218,9 @@ const Home_board_list = () => {
     },[board_data]);
 
     return (
+        <div>
+        <Home_header></Home_header>
         <div className="home_board_list_body">
-        {view && <Board_view view={view} board_View={board_View}></Board_view>}
-
         <form>
             <div className="home_hashtag_body">
                 <div className="home_hashtag_container">
@@ -349,6 +345,7 @@ const Home_board_list = () => {
             <div className="board-list-container">
                 {divElements}
             </div>
+        </div>
         </div>
     );
 };

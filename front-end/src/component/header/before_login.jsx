@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import store from "../../store";
+import { Link } from 'react-router-dom';
 
 export default class Before_login extends Component{
 
     render() { 
         return (
             <div className="home_header_body_1_form_before">
-
+                {/* <Link to="/Login"> <div className="home_header_body_1_c1" >로그인</div></Link>
+                <Link to="/Join"> <div className="home_header_body_1_c2" >회원가입</div></Link> */}
                 <div className="home_header_body_1_c1" onClick={function(){
                     store.dispatch({type:"LOGIN"});
                 }.bind(this)}>로그인</div>

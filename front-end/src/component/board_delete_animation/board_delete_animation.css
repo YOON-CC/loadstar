@@ -48,7 +48,7 @@
 @media (max-width: 900px) { /*175 이후*/
     .delete_container{
         position: absolute;
-        background-color: rgba(0, 0, 0, 0.9);
+        background: linear-gradient(135deg, #251666, #4d3c9b, #4d3c9b, #251666, #251666);
         height: 100%;
         width: 100%;
         /* margin-top : 270px; */

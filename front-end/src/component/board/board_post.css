@@ -267,7 +267,7 @@
     .board_post_container_button_post{
         background: linear-gradient(135deg, #13074b, #372978, #13074b);
         height: 100%;
-        width: 18%;
+        width: 130px;
 
         border-radius: 10px;
         border: none;
@@ -282,7 +282,7 @@
     .board_post_container_button_cancel{
         background: linear-gradient(135deg, #13074b, #372978, #13074b);
         height: 100%;
-        width: 18%;
+        width: 130px;
         display : flex;
         justify-content: center;
         align-items: center;
@@ -580,7 +580,7 @@
     .board_post_container_button_post{
         background: linear-gradient(135deg, #13074b, #372978, #13074b);
         height: 100%;
-        width: 45%;
+        width: 110px;
 
         border-radius: 10px;
         border: none;
@@ -595,7 +595,7 @@
     .board_post_container_button_cancel{
         background: linear-gradient(135deg, #13074b, #372978, #13074b);
         height: 100%;
-        width: 45%;
+        width: 110px;
         display : flex;
         justify-content: center;
         align-items: center;

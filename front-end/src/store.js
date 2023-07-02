@@ -1,46 +1,74 @@
-import {createStore} from 'redux'
-export default createStore(function(state, action){
-    if(state === undefined){
-        return {number:0}
+import { createStore } from 'redux';
+
+// 로컬 스토리지에서 상태값을 불러오는 함수
+const loadStateFromLocalStorage = () => {
+    try {
+        const serializedState = localStorage.getItem('reduxState');
+        if (serializedState === null) {
+            return undefined; // 초기 상태를 반환하거나, 다른 기본값을 설정할 수도 있습니다.
+        }
+        return JSON.parse(serializedState);
+    } catch (error) {
+        console.error('Failed to load state from local storage:', error);
+        return undefined; // 초기 상태를 반환하거나, 다른 기본값을 설정할 수도 있습니다.
     }
-    if(action.type === "HOME"){
-        return {...state, number:0}
+};
+
+// 리듀서 함수
+function reducer(state = { number: 0 }, action) {
+    switch (action.type) {
+        case 'HOME':
+            return { ...state, number: 0 };
+        case 'LOGIN':
+            return { ...state, number: 1 };
+        case 'JOIN':
+            return { ...state, number: 2 };
+        case 'SEARCH_ID':
+            return { ...state, number: 3 };
+        case 'SEARCH_PWD':
+            return { ...state, number: 4 };
+        case 'CHANGE_PWD':
+            return { ...state, number: action.payload.number, userId: action.payload.userId };
+        case 'WELCOME':
+            return { ...state, number: action.payload.number, userId: action.payload.userId };
+        case 'FIRST_QUESTION':
+            return { ...state, number: action.payload.number, userId: action.payload.userId };
+        case 'AFTER_LOGIN':
+            return { ...state, number: 7 };
+        case 'MYPAGE':
+            return { ...state, number: 8 };
+        case 'BOARD_POST':
+            return { ...state, number: 9 };
+        case 'DELETE_ANIMATION':
+            return { ...state, number: 11 };
+        default:
+            return state;
     }
-    if (action.type === "LOGIN"){
-        return {...state, number:1}
+}
+
+// 초기 상태를 불러옵니다.
+const initialState = loadStateFromLocalStorage();
+
+// 리덕스 스토어를 생성합니다.
+const store = createStore(reducer, initialState);
+
+// 상태값이 변경될 때마다 로컬 스토리지에 저장합니다.
+store.subscribe(() => {
+    const state = store.getState();
+    try {
+        const serializedState = JSON.stringify(state);
+        localStorage.setItem('reduxState', serializedState);
+    } catch (error) {
+        console.error('Failed to save state to local storage:', error);
     }
-    if (action.type === "JOIN"){
-        return {...state, number:2}
+});
+
+export const clearLocalStorage = () => {
+    try {
+        localStorage.removeItem('reduxState');
+    } catch (error) {
+        console.error('Failed to remove item from local storage:', error);
     }
-    if (action.type === "SEARCH_ID"){
-        return {...state, number:3}
-    }
-    if (action.type === "SEARCH_PWD"){
-        return {...state, number:4}
-    }
-    if (action.type === "CHANGE_PWD"){
-        return {...state, number: action.payload.number, userId: action.payload.userId}
-    }
-    if (action.type === "WELCOME"){
-        return {...state, number: action.payload.number, userId: action.payload.userId};
-    }
-    if (action.type === "FIRST_QUESTION"){
-        return {...state, number: action.payload.number, userId: action.payload.userId}
-    }
-    
-    // 로그인 이후
-    if (action.type === "AFTER_LOGIN"){
-        return {...state, number:7}
-    }
-    if (action.type === "MYPAGE"){
-        return {...state, number:8}
-    }
-    if (action.type === "BOARD_POST"){
-        return {...state, number:9}
-    }
-    if (action.type === "DELETE_ANIMATION"){
-        return {...state, number:11}
-    }
-    
-    return state;
-})
+};
+
+export default store;

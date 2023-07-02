@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import "./board_delete_animation.css";
 import store from "../../store";
+import { Link, useNavigate} from 'react-router-dom';
 
-export default class Board_delete_animation extends Component{
-    render() { 
-        setTimeout(() => {
-            store.dispatch({type:'AFTER_LOGIN'});
-        }, 1000);
+const Board_delete_animation = () => {
+    const navigate = useNavigate();
 
-        return (
-            <div className="delete_container">
-                <img className="delete_img" src="image/logo.png"></img>
-            </div>
-        )
-    }
+    setTimeout(() => {
+        navigate('/');
+    }, 1200);
+
+    return (
+        <div className="delete_container">
+            <img className="delete_img" src="image/logo.png"></img>
+        </div>
+    )
+    
 }
+export default Board_delete_animation;

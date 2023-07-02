@@ -2,11 +2,11 @@ import React, { useState, Component } from "react";
 import "./board_post.css";
 import store from "../../store";
 import axios from 'axios';
-
-
+import { Link, useNavigate  } from 'react-router-dom';
+import Home_header from '../header/home_header';
 
 const Board_post = () => {
-    
+    const navigate = useNavigate();
     //유저 아이디
     const userId = localStorage.getItem('user_Id');
 
@@ -81,7 +81,6 @@ const Board_post = () => {
         
         try {
             const response = await axios.post("http://13.125.16.222/boards", {
-                userId : userId,
                 title : title,
                 showGraph : showgraph,
                 hashtags : allTags,
@@ -96,8 +95,12 @@ const Board_post = () => {
 
             //요청 성공
             if (response.status === 200) {
-                store.dispatch({type:"AFTER_LOGIN"});
+                // store.dispatch({type:"AFTER_LOGIN"});
                 console.log("성공")
+
+                
+                navigate('/');
+              
             }
         }
         catch (error) {
@@ -106,119 +109,122 @@ const Board_post = () => {
     }
     
     return (
-        <div className="board_post_container">
-            <h2>게시글 작성</h2>
-            <form onSubmit={handlepostSubmit}>
-                <div className="board_post_container_title">
-                    <input type="text" onChange={handletitleChange}></input>
-                    <label>제목</label>
-                </div>
+        <div>
+            <Home_header></Home_header>
+            <div className="board_post_container">
+                <h2>게시글 작성</h2>
+                <form onSubmit={handlepostSubmit}>
+                    <div className="board_post_container_title">
+                        <input type="text" onChange={handletitleChange}></input>
+                        <label>제목</label>
+                    </div>
 
-                <div className="board_post_container_check">
+                    <div className="board_post_container_check">
 
-                    <div className="board_post_container_check_1">
-                        <div className="board_post_container_check_1_title">show your graph?</div>
-                        <div className="board_post_container_check_1_title_container">
-                            <div className ="show_or_not_graph_container" onClick={() => setShowgraph("y")}>
-                                {(showgraph === "n" || showgraph === '') && <div className ="show_or_not_graph_container_default">YES</div>}
-                                {showgraph === "y" && <div className ="show_or_not_graph_container_check">YES</div>}
+                        <div className="board_post_container_check_1">
+                            <div className="board_post_container_check_1_title">show your graph?</div>
+                            <div className="board_post_container_check_1_title_container">
+                                <div className ="show_or_not_graph_container" onClick={() => setShowgraph("y")}>
+                                    {(showgraph === "n" || showgraph === '') && <div className ="show_or_not_graph_container_default">YES</div>}
+                                    {showgraph === "y" && <div className ="show_or_not_graph_container_check">YES</div>}
+                                </div>
+                                <div className ="show_or_not_graph_container" onClick={() => setShowgraph("n")}>
+                                    {(showgraph === "y" || showgraph === '') && <div className ="show_or_not_graph_container_default">NO</div>}
+                                    {showgraph === "n" && <div className ="show_or_not_graph_container_check">NO</div>}
+                                </div>
                             </div>
-                            <div className ="show_or_not_graph_container" onClick={() => setShowgraph("n")}>
-                                {(showgraph === "y" || showgraph === '') && <div className ="show_or_not_graph_container_default">NO</div>}
-                                {showgraph === "n" && <div className ="show_or_not_graph_container_check">NO</div>}
+                        </div>
+
+                        <div className="board_post_container_check_2">
+                            <div className="board_post_container_check_2_title">Is it a question?</div>
+                            <div className="board_post_container_check_1_title_container">
+                                <div className ="show_or_not_graph_container">
+                                    {posttype === 0 && <div className ="show_or_not_graph_container_default" onClick={() => setPosttype("질문글")}>질문글</div>}
+                                    {posttype !== 0 && <div className ="show_or_not_graph_container_check" onClick={() => setPosttype(0)}>질문글</div>}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div className="board_post_container_check_3">
+                            <div className="board_post_container_check_3_hashtag">
+                                {/* 언어 */}
+                                {h1 === 0 && <div className="none_click_tag" onClick={() => setH1("html")}>html</div>}
+                                {h1 !== 0 && <div className="click_tag" onClick={() => setH1(0)}>html</div>}
+
+                                {h2 === 0 && <div className="none_click_tag" onClick={() => setH2("css")}>css</div>}
+                                {h2 !== 0 && <div className="click_tag" onClick={() => setH2(0)}>css</div>}
+
+                                {h3 === 0 && <div className="none_click_tag" onClick={() => setH3("javascript")}>javascript</div>}
+                                {h3 !== 0 && <div className="click_tag" onClick={() => setH3(0)}>javascript</div>}
+
+                                {h4 === 0 && <div className="none_click_tag" onClick={() => setH4("typescript")}>typescript</div>}
+                                {h4 !== 0 && <div className="click_tag" onClick={() => setH4(0)}>typescript</div>}
+
+                                {h5 === 0 && <div className="none_click_tag" onClick={() => setH5("react")}>react</div>}
+                                {h5 !== 0 && <div className="click_tag" onClick={() => setH5(0)}>react</div>}
+
+                                {h6 === 0 && <div className="none_click_tag" onClick={() => setH6("java")}>java</div>}
+                                {h6 !== 0 && <div className="click_tag" onClick={() => setH6(0)}>java</div>}
+
+                                {h7 === 0 && <div className="none_click_tag" onClick={() => setH7("python")}>python</div>}
+                                {h7 !== 0 && <div className="click_tag" onClick={() => setH7(0)}>python</div>}
+
+                                {h8 === 0 && <div className="none_click_tag" onClick={() => setH8("spring")}>spring</div>}
+                                {h8 !== 0 && <div className="click_tag" onClick={() => setH8(0)}>spring</div>}
+
+                                {h9 === 0 && <div className="none_click_tag" onClick={() => setH9("springboot")}>springboot</div>}
+                                {h9 !== 0 && <div className="click_tag" onClick={() => setH9(0)}>springboot</div>}
+
+                                {h10 === 0 && <div className="none_click_tag" onClick={() => setH10("node.js")}>node.js</div>}
+                                {h10 !== 0 && <div className="click_tag" onClick={() => setH10(0)}>node.js</div>}
+                                {/* CS */}
+                                {cs1 === 0 && <div className="none_click_tag" onClick={() => setCs1("운영체제")}>운영체제</div>}
+                                {cs1 !== 0 && <div className="click_tag" onClick={() => setCs1(0)}>운영체제</div>}
+
+                                {cs2 === 0 && <div className="none_click_tag" onClick={() => setCs2("네트워크")}>네트워크</div>}
+                                {cs2 !== 0 && <div className="click_tag" onClick={() => setCs2(0)}>네트워크</div>}
+                                
+                                {cs3 === 0 && <div className="none_click_tag" onClick={() => setCs3("자료구조")}>자료구조</div>}
+                                {cs3 !== 0 && <div className="click_tag" onClick={() => setCs3(0)}>자료구조</div>}
+
+                                {cs4 === 0 && <div className="none_click_tag" onClick={() => setCs4("컴퓨터구조")}>컴퓨터구조</div>}
+                                {cs4 !== 0 && <div className="click_tag" onClick={() => setCs4(0)}>컴퓨터구조</div>}
+
+                                {cs5 === 0 && <div className="none_click_tag" onClick={() => setCs5("알고리즘")}>알고리즘</div>}
+                                {cs5 !== 0 && <div className="click_tag" onClick={() => setCs5(0)}>알고리즘</div>}
+
+                                {cs6 === 0 && <div className="none_click_tag" onClick={() => setCs6("데이터베이스")}>데이터베이스</div>}
+                                {cs6 !== 0 && <div className="click_tag" onClick={() => setCs6(0)}>데이터베이스</div>}
+
+                                {cs7 === 0 && <div className="none_click_tag" onClick={() => setCs7("컴파일러")}>컴파일러</div>}
+                                {cs7 !== 0 && <div className="click_tag" onClick={() => setCs7(0)}>컴파일러</div>}
+                                {/* 기타 */}
+                                {e1 === 0 && <div className="none_click_tag" onClick={() => setE1("부트캠프")}>부트캠프</div>}
+                                {e1 !== 0 && <div className="click_tag" onClick={() => setE1(0)}>부트캠프</div>}
+
+                                {e2 === 0 && <div className="none_click_tag" onClick={() => setE2("개발외주")}>개발외주</div>}
+                                {e2 !== 0 && <div className="click_tag" onClick={() => setE2(0)}>개발외주</div>}
                             </div>
                         </div>
                     </div>
 
-                    <div className="board_post_container_check_2">
-                        <div className="board_post_container_check_2_title">Is it a question?</div>
-                        <div className="board_post_container_check_1_title_container">
-                            <div className ="show_or_not_graph_container">
-                                {posttype === 0 && <div className ="show_or_not_graph_container_default" onClick={() => setPosttype("질문글")}>질문글</div>}
-                                {posttype !== 0 && <div className ="show_or_not_graph_container_check" onClick={() => setPosttype(0)}>질문글</div>}
 
-                            </div>
-                        </div>
+                    <div className="board_post_container_detail">
+                        <div>내용</div>
+                        <input type="text" onChange={handlecontentChange}></input>
+
                     </div>
-                    <div className="board_post_container_check_3">
-                        <div className="board_post_container_check_3_hashtag">
-                            {/* 언어 */}
-                            {h1 === 0 && <div className="none_click_tag" onClick={() => setH1("html")}>html</div>}
-                            {h1 !== 0 && <div className="click_tag" onClick={() => setH1(0)}>html</div>}
 
-                            {h2 === 0 && <div className="none_click_tag" onClick={() => setH2("css")}>css</div>}
-                            {h2 !== 0 && <div className="click_tag" onClick={() => setH2(0)}>css</div>}
+                    <div className="board_post_container_button">
+                        <button className="board_post_container_button_post">게시글 post</button>
+                        <Link to="/"><div className="board_post_container_button_cancel">취소</div></Link>
+                        {/* <div className="board_post_container_button_cancel" onClick={function(){
+                            store.dispatch({type:"AFTER_LOGIN"});
+                        }.bind(this)}>취소</div> */}
+                    </div>   
 
-                            {h3 === 0 && <div className="none_click_tag" onClick={() => setH3("javascript")}>javascript</div>}
-                            {h3 !== 0 && <div className="click_tag" onClick={() => setH3(0)}>javascript</div>}
-
-                            {h4 === 0 && <div className="none_click_tag" onClick={() => setH4("javascript")}>typescript</div>}
-                            {h4 !== 0 && <div className="click_tag" onClick={() => setH4(0)}>typescript</div>}
-
-                            {h5 === 0 && <div className="none_click_tag" onClick={() => setH5("react")}>react</div>}
-                            {h5 !== 0 && <div className="click_tag" onClick={() => setH5(0)}>react</div>}
-
-                            {h6 === 0 && <div className="none_click_tag" onClick={() => setH6("java")}>java</div>}
-                            {h6 !== 0 && <div className="click_tag" onClick={() => setH6(0)}>java</div>}
-
-                            {h7 === 0 && <div className="none_click_tag" onClick={() => setH7("python")}>python</div>}
-                            {h7 !== 0 && <div className="click_tag" onClick={() => setH7(0)}>python</div>}
-
-                            {h8 === 0 && <div className="none_click_tag" onClick={() => setH8("spring")}>spring</div>}
-                            {h8 !== 0 && <div className="click_tag" onClick={() => setH8(0)}>spring</div>}
-
-                            {h9 === 0 && <div className="none_click_tag" onClick={() => setH9("springboot")}>springboot</div>}
-                            {h9 !== 0 && <div className="click_tag" onClick={() => setH9(0)}>springboot</div>}
-
-                            {h10 === 0 && <div className="none_click_tag" onClick={() => setH10("node.js")}>node.js</div>}
-                            {h10 !== 0 && <div className="click_tag" onClick={() => setH10(0)}>node.js</div>}
-                            {/* CS */}
-                            {cs1 === 0 && <div className="none_click_tag" onClick={() => setCs1("운영체제")}>운영체제</div>}
-                            {cs1 !== 0 && <div className="click_tag" onClick={() => setCs1(0)}>운영체제</div>}
-
-                            {cs2 === 0 && <div className="none_click_tag" onClick={() => setCs2("네트워크")}>네트워크</div>}
-                            {cs2 !== 0 && <div className="click_tag" onClick={() => setCs2(0)}>네트워크</div>}
-                            
-                            {cs3 === 0 && <div className="none_click_tag" onClick={() => setCs3("자료구조")}>자료구조</div>}
-                            {cs3 !== 0 && <div className="click_tag" onClick={() => setCs3(0)}>자료구조</div>}
-
-                            {cs4 === 0 && <div className="none_click_tag" onClick={() => setCs4("컴퓨터구조")}>컴퓨터구조</div>}
-                            {cs4 !== 0 && <div className="click_tag" onClick={() => setCs4(0)}>컴퓨터구조</div>}
-
-                            {cs5 === 0 && <div className="none_click_tag" onClick={() => setCs5("알고리즘")}>알고리즘</div>}
-                            {cs5 !== 0 && <div className="click_tag" onClick={() => setCs5(0)}>알고리즘</div>}
-
-                            {cs6 === 0 && <div className="none_click_tag" onClick={() => setCs6("데이터베이스")}>데이터베이스</div>}
-                            {cs6 !== 0 && <div className="click_tag" onClick={() => setCs6(0)}>데이터베이스</div>}
-
-                            {cs7 === 0 && <div className="none_click_tag" onClick={() => setCs7("컴파일러")}>컴파일러</div>}
-                            {cs7 !== 0 && <div className="click_tag" onClick={() => setCs7(0)}>컴파일러</div>}
-                            {/* 기타 */}
-                            {e1 === 0 && <div className="none_click_tag" onClick={() => setE1("부트캠프")}>부트캠프</div>}
-                            {e1 !== 0 && <div className="click_tag" onClick={() => setE1(0)}>부트캠프</div>}
-
-                            {e2 === 0 && <div className="none_click_tag" onClick={() => setE2("개발외주")}>개발외주</div>}
-                            {e2 !== 0 && <div className="click_tag" onClick={() => setE2(0)}>개발외주</div>}
-                        </div>
-                    </div>
-                </div>
-
-
-                <div className="board_post_container_detail">
-                    <div>내용</div>
-                    <input type="text" onChange={handlecontentChange}></input>
-
-                </div>
-
-                <div className="board_post_container_button">
-                    <button className="board_post_container_button_post">게시글 post</button>
-                    
-                    <div className="board_post_container_button_cancel" onClick={function(){
-                        store.dispatch({type:"AFTER_LOGIN"});
-                    }.bind(this)}>취소</div>
-                </div>   
-
-            </form>
+                </form>
+            </div>
         </div>
     )
     

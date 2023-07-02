@@ -1,34 +1,31 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Alarm from "../alarm/alarm";
-import store from "../../store";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
+const AfterLogin = () => {
+    const navigate = useNavigate();
+    const [alarm, setAlarm] = useState(0);
+    const dispatch = useDispatch();
 
-export default class After_login extends Component{
+    const handleLogout = () => {
+        navigate('/');
+        dispatch({ type: "HOME" });
+    };
 
-    constructor(props) {
-        super(props);
-        this.state = {alarm : 0};
-    }
+    return (
+        <div className="home_header_body_1_form_after">
+        <div className="home_header_body_1_c1" onClick={handleLogout}>
+            로그아웃
+        </div>
+        <Link to="/mypage">
+            <div className="home_header_body_1_c2">마이페이지</div>
+        </Link>
+        <div className="home_header_body_1_c3" onClick={() => setAlarm(alarm + 1)}><img src="image/alarm.png" alt="알람" />
+        </div>
+            {alarm % 2 === 1 && <Alarm />}
+        </div>
+    );
+};
 
-    render() { 
-        console.log(this.state)
-
-        return (
-            
-            <div className="home_header_body_1_form_after">
-                <div className="home_header_body_1_c1" onClick={function(){
-                    store.dispatch({type:'HOME'});
-                }.bind(this)}>로그아웃</div>
-
-                <div className="home_header_body_1_c2" onClick={function(){
-                    store.dispatch({type:"MYPAGE"});
-                }.bind(this)}>마이페이지</div>
-
-                <div className="home_header_body_1_c3"  onClick={() => this.setState({ alarm: this.state.alarm + 1 })}>
-                    <img src="image/alarm.png"></img>
-                </div>
-                {this.state.alarm % 2 === 1 && <Alarm></Alarm>}
-            </div>
-        )
-    }
-}
+export default AfterLogin;

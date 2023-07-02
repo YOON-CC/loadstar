@@ -9,15 +9,17 @@
     .join-box {
         position: absolute;
         height: 420px;
+        top: 38%;
         left: 50%;
+        transform: translate(-50%, -50%);
         width: 500px;
         padding: 30px;
-        transform: translate(-50%);
+
         background: rgb(255, 255, 255);
         box-sizing: border-box;
         box-shadow: 0px 0px 10px 0px rgb(136, 136, 136), 0px 0px 10px 0px rgb(22, 0, 78);
         border-radius: 30px;
-        margin-top: 250px;
+        margin-top: 100px;
     }
 
     .join-box h2 {
@@ -383,15 +385,16 @@
 @media (max-width: 900px) { /*175 이후*/
     .join-box {
         position: absolute;
+        top: 38%;
         left: 50%;
+        transform: translate(-50%, -50%);
         width: 270px;
         padding: 20px;
-        transform: translate(-50%);
         background: rgb(255, 255, 255);
         box-sizing: border-box;
         box-shadow: 0px 0px 10px 0px rgb(136, 136, 136), 0px 0px 10px 0px rgb(22, 0, 78);
         border-radius: 15px;
-        margin-top: 140px;
+        margin-top: 80px;
     }
 
     .join-box h2 {
