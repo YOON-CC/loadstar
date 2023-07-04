@@ -106,3 +106,230 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.chart_question_container_c1{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.chart_question_container_c2{
+    /* background-color: rgb(96, 101, 101); */
+    width: 100%;
+    height: 200px;
+    display: flex;
+}
+/*이전버튼*/
+.chart_question_container_c2_b1{
+    /* background-color: rgb(68, 241, 241); */
+    width: 120px;
+    height: 100%;
+}
+
+.chart_question_container_c2_b1 button{
+    background-color: rgba(255, 255, 255, 0.159);
+    width: 100px;
+    height: 35px; 
+    border-radius: 15px;
+    border: none;
+    margin-top: 145px;
+    margin-left: 20px;
+
+    color: #ffffff;
+}
+.chart_question_container_c2_b1 button:hover{
+    background-color: rgba(255, 255, 255, 0.053);
+    cursor: pointer;
+    color: #868686;
+}
+.chart_question_container_c2_select{
+    /* background-color: rgb(9, 135, 135); */
+    width: 1300px;
+    height: 100%;   
+}
+.chart_question_container_c2_container{
+    position: relative;
+    background-color: #0000000f;
+    /* background-color: #ff0000; */
+    width: 600px;
+    height: 180px;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 0px rgb(44, 44, 44);
+}
+.chart_question_container_c2_container_yes_no{
+    /* background-color: #4c3b9b; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*질문 버튼*/
+.chart_question_container_c2_container_b1_default{
+    background-color: #ffffff4b;
+    width: 120px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px; 
+    color: #363636;
+}
+.chart_question_container_c2_container_b1{
+    background-color: #ffffff;
+    width: 120px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px; 
+}
+.chart_question_container_c2_container_b2_default{
+    background-color: #ffffff4b;
+    width: 120px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px; 
+    color: #363636;
+}
+.chart_question_container_c2_container_b2{
+    background-color: #ffffff;
+    width: 120px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px; 
+}
+/*기간*/
+.chart_question_container_c2_container_period{
+    /* background-color: #4c3b9b; */
+    width: 100%;
+    margin-top: 25px;
+}
+.chart_question_container_c2_container_period_title_1{
+    /* background-color: #ffffff; */
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+}
+.chart_question_container_c2_container_period_title_2{
+    /* background-color: #ffffff; */
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+.chart_question_container_c2_container_period_input{
+    /* background-color: #241f3a; */
+    width: 380px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-left: 135px;
+
+}
+.chart_question_container_c2_container_period_input input{
+    position: relative;
+    width: 130px;
+    height: 30px;  
+
+    background: #25252576;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-size: 70%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.addition_btn{
+    background-color: #00000026;
+    height: 27px;
+    width: 27px;
+    border-radius: 100px;
+    margin-top: 2px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.addition_btn:hover{
+    background-color: #00000058;
+}
+/*다음버튼*/
+.chart_question_container_c2_b2{
+    /* background-color: rgb(68, 241, 241); */
+    width: 120px;
+    height: 100%;
+}
+.chart_question_container_c2_b2 button{
+    background-color: rgba(255, 255, 255, 0.159);
+    width: 100px;
+    height: 35px; 
+    border-radius: 15px;
+    border: none;
+    margin-top: 145px;
+    margin-right: 20px;
+
+    color: #ffffff;
+}
+.chart_question_container_c2_b2 button:hover{
+    background-color: rgba(255, 255, 255, 0.053);
+    cursor: pointer;
+    color: #868686;
+}

@@ -69,7 +69,7 @@
 
         font-size: 40px;
         font-weight: bold;
-        color: #ffffff;
+        color: #c5c5c5;
         animation: slideIn 1.5s ease-in-out;
         margin-top: 10px;
     }
@@ -78,7 +78,7 @@
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        color: #ffffff;
+        color: #c5c5c5;
         animation: blinking 3s infinite;
     }
     @keyframes shadowMove {
@@ -201,7 +201,7 @@
 
         font-size: 15px;
         font-weight: bold;
-        color: #ffffff;
+        color: #c5c5c5;
         animation: slideIn 1.5s ease-in-out;
         margin-top: 10px;
     }
@@ -210,7 +210,7 @@
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        color: #ffffff;
+        color: #c5c5c5;
         animation: blinking 3s infinite;
         font-size: 12px;
     }
