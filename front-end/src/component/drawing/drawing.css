@@ -311,6 +311,41 @@
 .addition_btn:hover{
     background-color: #00000058;
 }
+/*저장*/
+.save{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    display: flex;
+    width: 300px;
+    height: 100px;
+    border-radius: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    margin-top: 90px;
+}
+.save:hover{
+    background-color: rgba(0, 0, 0, 0.308);
+}
+.save_logo{
+    width: 110px;
+    height: 100px;
+    margin-left: 45px;
+}
+.save_text{
+    /* background-color: #2b197d; */
+    /* background: none; */
+    border: none;
+    width: 100px;
+    font-size: 30px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 30px;
+}
 /*다음버튼*/
 .chart_question_container_c2_b2{
     /* background-color: rgb(68, 241, 241); */

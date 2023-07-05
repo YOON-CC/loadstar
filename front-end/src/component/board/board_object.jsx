@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./board_object.css";
 import store from "../../store";
 import axios from 'axios';
+import ApexCharts from 'apexcharts';
 import { Link, useNavigate} from 'react-router-dom';
 
 
@@ -25,6 +26,69 @@ const Board_object = () => {
     const refresh_token = extractedValue.slice(0, endIndex);
 
     /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@그래프 받아오기@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+    //그래프
+    const [chartData, setChartData] = useState([]);
+    const [whether_drawing, setWhether_drawing] = useState(false);
+
+    useEffect(() => {
+        if (chartData.length > 0) {
+          const options = {
+            series: [
+              {
+                data: chartData,
+              },
+            ],
+            chart: {
+              height: 350,
+              type: 'rangeBar',
+              zoom: {
+                enabled: false,
+              },
+            },
+            plotOptions: {
+              bar: {
+                horizontal: true,
+                barHeight: 20,
+                borderRadius: 5,
+              },
+            },
+            xaxis: {
+                type: 'datetime',
+                labels: {
+                    style: {
+                        colors: '#251666', // x축 글 색상
+                    },
+                },
+                axisBorder: {
+                    color: '#251666', // X축 선 색상
+                },
+            },
+            yaxis: {
+                labels: {
+                    style: {
+                        colors: '#251666', // y축 글 색상
+                    },
+                },
+            },
+            colors: ['#251666'],
+          };
+    
+          const chart = new ApexCharts(
+            document.querySelector("#chart"),
+            options
+          );
+          chart.render();
+    
+          return () => {
+            chart.destroy();
+          };
+        }
+    }, [chartData]);
+
+    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@초반 api 받아오기@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
     //게시글 아이디, 게시글 유저인덱스, 제목, 내용,  그래프이미지, 해시테그, 댓글 목록
@@ -45,6 +109,9 @@ const Board_object = () => {
     //댓글 전송
     const [boardview_commentwrite, setBoardview_commentwrite] = useState(0);
     
+    //댓글 삭제
+    const [boardview_commentdelete, setBoardview_commentdelete] = useState(0);
+
     //북마크 상태
     const [bookmark, setBookmark] = useState('');
     const [bookmark_state, setBookmark_state] = useState(null); // 북마크 상태변화를 강제로 수행
@@ -70,10 +137,13 @@ const Board_object = () => {
                 setBoardview_graph(response.data.careerImage);
                 setBoardview_hashtags(response.data.hashtags);
                 setBoardview_comment(response.data.comments);
-                setBoardview_createAt(response.data.createdAt);
-                setBoardview_modifiedAt(response.data.modifiedAt);
+                setBoardview_createAt(response.data.createdAt.split("T")[0]);
+                setBoardview_modifiedAt(response.data.modifiedAt.split("T")[0]);
+                
+                setChartData(response.data.arr);
 
                 setBoardview_commentwrite(0);
+                setBoardview_commentdelete(0);
                 
                 setBookmark(response.data.bookmark)
             }
@@ -87,29 +157,59 @@ const Board_object = () => {
     useEffect(() => {
         // 페이지가 로드될 때 한 번만 호출되는 로직
         handleBoardView();
-    }, [boardview_commentwrite, bookmark, bookmark_state]);
+    }, [boardview_commentwrite, bookmark, bookmark_state, boardview_commentdelete]);
 
     const hashtagElements = boardview_hashtags.map((hashtag, index) => (
         <div key={index}>{hashtag}</div>
     ));
 
-    // console.log(boardview_boardId, boardview_userId, boardview_title, boardview_content, boardview_graph, bookmark,
-    // boardview_hashtags, boardview_comment, boardview_createAt, boardview_modifiedAt)
+    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@댓글 삭제 api@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+    const handleBoardcommentdelete = async (boardview_comment_userId, event) => {
+        event.preventDefault();
+        console.log("ㅎㅇ",boardview_comment_userId);
+        try {
+            const response = await axios.delete(`http://13.125.16.222/comments/${boardview_comment_userId}`,{
+                headers: {
+                    'X-ACCESS-TOKEN': access_token,
+                    'X-REFRESH-TOKEN': refresh_token
+                }
+            });
+            
+            if (response.status === 200) {
+                setBoardview_commentdelete(1)
+            }
+        }
+        catch (error) {
 
-    // console.log("댓글",boardview_comment)
+        }
+    } 
+
 
     const CommentList = boardview_comment.map(comment => (
         <div key={comment.commentId} className="board_view_review_container_list">
             <div className="board_view_review_container_list_container">
-                <div className="board_view_review_container_list_1">{comment.username}</div>
-                <div className="board_view_review_container_list_2">댓글작성일 : {comment.createdAt}</div>
-                <div className="board_view_review_container_list_3">댓글수정일 : {comment.modifiedAt}</div>
-                <button className="board_view_review_container_list_container_b1">수정</button>
-                <button className="board_view_review_container_list_container_b2">삭제</button>
+                <div className="board_view_review_container_list_1">{comment.username} </div>
+                <div className="board_view_review_container_list_2">댓글작성일 : {comment.createdAt.split("T")[0]}</div>
+                <div className="board_view_review_container_list_3">댓글수정일 : {comment.modifiedAt.split("T")[0]}</div>
+                {comment.userId == user_Id && (
+                    <div className="board_view_review_container_list_3_btn_container">
+                        <form onSubmit={(event) => handleBoardcommentdelete(comment.commentId, event)}>
+                            <button className="board_view_review_container_list_container_btn">삭제</button>
+                        </form>
+                    </div>
+                )}
+                {comment.userId != user_Id && (
+                    <div className="board_view_review_container_list_3_btn_container">
+                        <div className="board_view_review_container_list_3_btn_container_no_owner">삭제</div>
+                    </div>
+                )}
             </div>
             <div className="board_view_review_container_list_4">{comment.commentContent}</div>
         </div>
     ));
+
 
     /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@댓글 작성 api@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -214,6 +314,7 @@ const Board_object = () => {
 
         }
     }
+
     /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@다양한 함수들@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -247,7 +348,11 @@ const Board_object = () => {
             <div className="board_info_title_hashtag_container">
                 {/* 글쓴이 아이디, 게시일 */}
                 <div className="board_object_info">
-                    
+                    <div className="board_object_info_owner">작성자 : {boardview_username}</div>
+                    <div className="board_object_info_edit_container">
+                        <div>작성일 : {boardview_createAt}</div>
+                        <div>수정일 : {boardview_modifiedAt}</div>
+                    </div>
                 </div>
 
                 {/* 제목*/}
@@ -260,13 +365,15 @@ const Board_object = () => {
                     {hashtagElements}
                 </div>
             </div>
-            {/*구분라인*/}
-            <div className="board_object_line"></div>
 
             {/* 그래프*/}
+            <div className="board_object_chart_container">
+                <div id="chart" />
+            </div>
+            {/* <div id="chart" />
             <div className="board_object_graph">
                 <img className="board_object_graph_img" src="/image/그래프_사진.png"></img>
-            </div>
+            </div>   */}
 
             {/* 내용*/}
             <div className="board_object_content">

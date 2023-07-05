@@ -1,9 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import ApexCharts from 'apexcharts';
 import "./drawing.css";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { useDispatch } from "react-redux";
 
 const ChartComponent = () => {
+  //네비게이터, 리덕스
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
+  //토큰 방식
+  const access_token = localStorage.getItem('access-token');
+
+  const cookieString  = document.cookie.match('(^|;)\\s*' + 'X-REFRESH-TOKEN' + '\\s*=\\s*([^;]+)').pop();
+  const prefix = 'X-REFRESH-TOKEN=';
+  const extractedValue = cookieString.substring(cookieString.indexOf(prefix) + prefix.length);
+  const endIndex = extractedValue.indexOf("%");
+  const refresh_token = extractedValue.slice(0, endIndex);
+
+  
   // 차트 데이터
   const [chartData, setChartData] = useState([]);
 
@@ -31,6 +48,18 @@ const ChartComponent = () => {
         },
         xaxis: {
           type: 'datetime',
+          labels: {
+            style: {
+              colors: '#FFFFFF', // x축 글 색상
+            },
+          },
+        },
+        yaxis: {
+          labels: {
+            style: {
+              colors: '#FFFFFF', // y축 글 색상
+            },
+          },
         },
         colors: ['#FFFFFF'],
       };
@@ -40,6 +69,19 @@ const ChartComponent = () => {
         options
       );
       chart.render();
+
+      chart.addEventListener('click', (event, chartContext, config) => {
+        console.log('막대를 클릭했습니다!', config.dataPointIndex);
+          // 클릭한 막대의 인덱스를 가져옵니다.
+        const dataIndex = config.dataPointIndex;
+
+        // chartData 배열에서 클릭한 막대를 제외한 새로운 배열을 생성합니다.
+        const newData = chartData.filter((_, index) => index !== dataIndex);
+
+        // chartData를 업데이트하여 막대가 제거된 차트를 렌더링합니다.
+        setChartData(newData);
+        // console.log("삭제",chartData[config.dataPointIndex])
+      });
 
       return () => {
         chart.destroy();
@@ -76,12 +118,49 @@ const ChartComponent = () => {
       x: question_tag,
       y: [date1.getTime(), date2.getTime()],
     };
-
+    
     setChartData(prevData => [...prevData, newData]);
 
     setInput1_clear('');
     setInput2_clear('');
   };
+
+  //이전 돌아가기
+  const handlebackQeution = () => { 
+    setYesNoBtn1('');
+    
+    if (question === '저장'){
+      setQuestion('Q. 부트캠프 경험이 있습니까?');
+      setQuestion_tag('부트캠프')
+      setInput1_clear('');
+      setInput2_clear('');
+    }
+    else if (question === 'Q. 부트캠프 경험이 있습니까?'){
+      setQuestion('Q. 개발 프로젝트를 하셨습니까?');
+      setQuestion_tag('개발 프로젝트')
+      setInput1_clear('');
+      setInput2_clear('');
+    }
+    else if (question === 'Q. 개발 프로젝트를 하셨습니까?'){
+      setQuestion('Q. 개발공부를 하셨습니까?');
+      setQuestion_tag('개발공부')
+      setInput1_clear('');
+      setInput2_clear('');
+    }
+    else if (question === 'Q. 개발공부를 하셨습니까?'){
+      setQuestion('Q. CS공부를 하셨습니까?');
+      setQuestion_tag('CS')
+      setInput1_clear('');
+      setInput2_clear('');
+    }
+    else if (question === 'Q. CS공부를 하셨습니까?'){
+      setQuestion('Q. 알고리즘(코딩테스트) 공부를 하셨습니까?');
+      setQuestion_tag('알고리즘')
+      setInput1_clear('');
+      setInput2_clear('');
+    }
+  }
+
 
   //다음 넘기기
   const [question, setQuestion] = useState('Q. 알고리즘(코딩테스트) 공부를 하셨습니까?');
@@ -107,7 +186,112 @@ const ChartComponent = () => {
       setInput1_clear('');
       setInput2_clear('');
     }
+    else if (question === 'Q. 개발 프로젝트를 하셨습니까?'){
+      setQuestion('Q. 부트캠프 경험이 있습니까?');
+      setQuestion_tag('부트캠프')
+      setInput1_clear('');
+      setInput2_clear('');
+    }
+    else if (question === 'Q. 부트캠프 경험이 있습니까?'){
+      setQuestion('저장');
+      setQuestion_tag('')
+      setInput1_clear('');
+      setInput2_clear('');
+    }
   }
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  
+  //@@@@@@@@@@@@@@@@@@@@API 연동@@@@@@@@@@@@@@@@@@@@@@@@@
+  //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  const [whether_drawing, setWhether_drawing] = useState(false);
+
+  //처음에 데이터 받아오기
+  const handleDrawingInfo = async () => {
+    
+
+    try {   
+        const response = await axios.get('http://13.125.16.222/careers', {
+            headers: {
+                'X-ACCESS-TOKEN': access_token,
+                'X-REFRESH-TOKEN': refresh_token
+            }
+        });
+      
+        if (response.status === 200) {
+          console.log(response.data);
+          //그래프 그렸는지 안그렸는지
+          if (response.data.arr.length !== 0){// 이전에 그린 기록이 있다.
+            setWhether_drawing(true) 
+            setChartData(response.data.arr)
+          }
+        }
+        
+
+    } catch (error) {
+
+    }
+  };
+  useEffect(() => {
+      // 페이지가 로드될 때 한 번만 호출되는 로직
+      handleDrawingInfo();
+  }, []);
+
+  //데이터 보내기
+  const handleDrawingInfosend = async (event) => {
+    event.preventDefault();
+    console.log("보낸다!",chartData)
+
+    if (whether_drawing === false){ // 이전에 데이터가 없고, 새로 넣을때
+      try {
+        const response = await axios.post("http://13.125.16.222/careers", {
+            arr : chartData,
+        }, 
+        {
+            headers: {
+                'X-ACCESS-TOKEN': access_token,
+                'X-REFRESH-TOKEN': refresh_token
+            }
+        });
+        
+        if (response.status === 200) {
+          console.log(response.data);
+          navigate('/delete');
+        }
+          
+  
+      } catch (error) {
+  
+      }
+    }
+    else{ // 이전에 데이터가 없고, 새로 추가할때
+      try {
+        const response = await axios.patch("http://13.125.16.222/careers", {
+            arr : chartData,
+        }, 
+        {
+            headers: {
+                'X-ACCESS-TOKEN': access_token,
+                'X-REFRESH-TOKEN': refresh_token
+            }
+        });
+        
+        if (response.status === 200) {
+          console.log(response.data);
+          navigate('/delete');
+        }
+          
+  
+      } catch (error) {
+  
+      }
+    }
+
+  };
+
+  //로그아웃
+  const handleLogout = () => {
+    navigate('/');
+    dispatch({ type: "HOME" });
+  };
 
   return (
     <div className="chart_body">
@@ -117,7 +301,7 @@ const ChartComponent = () => {
           <img className="chart_header_c1_logo" src="/image/logo.png" alt="Logo" />
         </div>
         <div className="chart_header_c2">
-          <div className="chart_header_c2_b1">로그아웃</div>
+          <div className="chart_header_c2_b1" onClick={handleLogout}>로그아웃</div>
           <Link to="/mypage">
             <div className="chart_header_c2_b2">마이페이지</div>
           </Link>
@@ -138,7 +322,7 @@ const ChartComponent = () => {
           <div className="chart_question_container_c1">{question}</div>
           <div className="chart_question_container_c2">
             <div className="chart_question_container_c2_b1">
-              <button>이전</button>
+              {question_tag !== '알고리즘' && <button onClick={handlebackQeution}>이전</button>}
             </div>
 
             {/* 질문 */}
@@ -147,22 +331,31 @@ const ChartComponent = () => {
                 {/* yes, no 버튼 */}
                 <div className="chart_question_container_c2_container_yes_no">
                   <div onClick={() => setYesNoBtn1("y")}>
-                    {(yesNoBtn1 === "n" || yesNoBtn1 === '') && (
+                    {(yesNoBtn1 === "n" || yesNoBtn1 === '' && question !== '저장') && (
                       <div className="chart_question_container_c2_container_b1_default">YES</div>
                     )}
-                    {yesNoBtn1 === "y" && (
+                    {(yesNoBtn1 === "y" && question !== '저장') && (
                       <div className="chart_question_container_c2_container_b1">YES</div>
                     )}
                   </div>
                   <div onClick={() => setYesNoBtn1("n")}>
-                    {(yesNoBtn1 === "y" || yesNoBtn1 === '') && (
+                    {(yesNoBtn1 === "y" || yesNoBtn1 === ''  && question !== '저장') && (
                       <div className="chart_question_container_c2_container_b2_default">NO</div>
                     )}
-                    {yesNoBtn1 === "n" && (
+                    {(yesNoBtn1 === "n"  && question !== '저장') && (
                       <div className="chart_question_container_c2_container_b2">NO</div>
                     )}
                   </div>
                 </div>
+                
+                {question === '저장' && 
+                <form onSubmit={handleDrawingInfosend}>
+                  <button className='save'>
+                    <img className="save_logo" src="/image/logo.png" alt="Logo"/>
+                    <div className='save_text'>save</div>
+                  </button>
+                </form>}
+
                 {/* 기간 */}
                 {yesNoBtn1 === "y" && (
                   <div className="chart_question_container_c2_container_period">
@@ -186,7 +379,7 @@ const ChartComponent = () => {
             </div>
 
             <div className="chart_question_container_c2_b2">
-              <button onClick={handleNextQeution}>다음</button>
+              {question !== '저장' && <button onClick={handleNextQeution}>다음</button>}
             </div>
           </div>
         </div>
