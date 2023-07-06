@@ -188,25 +188,59 @@ const Home_board_list = () => {
             const hash_tag = board_data[i][3];
             const board_Id = board_data[i][0];
             const chartData = board_data[i][4];
+            console.log(chartData)
+            //그 그래프 없으면,, 있으면,, 조건 이렇게 
+            if (chartData.length === 0) {continue};
+            //https://apexcharts.com/javascript-chart-demos/timeline-charts/basic/
+            //https://apexcharts.com/docs/react-charts/
+            // const chartData = [
+            //     { x: '알고리즘', y: [1654009200000, 1675177200000], rangeName: '2v5q1yh8' },
+            //     { x: '알고리즘', y: [1680274800000, 1688137200000], rangeName: 'e0va4tu5' },
+            //     { x: 'CS', y: [1680274800000, 1685545200000], rangeName: 'cxtc10kwf' },
+            //   ];    
             
             const options = {
-                // 필요에 따라 차트 옵션을 구성합니다.
-                // 예를 들어:
                 chart: {
-                  id: `chart-${board_Id}`,
-                  type: 'line',
+                    height: 350,
+                    type: 'rangeBar',
+                    zoom: {
+                        enabled: false,
+                      },
+                      toolbar: {
+                        show: false, // 햄버거 바 숨기기
+                      },
                 },
-                xaxis: {
-                  categories: chartData.map(data => data.x),
-                },
+                plotOptions: {
+                    bar: {
+                      horizontal: true,
+                      barHeight: 10,
+                      borderRadius: 2,
+                    },
+                  },
+                  xaxis: {
+                    type: 'datetime',
+                    labels: {
+                        style: {
+                          colors: '#ffffff', // 원하는 글자색 지정
+                        },
+                      },
+                      axisBorder: {
+                        show: false, // 세로 축 선 색상 지정
+                      },
+                    
+                  },
+                  yaxis: {
+
+                    show: false,
+                  },
+                  colors: ['#ffffff'],
               };
-          
-              const series = [
+              
+            const series = [
                 {
-                  name: 'Series 1',
-                  data: chartData.map(data => data.y),
-                },
-              ];
+                    data : chartData,
+                }
+              ]
           
 
             updatedDivElements.push(
@@ -217,7 +251,7 @@ const Home_board_list = () => {
                             <div className="board-list_c1_img">
                                 {/* <img className="home_header_body_1_graph_img" src="image/그래프_사진.png" alt="그래프 사진" /> */}
                                 {/*여기에 차트 표시*/}
-                                <Chart options={options} series={series} type="line" height={150} />
+                                <Chart className="chanchan" options={options} series={series} type="rangeBar" height = "140" width="250"/>
                             </div>
 
                             <div className="board-list_c1_tag"></div>
