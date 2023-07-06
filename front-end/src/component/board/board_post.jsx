@@ -40,6 +40,36 @@ const Board_post = () => {
     };
 
     //해시테그
+    const [d1, setD1] = useState(0);
+    const [d2, setD2] = useState(0);
+    const [d3, setD3] = useState(0);
+    const [d4, setD4] = useState(0);
+    const [d5, setD5] = useState(0);
+    const [d6, setD6] = useState(0);
+
+    const handleTagClick = (tag) => {
+        if (tag === "비현직자") {
+          setD1(d1 === 0 ? tag : 0);
+          setD2(0);
+        } else if (tag === "현직자") {
+          setD2(d2 === 0 ? tag : 0);
+          setD1(0);
+        } else if (tag === "전공자") {
+          setD3(d3 === 0 ? tag : 0);
+          setD4(0);
+        } else if (tag === "비전공자") {
+          setD4(d4 === 0 ? tag : 0);
+          setD3(0);
+        } else if (tag === "front") {
+          setD5(d5 === 0 ? tag : 0);
+          setD6(0);
+        } else if (tag === "back") {
+          setD6(d6 === 0 ? tag : 0);
+          setD5(0);
+        }
+      };
+
+      
     const [h1, setH1] = useState(0);
     const [h2, setH2] = useState(0);
     const [h3, setH3] = useState(0);
@@ -63,6 +93,7 @@ const Board_post = () => {
     const [e2, setE2] = useState(0);
 
     const allTags = [
+        d1, d2, d3, d4, d5, d6,
         h1, h2, h3, h4, h5, h6, h7, h8, h9, h10,
         cs1, cs2, cs3, cs4, cs5, cs6, cs7,
         e1, e2, posttype
@@ -147,6 +178,25 @@ const Board_post = () => {
                         </div>
                         <div className="board_post_container_check_3">
                             <div className="board_post_container_check_3_hashtag">
+                                {/* 기본설정 */}
+                                {d1 === 0 && <div className="none_click_tag" onClick={() => {setD1("비현직자"); setD2(0)}}>비현직자</div>}
+                                {d1 !== 0 && <div className="click_tag" onClick={() => setD1(0)}>비현직자</div>}
+
+                                {d2 === 0 && <div className="none_click_tag" onClick={() => {setD2("현직자"); setD1(0)}}>현직자</div>}
+                                {d2 !== 0 && <div className="click_tag" onClick={() => setD2(0)}>현직자</div>}
+
+                                {d3 === 0 && <div className="none_click_tag" onClick={() => {setD3("비전공자"); setD4(0);}}>비전공자</div>}
+                                {d3 !== 0 && <div className="click_tag" onClick={() => setD3(0)}>비전공자</div>}
+
+                                {d4 === 0 && <div className="none_click_tag" onClick={() => {setD4("전공자"); setD3(0);}}>전공자</div>}
+                                {d4 !== 0 && <div className="click_tag" onClick={() => setD4(0)}>전공자</div>}
+
+                                {d5 === 0 && <div className="none_click_tag" onClick={() => {setD5("front"); setD6(0);}}>front</div>}
+                                {d5 !== 0 && <div className="click_tag" onClick={() => setD5(0)}>front</div>}
+
+                                {d6 === 0 && <div className="none_click_tag" onClick={() => {setD6("back"); setD5(0);}}>back</div>}
+                                {d6 !== 0 && <div className="click_tag" onClick={() => setD6(0)}>back</div>}
+
                                 {/* 언어 */}
                                 {h1 === 0 && <div className="none_click_tag" onClick={() => setH1("html")}>html</div>}
                                 {h1 !== 0 && <div className="click_tag" onClick={() => setH1(0)}>html</div>}

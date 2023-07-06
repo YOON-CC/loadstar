@@ -10,7 +10,7 @@ export default class Welcome extends Component{
 
 
         setTimeout(() => {
-            store.dispatch({ type: 'FIRST_QUESTION', payload: {
+            store.dispatch({ type: 'HOME', payload: {
                 number: 10,
                 userId: userId
             }});

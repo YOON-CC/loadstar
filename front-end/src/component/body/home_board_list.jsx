@@ -4,9 +4,11 @@ import Home_header from '../header/home_header';
 import axios from 'axios';
 import store from "../../store";
 import { Link } from 'react-router-dom';
+import ApexCharts from 'apexcharts';
+import Chart from 'react-apexcharts';
+
 
 const Home_board_list = () => {
-
 
     //해시테그 보기
     const [show, setShow] = useState(false);
@@ -123,10 +125,10 @@ const Home_board_list = () => {
         // console.log(board_data[0][0])
         setShow(!show);
     };
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--차트 받아옴--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--스크롤에 받아옴--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     useEffect(() => {
         const handleBoardInfo = async () => {
             const hashtagsQuery = allTags.join(",");
@@ -144,14 +146,14 @@ const Home_board_list = () => {
             if (response.status === 200) {
                 console.log(response.data)
                 //튜플로 합치기 (boardId, 그래프 보여주기, Q&A여부 ,제목, 해시테그)
-                const combinedArray = response.data.map(item => [item.boardId, item.careerImage, item.title, item.hashtags]);
+                const combinedArray = response.data.map(item => [item.boardId, item.careerImage, item.title, item.hashtags, item.arr]);                
+                
                 setBoard_data(prevTitle => {
                     const existingIds = prevTitle.map(item => item[0]);
                     const newItems = combinedArray.filter(item => !existingIds.includes(item[0]));
                     return [...prevTitle, ...newItems];
                 });
-                // console.log(board_data)
-
+                console.log(board_data)
             }
             } catch (error) {
             // 에러 처리
@@ -185,14 +187,39 @@ const Home_board_list = () => {
             const title = board_data[i][2];
             const hash_tag = board_data[i][3];
             const board_Id = board_data[i][0];
+            const chartData = board_data[i][4];
+            
+            const options = {
+                // 필요에 따라 차트 옵션을 구성합니다.
+                // 예를 들어:
+                chart: {
+                  id: `chart-${board_Id}`,
+                  type: 'line',
+                },
+                xaxis: {
+                  categories: chartData.map(data => data.x),
+                },
+              };
+          
+              const series = [
+                {
+                  name: 'Series 1',
+                  data: chartData.map(data => data.y),
+                },
+              ];
+          
 
             updatedDivElements.push(
                 <Link to={`/board/${board_Id}`} key={board_Id}>
                     <div className="board-list" onClick={() => localStorage.setItem('board_Id', board_Id)}>
                         <div className="board-list_c1">
+
                             <div className="board-list_c1_img">
-                                <img className="home_header_body_1_graph_img" src="image/그래프_사진.png" alt="그래프 사진" />
+                                {/* <img className="home_header_body_1_graph_img" src="image/그래프_사진.png" alt="그래프 사진" /> */}
+                                {/*여기에 차트 표시*/}
+                                <Chart options={options} series={series} type="line" height={150} />
                             </div>
+
                             <div className="board-list_c1_tag"></div>
                         </div>
                         <div className="board-list_c2">{title}</div>
@@ -227,7 +254,6 @@ const Home_board_list = () => {
                 </div>
             </div>
         </form>
-
         {show && (
             <div className="home_hashtag_container_view">
                 <div className="home_hashtag_container_view_container">

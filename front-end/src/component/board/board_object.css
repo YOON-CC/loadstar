@@ -113,6 +113,58 @@
         font-weight: bold;
         color: #ffffff;
     }
+    .board_object_title_edit{
+        /*제목*/
+    }
+    .board_object_content_edit{
+        /*내용*/
+    }
+    .board_object_tool_edit_1{
+        background-color: #ffffff0e;
+        height: 77px;
+        width: 50px;
+        font-size: 16px;
+        border-radius: 50px 50px 0px 0px;
+        border: none;
+
+        margin-left: 10px;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 10px;
+        font-weight: bold;
+        color: #fff;
+        margin-top: 10px;
+    }
+    .board_object_tool_edit_1:hover{
+        background-color: #82828246;
+    }
+    .board_object_tool_edit_2{
+        background-color: #ffffff0e;
+        height: 77px;
+        width: 50px;
+        font-size: 16px;
+        border-radius: 0px 0px 50px 50px ;
+        border: none;
+
+        margin-left: 10px;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 10px;
+        font-weight: bold;
+        color: #fff;
+        margin-top: 10px;
+    }
+    .board_object_tool_edit_2:hover{
+        background-color: #82828246;
+    }
     .board_object_hashtag{
         position: relative;
         /* background-color: rgb(124, 124, 124); */
@@ -152,9 +204,11 @@
         transform: translate(-50%);
         border-radius: 10px;
         display: flex;
+        justify-content: space-between;
     }
     .board_object_info_owner{
         /* background-color: #251666; */
+        /* width: 200px; */
         height: 100%;
         display: flex;
         justify-content: center;
@@ -162,17 +216,19 @@
 
         color: #ffffff;
         font-weight: bold;
-        margin-left: 20px;
+        margin-left: 25px;
     }
     .board_object_info_edit_container{
         height: 100%;
-        display: flex;
-        justify-content: space-between;
+        /* display: flex;
+        justify-content: space-between; */
         margin-left: 360px;
+        margin-top: 4px;
+        
     }
     .board_object_info_edit_container div{
         /* background-color: #251666; */
-        width: 130px;
+        width: 160px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -684,10 +740,11 @@
         transform: translate(-50%);
         border-radius: 10px;
         display: flex;
+        justify-content: space-between;
     }
     .board_object_info_owner{
         /* background-color: #251666; */
-        width: 200px;
+        /* width: 200px; */
         height: 100%;
         display: flex;
         justify-content: center;
@@ -700,8 +757,10 @@
     }
     .board_object_info_edit_container{
         height: 100%;
-        margin-left: 30px;
+        /* background-color: #0d0042; */
+        /* margin-left: 30px; */
         margin-top: 7px;
+        margin-right: 5px;
     }
     .board_object_info_edit_container div{
         /* background-color: #251666; */

@@ -191,7 +191,15 @@
         padding-bottom: 8px;
     }
     .board_post_container_check_3_hashtag::-webkit-scrollbar {
-        display: none;
+        width: 5px;
+    }
+    .board_post_container_check_3_hashtag::-webkit-scrollbar-thumb {
+        background-color: #ffffff;
+        border-radius: 10px;
+        border: 1px solid transparent;
+    }
+    .board_post_container_check_3_hashtag::-webkit-scrollbar-track {
+        border-radius: 50px;
     }
 
     .none_click_tag{

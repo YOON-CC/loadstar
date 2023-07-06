@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useDispatch } from "react-redux";
 
+
 const ChartComponent = () => {
   //네비게이터, 리덕스
   const navigate = useNavigate();
@@ -51,6 +52,7 @@ const ChartComponent = () => {
           labels: {
             style: {
               colors: '#FFFFFF', // x축 글 색상
+              fontSize: '10px', // x축 글자 크기
             },
           },
         },
@@ -58,6 +60,7 @@ const ChartComponent = () => {
           labels: {
             style: {
               colors: '#FFFFFF', // y축 글 색상
+              fontSize: '10px', // x축 글자 크기
             },
           },
         },
@@ -295,6 +298,11 @@ const ChartComponent = () => {
 
   return (
     <div className="chart_body">
+      <div className="chart_body_not_100">
+        <img src="/image/logo.png" alt="Logo" />
+        <div className='chart_body_not_100_text1'>화면이 너무 작습니다!</div>
+        <div className='chart_body_not_100_text2'>웹버전 전체화면, 100% 밑으로 이용해주세요!</div>
+      </div>
       {/* 헤더 */}
       <div className="chart_header">
         <div className="chart_header_c1">

@@ -116,6 +116,10 @@ const Board_object = () => {
     const [bookmark, setBookmark] = useState('');
     const [bookmark_state, setBookmark_state] = useState(null); // 북마크 상태변화를 강제로 수행
 
+    //편집 강제 수행
+    const [edit_state, setEdit_state] = useState(null); // 북마크 상태변화를 강제로 수행
+
+
     const handleBoardView = async () => {
 
         try {   
@@ -144,6 +148,7 @@ const Board_object = () => {
 
                 setBoardview_commentwrite(0);
                 setBoardview_commentdelete(0);
+                setEdit_state(0);
                 
                 setBookmark(response.data.bookmark)
             }
@@ -157,7 +162,7 @@ const Board_object = () => {
     useEffect(() => {
         // 페이지가 로드될 때 한 번만 호출되는 로직
         handleBoardView();
-    }, [boardview_commentwrite, bookmark, bookmark_state, boardview_commentdelete]);
+    }, [boardview_commentwrite, bookmark, bookmark_state, boardview_commentdelete, edit_state]);
 
     const hashtagElements = boardview_hashtags.map((hashtag, index) => (
         <div key={index}>{hashtag}</div>
@@ -314,7 +319,134 @@ const Board_object = () => {
 
         }
     }
+    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@편집@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+    /*편집모드*/
+    const [boardedit_mode, setBoardEdit_mode] = useState(false);
+    const handleEditmode = (event) => {
+        setBoardEdit_mode(!boardedit_mode)
+    };
 
+    /*제목변경*/
+    const [boardedit_title, setBoardedit_title] = useState(boardview_title);
+
+    const handleboardedit_titleChange = (event) => { //년도
+        setBoardedit_title(event.target.value)
+    };
+    /*해시태그 변경*/
+    const [send_edit_hashtag, setSendEditHashtag] = useState([]);
+
+    /*내용변경*/
+    const [boardedit_content, setBoardedit_content] = useState(boardview_content);
+    const handleboardedit_contentChange = (event) => { //년도
+        setBoardedit_content(event.target.value)
+    };
+
+    const handleBoardEditSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await axios.patch(`http://13.125.16.222/boards/${boardview_boardId}`, {
+                title : boardedit_title,
+                content : boardedit_content,
+                hashtags : send_edit_hashtag
+            }, 
+            {
+                headers: {
+                    'X-ACCESS-TOKEN': access_token,
+                    'X-REFRESH-TOKEN': refresh_token
+                }
+            });
+            if (response.status === 200) {
+                setBoardEdit_mode(false)
+                setEdit_state(1)
+            }
+
+        } catch (error) {
+            console.error('PATCH 요청 실패:', error);
+            // 에러 처리 작업 추가
+        }
+    };
+    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@해시태그 편집들@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+    /*해시테그 boardview_hashtags*/
+    const [edit_hashtags, setEditHashtags] = useState([
+        { text: '질문글', selected: false },
+
+        { text: '비현직자', selected: false },
+        { text: '현직자', selected: false },
+        { text: '전공자', selected: false },
+        { text: '비전공자', selected: false },
+        { text: 'front', selected: false },
+        { text: 'back', selected: false },
+
+        { text: 'html', selected: false },
+        { text: 'css', selected: false },
+        { text: 'javascript', selected: false },
+        { text: 'typescript', selected: false },
+        { text: 'react', selected: false },
+        { text: 'java', selected: false },
+        { text: 'python', selected: false },
+        { text: 'spring', selected: false },
+        { text: 'springboot', selected: false },
+        { text: 'node.js', selected: false },
+
+        { text: '운영체제', selected: false },
+        { text: '네트워크', selected: false },
+        { text: '자료구조', selected: false },
+        { text: '컴퓨터구조', selected: false },
+        { text: '컴파일러', selected: false },
+        { text: '알고리즘', selected: false },
+        { text: '데이터베이스', selected: false },
+
+        { text: '부트캠프', selected: false },
+        { text: '개발외주', selected: false },
+    ]);
+    useEffect(() => {
+        setEditHashtags((prevEditHashtags) => {
+          return prevEditHashtags.map((editHashtag) => {
+            return {
+              ...editHashtag,
+              selected: boardview_hashtags.some((hashtag) => hashtag === editHashtag.text),
+            };
+          });
+        });
+      }, [boardview_hashtags]);
+
+    const handleClick = (index) => {
+        setEditHashtags((prevHashtags) => {
+            const updatedHashtags = prevHashtags.map((hashtag, i) => {
+                if (i === index) {
+                    return { ...hashtag, selected: !hashtag.selected };
+                } else if (hashtag.text === '비현직자' && prevHashtags[index].text === '현직자') {
+                    return { ...hashtag, selected: false };
+                } else if (hashtag.text === '현직자' && prevHashtags[index].text === '비현직자') {
+                    return { ...hashtag, selected: false };
+                } else if (hashtag.text === '전공자' && prevHashtags[index].text === '비전공자') {
+                    return { ...hashtag, selected: false };
+                } else if (hashtag.text === '비전공자' && prevHashtags[index].text === '전공자') {
+                    return { ...hashtag, selected: false };
+                } else if (hashtag.text === 'front' && prevHashtags[index].text === 'back') {
+                    return { ...hashtag, selected: false };
+                } else if (hashtag.text === 'back' && prevHashtags[index].text === 'front') {
+                    return { ...hashtag, selected: false };
+                } else {
+                    return hashtag;
+                }
+            });
+      
+          return updatedHashtags;
+        });
+    };
+
+    useEffect(() => {
+        const selectedHashtags = edit_hashtags.filter((hashtag) => hashtag.selected);
+        const selectedHashtagTexts = selectedHashtags.map((hashtag) => hashtag.text);
+        setSendEditHashtag(selectedHashtagTexts);
+    }, [edit_hashtags]);
+
+    console.log(send_edit_hashtag)
     /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@다양한 함수들@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -356,29 +488,52 @@ const Board_object = () => {
                 </div>
 
                 {/* 제목*/}
-                <div className="board_object_title">
-                    {boardview_title}
-                </div>
+                {boardedit_mode === false && (
+                    <div className="board_object_title">
+                        {boardview_title}
+                    </div>
+                )}
+                {boardedit_mode === true && (
+                    <div className="board_object_title">
+                        <input className="board_object_title_edit" placeholder={boardview_title} onChange={handleboardedit_titleChange}></input>
+                    </div>
+                )}
 
                 {/* 해시테그*/}
-                <div className="board_object_hashtag">
-                    {hashtagElements}
-                </div>
+                {boardedit_mode === false && (
+                    <div className="board_object_hashtag">
+                        {hashtagElements}
+                    </div>
+                )}
+                {boardedit_mode === true && (
+                    <div>
+                        {edit_hashtags.map((hashtag, index) => (
+                        <div key={index} style={{ backgroundColor: hashtag.selected ? 'yellow' : 'green' }} onClick={() => handleClick(index)}>
+                            {hashtag.text}
+                        </div>
+                        ))}
+                    </div>
+                )}
+                
+
             </div>
 
             {/* 그래프*/}
             <div className="board_object_chart_container">
                 <div id="chart" />
             </div>
-            {/* <div id="chart" />
-            <div className="board_object_graph">
-                <img className="board_object_graph_img" src="/image/그래프_사진.png"></img>
-            </div>   */}
 
             {/* 내용*/}
-            <div className="board_object_content">
-                {boardview_content}
-            </div>
+            {boardedit_mode === false && (
+                <div className="board_object_content">
+                    {boardview_content}
+                </div>
+                )}
+            {boardedit_mode === true && (
+                <div className="board_object_content">
+                    <input className="board_object_content_edit" placeholder={boardview_content} onChange={handleboardedit_contentChange}></input>
+                </div>
+            )}
             
             {/*구분라인*/}
             <div className="board_object_line"></div>
@@ -408,10 +563,11 @@ const Board_object = () => {
             </div>
 
             {/*즐겨찾기, 게시글 삭제 및 수정*/}
+            {boardedit_mode === false && (
             <div className="board_object_tool">
                 <div className="board_object_tool_c1">
-                    {user_Id == boardview_userId && <button className = "board_object_tool_c1_btn" onClick={handleBoarddelete}>EDIT</button>} 
-                    {user_Id != boardview_userId && <div className = "no_board_object_tool_c1_btn ">EDIT</div>} 
+                    {user_Id == boardview_userId && <button className = "board_object_tool_c1_btn" onClick={handleEditmode}>EDIT</button>} 
+                    {user_Id != boardview_userId && <div className = "no_board_object_tool_c1_btn">EDIT</div>} 
                 </div>
                 <div className="board_object_tool_c2">
                     {user_Id == boardview_userId && <button className = "board_object_tool_c2_btn" onClick={handleBoarddelete}>DELETE</button>}
@@ -422,6 +578,22 @@ const Board_object = () => {
                     {bookmark === true && <img className="star" src="/image/star_2.png" onClick={handleBoardBookmark_2}></img>} 
                 </div>                
             </div>
+            )}
+            {boardedit_mode === true && (
+            <div className="board_object_tool">
+                <form onSubmit={handleBoardEditSubmit}>
+                    <button className="board_object_tool_edit_1">
+                        저장
+                    </button>
+                </form>
+                <div className="board_object_tool_edit_2" onClick={handleEditmode}>
+                    취소
+                </div>           
+            </div>
+            )}
+
+
+
         </div>
     )
     

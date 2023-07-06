@@ -161,7 +161,6 @@ const Join = () => {
                 console.log(response.data);
                 store.dispatch({type:'WELCOME', payload: {
                     number: 6,
-                    userId: response.data.userId
                 }});
                 
             }
@@ -172,17 +171,17 @@ const Join = () => {
     };
 
     //여기서 회원가입 가능 여부를 판단해야 한다.
-    // const handleJoin = () => {
-    //     store.dispatch({type:'WELCOME', payload: {
-    //         number: 6,
-    //         userId: 5
-    //     }});
-    // };
+    const handleJoin = () => {
+        store.dispatch({type:'WELCOME', payload: {
+            number: 6,
+            userId: 5
+        }});
+    };
 
     return (
         <div className="join-box">
             <h2>회원가입</h2>
-            {/* <button onClick={handleJoin}></button> */}
+            <button onClick={handleJoin}></button>
             <form onSubmit={handlejoinSubmit}>
                 {/* @@@ */}
                 <div className="newid-container">
