@@ -4,7 +4,7 @@ import store from "../../store";
 import axios from 'axios';
 import ApexCharts from 'apexcharts';
 import { Link, useNavigate} from 'react-router-dom';
-
+/*그래프 그리는 부분 통합, api 통합, css 통합 */
 
 const Board_object = () => {
     /*네비게이트*/
@@ -403,6 +403,7 @@ const Board_object = () => {
         { text: '부트캠프', selected: false },
         { text: '개발외주', selected: false },
     ]);
+      
     useEffect(() => {
         setEditHashtags((prevEditHashtags) => {
           return prevEditHashtags.map((editHashtag) => {
