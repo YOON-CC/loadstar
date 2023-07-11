@@ -31,8 +31,11 @@ const Search_id = () => {
                 }
             });
 
-            console.log(response.data);
-            setShowId(response.data.message)
+            if (response.status === 200){
+                console.log(response.data);
+                setShowId(response.data.message)
+            }
+
         }
         catch (error) {
             if (error.response && error.response.status === 400) {

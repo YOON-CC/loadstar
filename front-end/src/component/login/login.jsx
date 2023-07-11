@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./login.css";
 import store from "../../store";
+import Swal from 'sweetalert2';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
@@ -57,7 +58,12 @@ const Login = () => {
                 }
             }   
             catch (error) {
-                console.error(error);
+                Swal.fire({
+                    title: 'Login',
+                    text: '로그인에 실패했습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                });
             }
         };
         
@@ -66,13 +72,13 @@ const Login = () => {
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="user-box">
-                        <input type="text" value={id} onChange={handleidChange}></input>
+                        <input type="text" value={id} onChange={handleidChange} maxLength={10}></input>
                         <label>Id</label>
                     </div>
 
                     <div className="user-box">
                         {/* password */}
-                        <input type="password" value={password} onChange={handlePasswordChange}></input> 
+                        <input type="password" value={password} onChange={handlePasswordChange} maxLength={10}></input> 
                         <label>Password</label>
                     </div>
 

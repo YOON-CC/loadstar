@@ -31,8 +31,12 @@ const Change_pwd = () => {
                 userId: userId, // 회원가입에서 받아온 값으로 대체해야 합니다.
                 password: newpassword,
             });
-            console.log('PATCH 요청 성공:', response.data);
-            store.dispatch({type:'HOME'});
+
+            if (response.status === 200){
+                console.log('PATCH 요청 성공:', response.data);
+                store.dispatch({type:'HOME'});
+            }
+
         } catch (error) {
             console.error('PATCH 요청 실패:', error);
             // 에러 처리 작업 추가
@@ -44,12 +48,12 @@ const Change_pwd = () => {
             <h2>비밀번호 변경</h2>
             <form onSubmit={handleChangeSubmit}>
                 <div className="user-box">
-                    <input type="password" value={newpassword} onChange={handlenewpasswordChange}></input>
+                    <input type="password" value={newpassword} onChange={handlenewpasswordChange} maxLength={10}></input>
                     <label>Password</label>
                 </div>
 
                 <div className="user-box">
-                    <input type="password" value={newpassword_again} onChange={handlenewpassword_againgChange}></input>
+                    <input type="password" value={newpassword_again} onChange={handlenewpassword_againgChange} maxLength={10}></input>
                     <label>Password_again</label>
                 </div>
 

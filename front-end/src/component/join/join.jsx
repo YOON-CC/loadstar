@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import store from "../../store";
+import Swal from 'sweetalert2';
 import "./join.css";
 import axios from 'axios';
 
@@ -78,7 +79,7 @@ const Join = () => {
                 });
             
                 console.log(response.data);
-                if (response.data.check === true){ // 아이디 확인이 된 것이다.
+                if (response.status === 200){ // 아이디 확인이 된 것이다.
                     setSendId(2);
                     setCan_use_newid("사용 가능한 아이디 입니다!")
                 }
@@ -107,7 +108,13 @@ const Join = () => {
                 });
         
                 console.log(response.data);
-                if (response.data.message === "메일 전송이 완료되었습니다."){ // 이메일 승인이 된 것이다.
+                if (response.status === 200){ // 이메일 승인이 된 것이다.
+                    Swal.fire({
+                        title: 'Email',
+                        text: '이메일을 전송했습니다!',
+                        icon: 'success',
+                        confirmButtonText: '확인',
+                    });
                     setSendemail(2);
                 }
             }
@@ -130,13 +137,24 @@ const Join = () => {
                 });
               
                 console.log(response.data);
-                if (response.data.result === true) {
-                  // 코드 승인이 된 것이다.
-                  setSendcode(2);
+                if (response.status === 200) {
+                    Swal.fire({
+                        title: 'Code',
+                        text: '코드승인이 완료되었습니다!',
+                        icon: 'success',
+                        confirmButtonText: '확인',
+                    });
+
+                    setSendcode(2);
                 }
 
             } catch (error) {
-
+                Swal.fire({
+                    title: 'Code',
+                    text: '승인에 실패했습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                });
             }
         }
 
@@ -157,12 +175,13 @@ const Join = () => {
                     "Content-Type": "application/json"
                     }
                 });
-        
-                console.log(response.data);
-                store.dispatch({type:'WELCOME', payload: {
-                    number: 6,
-                }});
-                
+
+                if (response.status === 200){
+                    console.log(response.data);
+                    store.dispatch({type:'WELCOME', payload: {
+                        number: 6,
+                    }});
+                }
             }
             catch (error) {
                 console.error(error);
@@ -187,7 +206,7 @@ const Join = () => {
                 <div className="newid-container">
                     <div className="newid-box_1">
                         <div className="newid-input_text">Id</div>
-                        <input type="text" value={newid} onChange={handlenewidChange} className="newid-input"></input>
+                        <input type="text" value={newid} onChange={handlenewidChange} className="newid-input" maxLength={10}></input>
                     </div>
                     <div className="newid-box_2">
                         <button type="submit" className="newid-box_send" onClick={handlesendidChange}>
@@ -203,11 +222,11 @@ const Join = () => {
                 <div className="newpwd-container">
                     <div className="newpwd-box_1">
                         <div className="newpwd-input_text">Password</div>
-                        <input type="password" value={newpassword} onChange={handlenewpasswordChange} className="newpwd-input"></input>
+                        <input type="password" value={newpassword} onChange={handlenewpasswordChange} className="newpwd-input" maxLength={10}></input>
                     </div>
                     <div className="newpwd-box_2">
                         <div className="newpwd-input_text2">Password_again</div>
-                        <input type="password" value={newpassword_again} onChange={handlenewpassword_againgChange} className="newpwd-input2"></input>
+                        <input type="password" value={newpassword_again} onChange={handlenewpassword_againgChange} className="newpwd-input2" maxLength={10}></input>
                     </div>
                 </div>
                 {/* @@@ */}
@@ -225,12 +244,15 @@ const Join = () => {
                 </div>  
 
                 {/* @@@ */}
-                <div className="newmail_receive_code_container">
-                    <input type="text" value={newcode} onChange={handlenewcodeChange} className="newmail_receive_code" placeholder="code"></input>
-                    <button type="submit" className="newmail_receive_code_send" onClick={handlesendcodeChange}>
-                            확인
-                    </button>
-                </div>
+                {sendemail == 2 && (
+                    <div className="newmail_receive_code_container">
+                        <input type="text" value={newcode} onChange={handlenewcodeChange} className="newmail_receive_code" placeholder="code" maxLength={8}></input>
+                        <button type="submit" className="newmail_receive_code_send" onClick={handlesendcodeChange}>
+                                확인
+                        </button>
+                    </div>
+                )}
+
                 {/* @@@ */}
 
                 <div className="newbtn-container">

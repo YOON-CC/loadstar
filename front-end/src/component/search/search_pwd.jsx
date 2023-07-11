@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./search_pwd.css";
 import store from "../../store";
+import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const Search_pwd = () => {
@@ -50,11 +51,23 @@ const Search_pwd = () => {
                 });
         
                 console.log(response.data);
-                if (response.data.message === "메일 전송이 완료되었습니다."){ // 이메일 승인이 된 것이다.
+                if (response.status === 200){ // 이메일 승인이 된 것이다.
+                    Swal.fire({
+                        title: 'Email',
+                        text: '이메일을 전송했습니다!',
+                        icon: 'success',
+                        confirmButtonText: '확인',
+                    });
                     setSendemail(2);
                 }
             }
             catch (error) {
+                Swal.fire({
+                    title: 'Email',
+                    text: '존재하지 않는 이메일입니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                });
 
             }
         }
@@ -73,14 +86,25 @@ const Search_pwd = () => {
                 });
               
                 console.log(response.data);
-                if (response.data.result === true) {
+                if (response.status === 200) {
                   // 코드 승인이 된 것이다.
-                  setSendcode(2);
-                  setUseridx(response.data.userId)
+                    Swal.fire({
+                        title: 'Code',
+                        text: '코드승인이 완료되었습니다!',
+                        icon: 'success',
+                        confirmButtonText: '확인',
+                    });
+                    setSendcode(2);
+                    setUseridx(response.data.userId)
                 }
 
             } catch (error) {
-
+                Swal.fire({
+                    title: 'Code',
+                    text: '승인에 실패했습니다.',
+                    icon: 'error',
+                    confirmButtonText: '확인',
+                });
             }
         }
     };
@@ -100,13 +124,15 @@ const Search_pwd = () => {
                         </button>
                     </div>
                 </div>
+                {sendemail == 2 && (
+                    <div className="mail_receive_code_container">
+                        <input className="mail_receive_code" placeholder="code" value={newcode} onChange={handlenewcodeChange} maxLength={8}></input>
+                        <button type="submit" className="mail_receive_code_send" onClick={handlesendcodeChange}>
+                                확인
+                        </button>
+                    </div>
+                )}
 
-                <div className="mail_receive_code_container">
-                    <input className="mail_receive_code" placeholder="code" value={newcode} onChange={handlenewcodeChange}></input>
-                    <button type="submit" className="mail_receive_code_send" onClick={handlesendcodeChange}>
-                            확인
-                    </button>
-                </div>
 
                 <div className="stop_search_pwd_container">
                     {newemail !== '' && newcode !== '' && sendemail === 2 && sendcode === 2 ? (
