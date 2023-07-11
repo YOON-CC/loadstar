@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import ApexCharts from 'apexcharts';
 import "./drawing.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import Swal from 'sweetalert2';
+
 import { useDispatch } from "react-redux";
 
 
@@ -109,9 +111,41 @@ const ChartComponent = () => {
     const input1 = document.querySelector('.input1').value; // 예: '2023-1'
     const input2 = document.querySelector('.input2').value; // 예: '2023-5'
 
+    //양식확인
+    if (/^\d{4}-(0[1-9]|1[0-2])$/.test(input1)) {
+      // 올바른 형식인 경우
+      // 처리할 로직 작성
+    } 
+    else {
+      // 올바르지 않은 형식인 경우
+      Swal.fire({
+        title: '양식을 올바르게 작성해주세요!',
+        text: 'ex) 2023-08',
+        icon: 'warning',
+        confirmButtonText: '확인',
+      });
+      return 
+    }
+    if (/^\d{4}-(0[1-9]|1[0-2])$/.test(input2)) {
+      // 올바른 형식인 경우
+      // 처리할 로직 작성
+    } 
+    else {
+      // 올바르지 않은 형식인 경우
+      Swal.fire({
+        title: '양식을 올바르게 작성해주세요!',
+        text: 'ex) 2023-08',
+        icon: 'warning',
+        confirmButtonText: '확인',
+      });
+      return 
+    }
+
     // 입력값에서 연도와 월을 추출
     const [year1, month1] = input1.split('-');
     const [year2, month2] = input2.split('-');
+
+
 
     // 연도와 월을 기반으로 Date 객체 생성 (일은 1일로 설정)
     const date1 = new Date(`${year1}-${month1}-1`);
@@ -310,12 +344,9 @@ const ChartComponent = () => {
         </div>
         <div className="chart_header_c2">
           <div className="chart_header_c2_b1" onClick={handleLogout}>로그아웃</div>
-          <Link to="/mypage">
+          <Link to="/mypage" style={{ textDecoration: 'none' }}>
             <div className="chart_header_c2_b2">마이페이지</div>
           </Link>
-          <div className="chart_header_c2_b3">
-            <img src="/image/alarm.png" alt="Alarm" />
-          </div>
         </div>
       </div>
 
@@ -369,8 +400,8 @@ const ChartComponent = () => {
                   <div className="chart_question_container_c2_container_period">
                     <div className="chart_question_container_c2_container_period_title_1">기간을 입력해주세요! 시작일, 종료일(현재까지)</div>
                     <div className="chart_question_container_c2_container_period_input">
-                      <input type="text" className="input1" value={input1_clear} placeholder="시작일 ex) 2023-01" onChange={e => setInput1_clear(e.target.value)}/>
-                      <input type="text" className="input2" value={input2_clear} placeholder="종료일 ex) 2023-12" onChange={e => setInput2_clear(e.target.value)}/>
+                      <input type="text" className="input1" value={input1_clear} placeholder="시작일 ex) 2023-01" onChange={e => setInput1_clear(e.target.value)} maxLength={7}/>
+                      <input type="text" className="input2" value={input2_clear} placeholder="종료일 ex) 2023-12" onChange={e => setInput2_clear(e.target.value)} maxLength={7}/>
                       <div className= "addition_btn" onClick={handleAddData_addition}>+</div>
                     </div>
                   </div>
@@ -387,7 +418,7 @@ const ChartComponent = () => {
             </div>
 
             <div className="chart_question_container_c2_b2">
-              {question !== '저장' && <button onClick={handleNextQeution}>다음</button>}
+              {question !== '저장' && yesNoBtn1 !== '' && <button onClick={handleNextQeution}>다음</button>}
             </div>
           </div>
         </div>

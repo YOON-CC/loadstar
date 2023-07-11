@@ -244,7 +244,7 @@
         color: #4a3b8b;
         /* background-color: blueviolet; */
     }
-    .board_post_container_detail input {
+    .board_post_container_detail textarea {
         height: 100px;
         width: 100%;
 
@@ -256,9 +256,11 @@
         font-size: 12px;
         font-weight: bold;
         margin-top: 10px;
+        margin-left: -4px;
         box-shadow: 0 0px 5px 0 rgb(147, 146, 146);
-        outline: none;
 
+        resize: none; /* 사용자가 크기 조절하지 못하도록 비활성화 */
+        outline: none;
         
     }
 
@@ -270,6 +272,21 @@
         margin-top: 20px;
         display: flex;
         justify-content: space-evenly;
+    }
+    .board_post_container_button_post_no{
+        background-color:#d6d5d5 ;
+        height: 100%;
+        width: 130px;
+
+        border-radius: 10px;
+        border: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-weight: bold;
+        font-size: 13px;
     }
 
     .board_post_container_button_post{
@@ -557,21 +574,21 @@
         color: #4a3b8b;
         /* background-color: blueviolet; */
     }
-    .board_post_container_detail input {
+    .board_post_container_detail textarea {
         height: 100px;
         width: 100%;
 
         /* background-color: rgb(58, 48, 114); */
         border-radius: 10px;
         border : 2px solid #4a3b8b;
-        
+        margin-left: -4px;
         color: #4a3b8b;
         font-size: 10px;
         font-weight: bold;
         margin-top: 10px;
         box-shadow: 0 0px 5px 0 rgb(147, 146, 146);
+        resize: none; /* 사용자가 크기 조절하지 못하도록 비활성화 */
         outline: none;
-
         
     }
 
@@ -596,6 +613,22 @@
         color: #fff;
         font-weight: bold;
     }
+
+    .board_post_container_button_post_no{
+        background-color:#d6d5d5 ;
+        height: 100%;
+        width: 110px;
+        border-radius: 10px;
+        border: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
     .board_post_container_button_post:hover{
         background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
         cursor: pointer;

@@ -45,7 +45,7 @@
     }
     .chart_header_c2{
         /* background-color: aqua; */
-        width: 220px;
+        width: 195px;
 
         display: flex;
         justify-content: space-evenly;
@@ -162,7 +162,7 @@
         border-radius: 15px;
         border: none;
         margin-top: 145px;
-        margin-left: 20px;
+        margin-left: 10px;
 
         color: #ffffff;
     }
@@ -382,10 +382,11 @@
         border-radius: 15px;
         border: none;
         margin-top: 145px;
-        margin-right: 20px;
+        margin-right: 10px;
 
         color: #ffffff;
     }
+    
     .chart_question_container_c2_b2 button:hover{
         background-color: rgba(255, 255, 255, 0.053);
         cursor: pointer;

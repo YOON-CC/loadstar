@@ -1,6 +1,7 @@
 import React, { useState, Component } from "react";
 import "./board_post.css";
 import store from "../../store";
+import Swal from 'sweetalert2';
 import axios from 'axios';
 import { Link, useNavigate  } from 'react-router-dom';
 import Home_header from '../header/home_header';
@@ -47,27 +48,27 @@ const Board_post = () => {
     const [d5, setD5] = useState(0);
     const [d6, setD6] = useState(0);
 
-    const handleTagClick = (tag) => {
-        if (tag === "비현직자") {
-          setD1(d1 === 0 ? tag : 0);
-          setD2(0);
-        } else if (tag === "현직자") {
-          setD2(d2 === 0 ? tag : 0);
-          setD1(0);
-        } else if (tag === "전공자") {
-          setD3(d3 === 0 ? tag : 0);
-          setD4(0);
-        } else if (tag === "비전공자") {
-          setD4(d4 === 0 ? tag : 0);
-          setD3(0);
-        } else if (tag === "front") {
-          setD5(d5 === 0 ? tag : 0);
-          setD6(0);
-        } else if (tag === "back") {
-          setD6(d6 === 0 ? tag : 0);
-          setD5(0);
-        }
-      };
+    // const handleTagClick = (tag) => {
+    //     if (tag === "비현직자") {
+    //       setD1(d1 === 0 ? tag : 0);
+    //       setD2(0);
+    //     } else if (tag === "현직자") {
+    //       setD2(d2 === 0 ? tag : 0);
+    //       setD1(0);
+    //     } else if (tag === "전공자") {
+    //       setD3(d3 === 0 ? tag : 0);
+    //       setD4(0);
+    //     } else if (tag === "비전공자") {
+    //       setD4(d4 === 0 ? tag : 0);
+    //       setD3(0);
+    //     } else if (tag === "front") {
+    //       setD5(d5 === 0 ? tag : 0);
+    //       setD6(0);
+    //     } else if (tag === "back") {
+    //       setD6(d6 === 0 ? tag : 0);
+    //       setD5(0);
+    //     }
+    //   };
 
       
     const [h1, setH1] = useState(0);
@@ -127,15 +128,18 @@ const Board_post = () => {
             //요청 성공
             if (response.status === 200) {
                 // store.dispatch({type:"AFTER_LOGIN"});
+                Swal.fire({
+                    title: 'Post',
+                    text: '게시물을 등록했습니다!',
+                    icon: 'success',
+                    confirmButtonText: '확인',
+                });
                 console.log("성공")
-
-                
                 navigate('/');
               
             }
         }
         catch (error) {
-
         }
     }
     
@@ -146,7 +150,7 @@ const Board_post = () => {
                 <h2>게시글 작성</h2>
                 <form onSubmit={handlepostSubmit}>
                     <div className="board_post_container_title">
-                        <input type="text" onChange={handletitleChange}></input>
+                        <input type="text" onChange={handletitleChange} maxLength={20}></input>
                         <label>제목</label>
                     </div>
 
@@ -261,17 +265,23 @@ const Board_post = () => {
 
                     <div className="board_post_container_detail">
                         <div>내용</div>
-                        <input type="text" onChange={handlecontentChange}></input>
+                        <textarea type="text" onChange={handlecontentChange}></textarea>
 
                     </div>
 
-                    <div className="board_post_container_button">
-                        <button className="board_post_container_button_post">게시글 post</button>
-                        <Link to="/"><div className="board_post_container_button_cancel">취소</div></Link>
-                        {/* <div className="board_post_container_button_cancel" onClick={function(){
-                            store.dispatch({type:"AFTER_LOGIN"});
-                        }.bind(this)}>취소</div> */}
-                    </div>   
+                    {(showgraph === '' || title === '' || content ==='') && (
+                        <div className="board_post_container_button">
+                            <div className="board_post_container_button_post_no">게시글 post</div>
+                            <Link to="/" style={{ textDecoration: 'none' }}><div className="board_post_container_button_cancel">취소</div></Link>
+                        </div>   
+                    )}
+
+                    {showgraph !== '' && title !== '' && content !=='' && (
+                        <div className="board_post_container_button">
+                            <button className="board_post_container_button_post">게시글 post</button>
+                            <Link to="/" style={{ textDecoration: 'none' }}><div className="board_post_container_button_cancel">취소</div></Link>
+                        </div>   
+                    )}
 
                 </form>
             </div>

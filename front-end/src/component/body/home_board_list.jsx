@@ -201,50 +201,46 @@ const Home_board_list = () => {
             
             const options = {
                 chart: {
-                    height: 350,
-                    type: 'rangeBar',
-                    zoom: {
-                        enabled: false,
-                      },
-                      toolbar: {
-                        show: false, // 햄버거 바 숨기기
-                      },
+                  height: 350,
+                  type: 'rangeBar',
+                  zoom: {
+                    enabled: false,
+                  },
+                  toolbar: {
+                    show: false, // 햄버거 바 숨기기
+                  },
                 },
                 plotOptions: {
-                    bar: {
-                      horizontal: true,
-                      barHeight: 10,
-                      borderRadius: 2,
-                    },
+                  bar: {
+                    horizontal: true,
+                    barHeight: 10,
+                    borderRadius: 2,
                   },
-                  xaxis: {
-                    type: 'datetime',
-                    labels: {
-                        style: {
-                          colors: '#ffffff', // 원하는 글자색 지정
-                        },
-                      },
-                      axisBorder: {
-                        show: false, // 세로 축 선 색상 지정
-                      },
-                    
+                },
+                xaxis: {
+                  type: 'datetime',
+                  labels: {
+                    show: false, // x축 레이블 숨기기
                   },
-                  yaxis: {
-
-                    show: false,
+                  axisBorder: {
+                    show: false, // 세로 축 선 숨기기
                   },
-                  colors: ['#ffffff'],
+                },
+                yaxis: {
+                  show: false, // y축 숨기기
+                },
+                colors: ['#ffffff'],
               };
               
-            const series = [
+              const series = [
                 {
-                    data : chartData,
-                }
-              ]
+                  data: chartData,
+                },
+              ];
           
 
             updatedDivElements.push(
-                <Link to={`/board/${board_Id}`} key={board_Id}>
+                <Link to={`/board/${board_Id}`} key={board_Id} style={{ textDecoration: 'none' }}>
                     <div className="board-list" onClick={() => localStorage.setItem('board_Id', board_Id)}>
                         <div className="board-list_c1">
 
@@ -284,7 +280,8 @@ const Home_board_list = () => {
         <form>
             <div className="home_hashtag_body">
                 <div className="home_hashtag_container">
-                    <div className="hashtag" onClick={hashtag_Show}>해시태그 고르기</div>
+                    <div className="hashtag" onClick={hashtag_Show}>해시태그 고르기 <img src="/image/click_hastag.png"></img></div>
+                    
                 </div>
             </div>
         </form>

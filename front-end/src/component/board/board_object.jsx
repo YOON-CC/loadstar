@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./board_object.css";
+import Swal from 'sweetalert2';
 import store from "../../store";
 import axios from 'axios';
 import ApexCharts from 'apexcharts';
@@ -183,6 +184,12 @@ const Board_object = () => {
             });
             
             if (response.status === 200) {
+                Swal.fire({
+                    title: '댓글삭제',
+                    text: '댓글을 삭제했습니다!',
+                    icon: 'success',
+                    confirmButtonText: '확인',
+                });
                 setBoardview_commentdelete(1)
             }
         }
@@ -238,9 +245,14 @@ const Board_object = () => {
             });
             // console.log(response.data);
 
-            // if (response.status === 200) {
-
-            // }
+            if (response.status === 200) {
+                Swal.fire({
+                    title: '댓글작성',
+                    text: '댓글작성을 완료했습니다!',
+                    icon: 'success',
+                    confirmButtonText: '확인',
+                });
+            }
         }
         catch (error) {
 
@@ -345,6 +357,16 @@ const Board_object = () => {
 
     const handleBoardEditSubmit = async (event) => {
         event.preventDefault();
+        
+        if (boardedit_title === '' || boardedit_content === ''){
+            Swal.fire({
+                title: 'Edit',
+                text: '제목 또는 내용을 입력해주세요!',
+                icon: 'warning',
+                confirmButtonText: '확인',
+            });
+        }
+        console.log(boardedit_title, boardedit_content, send_edit_hashtag)
         try {
             const response = await axios.patch(`http://13.125.16.222/boards/${boardview_boardId}`, {
                 title : boardedit_title,
@@ -358,11 +380,23 @@ const Board_object = () => {
                 }
             });
             if (response.status === 200) {
+                Swal.fire({
+                    title: 'Edit',
+                    text: '게시물이 수정되었습니다!',
+                    icon: 'success',
+                    confirmButtonText: '확인',
+                });
                 setBoardEdit_mode(false)
                 setEdit_state(1)
             }
 
         } catch (error) {
+            Swal.fire({
+                title: 'Edit',
+                text: '편집되지 않았습니다!',
+                icon: 'error',
+                confirmButtonText: '확인',
+            });
             console.error('PATCH 요청 실패:', error);
             // 에러 처리 작업 추가
         }
@@ -469,12 +503,7 @@ const Board_object = () => {
                 </div>
                 <div className="board_object_header_c2">
                     <div className="board_object_header_c2_b1" onClick={handleLogout}>로그아웃</div>
-
-                    <Link to="/mypage"><div className="board_object_header_c2_b2">마이페이지</div></Link>
-
-                    <div className="board_object_header_c2_b3">
-                        <img src="/image/alarm.png"></img>
-                    </div>
+                    <Link to="/mypage" style={{ textDecoration: 'none' }}><div className="board_object_header_c2_b2">마이페이지</div></Link>
                 </div>
             </div>
 
@@ -507,9 +536,9 @@ const Board_object = () => {
                     </div>
                 )}
                 {boardedit_mode === true && (
-                    <div>
+                    <div className="board_object_hashtag_edit_mode">
                         {edit_hashtags.map((hashtag, index) => (
-                        <div key={index} style={{ backgroundColor: hashtag.selected ? 'yellow' : 'green' }} onClick={() => handleClick(index)}>
+                        <div key={index} style={{ backgroundColor: hashtag.selected ? 'white' : '#0000000e' }} onClick={() => handleClick(index)}>
                             {hashtag.text}
                         </div>
                         ))}
@@ -532,7 +561,7 @@ const Board_object = () => {
                 )}
             {boardedit_mode === true && (
                 <div className="board_object_content">
-                    <input className="board_object_content_edit" placeholder={boardview_content} onChange={handleboardedit_contentChange}></input>
+                    <textarea className="board_object_content_edit" placeholder={boardview_content} onChange={handleboardedit_contentChange}></textarea>
                 </div>
             )}
             
@@ -581,16 +610,19 @@ const Board_object = () => {
             </div>
             )}
             {boardedit_mode === true && (
-            <div className="board_object_tool">
-                <form onSubmit={handleBoardEditSubmit}>
-                    <button className="board_object_tool_edit_1">
-                        저장
-                    </button>
-                </form>
-                <div className="board_object_tool_edit_2" onClick={handleEditmode}>
-                    취소
-                </div>           
-            </div>
+                <div className="board_object_tool">
+                    <form onSubmit={handleBoardEditSubmit}>
+                        <button className="board_object_tool_edit_1">
+                            저장
+                        </button>
+                    </form>
+                    <div className="board_object_tool_edit_2" onClick={handleEditmode}>
+                        취소
+                    </div>           
+                </div>
+            )}
+            {boardedit_mode === true && (
+                <div className="boardedit_mode_background"></div>
             )}
 
 

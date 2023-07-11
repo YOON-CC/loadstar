@@ -93,12 +93,12 @@ const First_question = () => {
         <div>
             <Home_header></Home_header>
             <div className="mypage_container">
-                <div className="mypage_container_1">
+                <div className="mypage_container_1" >
                     <div className="mypage_container_1_box_0" onClick={() => setMypagenum(0)}>회원정보</div>
                     <div className="mypage_container_1_box_1" onClick={() => setMypagenum(1)}>나의활동</div>
                     <div className="mypage_container_1_box_2" onClick={() => setMypagenum(2)}>이용방법</div>
                     <div className="mypage_container_1_box_3" onClick={() => setMypagenum(3)}>ABOUT</div>
-                    <Link to="/"><div className="mypage_container_1_box_4">나가기</div></Link>
+                    <Link to="/" style={{ textDecoration: 'none' }}><div className="mypage_container_1_box_4">나가기</div></Link>
                     {/* <div className="mypage_container_1_box_4" onClick={function(){
                             store.dispatch({type:'AFTER_LOGIN'});
                         }.bind(this)}>나가기</div> */}
