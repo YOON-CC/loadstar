@@ -114,7 +114,7 @@ const Board_post = () => {
         try {
             const response = await axios.post("http://13.125.16.222/boards", {
                 title : title,
-                showGraph : showgraph,
+                showGraph : "y",
                 hashtags : allTags,
                 content : content,
             }, 
@@ -156,7 +156,7 @@ const Board_post = () => {
 
                     <div className="board_post_container_check">
 
-                        <div className="board_post_container_check_1">
+                        {/* <div className="board_post_container_check_1">
                             <div className="board_post_container_check_1_title">show your graph?</div>
                             <div className="board_post_container_check_1_title_container">
                                 <div className ="show_or_not_graph_container" onClick={() => setShowgraph("y")}>
@@ -168,7 +168,7 @@ const Board_post = () => {
                                     {showgraph === "n" && <div className ="show_or_not_graph_container_check">NO</div>}
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className="board_post_container_check_2">
                             <div className="board_post_container_check_2_title">Is it a question?</div>
@@ -269,14 +269,14 @@ const Board_post = () => {
 
                     </div>
 
-                    {(showgraph === '' || title === '' || content ==='') && (
+                    {(title === '' || content ==='') && (
                         <div className="board_post_container_button">
                             <div className="board_post_container_button_post_no">게시글 post</div>
                             <Link to="/" style={{ textDecoration: 'none' }}><div className="board_post_container_button_cancel">취소</div></Link>
                         </div>   
                     )}
 
-                    {showgraph !== '' && title !== '' && content !=='' && (
+                    {title !== '' && content !=='' && (
                         <div className="board_post_container_button">
                             <button className="board_post_container_button_post">게시글 post</button>
                             <Link to="/" style={{ textDecoration: 'none' }}><div className="board_post_container_button_cancel">취소</div></Link>
