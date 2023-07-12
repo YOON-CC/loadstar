@@ -187,7 +187,68 @@ const Search_pwd = () => {
                         color: #4a3b8b;
                         text-align: center;
                     }
-
+                    .email-container{
+                        position: relative;
+                        /* background-color: aquamarine; */
+                        height: 60px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-evenly;
+                    }
+                
+                    .email-box_1{
+                        height: 90%;
+                        width: 300px;
+                        font-size: 16px;
+                        color: #4a3b8b;
+                        /* background-color: blue; */
+                    }
+                
+                    .email-input_text{
+                        height: 10px;
+                        width: 100%;
+                        font-size: 13px;
+                        /* background-color: rgb(255, 183, 94); */
+                    }
+                
+                    .email-input{
+                        height: 40%;
+                        width: 100%;
+                        font-size: 16px;
+                        color: #4a3b8b;
+                        border: none;
+                        background: transparent;
+                        border-bottom: 1px solid #4a3b8b;
+                        margin-top: 15px;
+                        outline: none;
+                        /* background-color: rgb(255, 183, 94); */
+                        padding-bottom: 5px;
+                
+                    }
+                
+                
+                    .email-box_2{
+                        /* background-color: blueviolet; */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                    }
+                
+                    .email-box_send{
+                        height: 40px;
+                        width: 100px;
+                        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+                        border-radius: 10px;
+                        border: none;
+                        color: #fff;
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                    .email-box_send:hover{
+                        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+                        cursor: pointer;
+                    }
                     .mail_receive_code_container{
                         /* background-color: beige; */
                         margin-top: 10px;
