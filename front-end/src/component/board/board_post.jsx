@@ -47,29 +47,6 @@ const Board_post = () => {
     const [d4, setD4] = useState(0);
     const [d5, setD5] = useState(0);
     const [d6, setD6] = useState(0);
-
-    // const handleTagClick = (tag) => {
-    //     if (tag === "비현직자") {
-    //       setD1(d1 === 0 ? tag : 0);
-    //       setD2(0);
-    //     } else if (tag === "현직자") {
-    //       setD2(d2 === 0 ? tag : 0);
-    //       setD1(0);
-    //     } else if (tag === "전공자") {
-    //       setD3(d3 === 0 ? tag : 0);
-    //       setD4(0);
-    //     } else if (tag === "비전공자") {
-    //       setD4(d4 === 0 ? tag : 0);
-    //       setD3(0);
-    //     } else if (tag === "front") {
-    //       setD5(d5 === 0 ? tag : 0);
-    //       setD6(0);
-    //     } else if (tag === "back") {
-    //       setD6(d6 === 0 ? tag : 0);
-    //       setD5(0);
-    //     }
-    //   };
-
       
     const [h1, setH1] = useState(0);
     const [h2, setH2] = useState(0);
@@ -155,21 +132,6 @@ const Board_post = () => {
                     </div>
 
                     <div className="board_post_container_check">
-
-                        {/* <div className="board_post_container_check_1">
-                            <div className="board_post_container_check_1_title">show your graph?</div>
-                            <div className="board_post_container_check_1_title_container">
-                                <div className ="show_or_not_graph_container" onClick={() => setShowgraph("y")}>
-                                    {(showgraph === "n" || showgraph === '') && <div className ="show_or_not_graph_container_default">YES</div>}
-                                    {showgraph === "y" && <div className ="show_or_not_graph_container_check">YES</div>}
-                                </div>
-                                <div className ="show_or_not_graph_container" onClick={() => setShowgraph("n")}>
-                                    {(showgraph === "y" || showgraph === '') && <div className ="show_or_not_graph_container_default">NO</div>}
-                                    {showgraph === "n" && <div className ="show_or_not_graph_container_check">NO</div>}
-                                </div>
-                            </div>
-                        </div> */}
-
                         <div className="board_post_container_check_2">
                             <div className="board_post_container_check_2_title">Is it a question?</div>
                             <div className="board_post_container_check_1_title_container">

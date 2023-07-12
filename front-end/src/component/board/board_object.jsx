@@ -32,7 +32,6 @@ const Board_object = () => {
 
     //그래프
     const [chartData, setChartData] = useState([]);
-    const [whether_drawing, setWhether_drawing] = useState(false);
 
     useEffect(() => {
         if (chartData.length > 0) {
@@ -98,7 +97,6 @@ const Board_object = () => {
     const [boardview_username, setBoardview_username] = useState('');
     const [boardview_title, setBoardview_title] = useState('');
     const [boardview_content, setBoardview_content] = useState('');
-    const [boardview_graph, setBoardview_graph] = useState('');
     const [boardview_hashtags, setBoardview_hashtags] = useState([]);
     const [boardview_comment, setBoardview_comment] = useState([]);
     const [boardview_createAt, setBoardview_createAt] = useState('');
@@ -139,7 +137,6 @@ const Board_object = () => {
                 setBoardview_username(response.data.username)
                 setBoardview_title(response.data.title);
                 setBoardview_content(response.data.content);
-                setBoardview_graph(response.data.careerImage);
                 setBoardview_hashtags(response.data.hashtags);
                 setBoardview_comment(response.data.comments);
                 setBoardview_createAt(response.data.createdAt.split("T")[0]);

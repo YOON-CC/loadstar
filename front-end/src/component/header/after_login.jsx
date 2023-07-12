@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Alarm from "../alarm/alarm";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
