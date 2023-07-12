@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./search_pwd.css";
+// import "./search_pwd.css";
 import store from "../../store";
 import Swal from 'sweetalert2';
 import axios from 'axios';
@@ -154,6 +154,221 @@ const Search_pwd = () => {
                 </div>
 
             </form>
+
+            {/* css스타일 */}
+            <style>
+                {`
+                /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@---------반응형---------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+                @media (min-width: 901px) { /*175 이전*/
+                    .search_pwd-box{
+                        position: absolute;
+                        top: 38%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 500px;
+                        padding: 30px;
+
+                        background: rgb(255, 255, 255);
+                        box-sizing: border-box;
+                        box-shadow: 0px 0px 10px 0px rgb(136, 136, 136), 0px 0px 10px 0px rgb(22, 0, 78);
+                        border-radius: 30px;
+                        margin-top: 100px;
+                    }
+
+                    .search_pwd-box h2 {
+                        margin: 0 0 30px;
+                        padding: 0;
+                        color: #4a3b8b;
+                        text-align: center;
+                    }
+
+                    .mail_receive_code_container{
+                        /* background-color: beige; */
+                        margin-top: 10px;
+                        height: 40px;
+                        display: flex;
+                    }
+
+                    .mail_receive_code{
+                        height: 30px;
+                        width: 100px;
+                        font-size: 16px;
+                        color: #fff;
+                        border: none;
+                        background-color: rgb(59, 59, 59)  ;
+                        outline: none;
+                        /* background-color: rgb(255, 183, 94); */
+                        border-radius: 5px;
+                        text-align: center;
+                        margin-left: 167px;
+                    }
+
+                    .mail_receive_code_send{
+                        height: 32px;
+                        width: 40px;
+                        background-color: rgb(59, 59, 59)  ;
+                        border-radius: 5px;
+                        border: none;
+                        color: #fff;
+                        font-size: 12px;
+                        font-weight: bold;
+                        margin-left: 10px;
+                        cursor: pointer;
+                    }
+
+                    .stop_search_pwd_container{
+                        /* background-color: blueviolet; */
+                        height: 40px;
+                        display: flex;
+                        justify-content: space-evenly;
+                    }
+
+                    .stop_search_pwd_container_button_1{
+                        height: 40px;
+                        width: 120px;
+                        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+                        border-radius: 10px;
+                        border: none;
+                        color: #fff;
+                        font-size: 12px;
+                        font-weight: bold;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        margin-top: 5px;
+                    }
+                    .stop_search_pwd_container_button_1:hover{
+                        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+                        cursor: pointer;
+                    }
+
+                    .stop_search_pwd_container_button_2{
+                        height: 40px;
+                        width: 120px;
+                        background: rgb(205, 205, 205);
+                        border-radius: 10px;
+                        border: none;
+                        color: #acacac;
+                        font-size: 12px;
+                        font-weight: bold;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        margin-top: 5px;
+                    }
+                }
+                /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@---------반응형---------@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+                @media (max-width: 900px) { /*175 이후*/
+                    .search_pwd-box{
+                        position: absolute;
+                        top: 38%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 270px;
+                        padding: 20px;
+
+                        background: rgb(255, 255, 255);
+                        box-sizing: border-box;
+                        box-shadow: 0px 0px 10px 0px rgb(136, 136, 136), 0px 0px 10px 0px rgb(22, 0, 78);
+                        border-radius: 15px;
+                        margin-top: 80px;
+                    }
+
+                    .search_pwd-box h2 {
+                        font-size: 20px;
+                        color: #4a3b8b;
+                        text-align: center;
+                    }
+
+                    .mail_receive_code_container{
+                        /* background-color: beige; */
+                        margin-top: 10px;
+                        height: 40px;
+                        display: flex;
+                    }
+
+                    .mail_receive_code{
+                        height: 25px;
+                        width: 70px;
+                        font-size: 10px;
+                        color: #fff;
+                        border: none;
+                        background-color: rgb(59, 59, 59)  ;
+                        outline: none;
+                        /* background-color: rgb(255, 183, 94); */
+                        border-radius: 5px;
+                        text-align: center;
+                        margin-left: 70px;
+                    }
+
+                    .mail_receive_code_send{
+                        height: 27px;
+                        width: 35px;
+                        background-color: rgb(59, 59, 59)  ;
+                        border-radius: 5px;
+                        border: none;
+                        color: #fff;
+                        font-size: 10px;
+                        font-weight: bold;
+                        margin-left: 10px;
+                        cursor: pointer;
+                    }
+
+                    .stop_search_pwd_container{
+                        /* background-color: blueviolet; */
+                        height: 40px;
+                        display: flex;
+                        justify-content: space-evenly;
+                    }
+
+                    .stop_search_pwd_container_button_1{
+                        height: 35px;
+                        width: 100px;
+                        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+                        border-radius: 10px;
+                        border: none;
+                        color: #fff;
+                        font-size: 12px;
+                        font-weight: bold;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .stop_search_pwd_container_button_1:hover{
+                        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+                        cursor: pointer;
+                    }
+
+                    .stop_search_pwd_container_button_2{
+                        height: 35px;
+                        width: 100px;
+                        background: rgb(205, 205, 205);
+                        border-radius: 10px;
+                        border: none;
+                        color: #acacac;
+                        font-size: 12px;
+                        font-weight: bold;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                `}
+            </style>
         </div>
     )
     
