@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate} from 'react-router-dom';
 
 const Board_delete_animation = () => {
+    
     const navigate = useNavigate();
 
     setTimeout(() => {
