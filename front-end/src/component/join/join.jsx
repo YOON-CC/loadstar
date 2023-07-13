@@ -4,7 +4,6 @@ import Swal from 'sweetalert2';
 import axios from 'axios';
 
 const Join = () => {
-
     //input 변화 상태
     const [newid, setnewId] = useState(''); //아이디
     const [newpassword, setnewPassword] = useState(''); //비밀번호
