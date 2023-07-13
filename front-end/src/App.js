@@ -13,7 +13,7 @@ import Board_object from "./component/board/board_object";
 import Board_delete_animation from "./component/board_delete_animation/board_delete_animation"
 import Drawing from "./component/drawing/drawing";
 import store from "./store";
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 export default class App extends Component{
   state = {
