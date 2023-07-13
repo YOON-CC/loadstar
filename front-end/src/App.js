@@ -27,7 +27,6 @@ export default class App extends Component{
     }.bind(this));
   }
 
-
   render() {
 
     if (this.state.number === 0 || this.state.number === 1 || this.state.number === 2 || this.state.number === 3 ||
