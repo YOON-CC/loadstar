@@ -14,8 +14,7 @@ import Board_delete_animation from "./component/board_delete_animation/board_del
 import Drawing from "./component/drawing/drawing";
 import store from "./store";
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-
-
+///
 export default class App extends Component{
   state = {
     number:store.getState().number,
