@@ -15,7 +15,6 @@ const Join = () => {
     //아이디 중복환인
     const [can_use_newid, setCan_use_newid] = useState('중복확인이 필요합니다!'); //아이디
 
-
     //회원가입 버튼 전, 다른 버튼보내는 상태
     const [sendid, setSendId] = useState(0); //아이디 중복 버튼
     const [sendemail, setSendemail] = useState(0); //이메일 보내기 버튼
@@ -58,15 +57,12 @@ const Join = () => {
         setSendcode(1);
     };
 
-
-
-    //최종 보내기
+    //API 호출
     const handlejoinSubmit = async (event) => {
         event.preventDefault();
 
         //아이디 중복확인
         if(sendid === 1){
-            // 
             try {
                 const response = await axios.get("http://13.125.16.222/users/duplicated-username", {
                     params: {
@@ -90,13 +86,11 @@ const Join = () => {
                     setCan_use_newid("사용할 수 없는 아이디 입니다!")
                 } else {
                     // 네트워크 오류 등의 예외 처리
-                    console.error('API 요청 중 오류 발생:', error);
+                    // console.error('API 요청 중 오류 발생:', error);
                 }            
             }
         }
         if(sendemail === 1){
-            //이메일 중복확인
-            console.log("서울대학교")
             try {
                 const response = await axios.post("http://13.125.16.222/emails/check-email", {
                     email: newemail
@@ -105,8 +99,7 @@ const Join = () => {
                     "Content-Type": "application/json"
                     }
                 });
-        
-                console.log(response.data);
+
                 if (response.status === 200){ // 이메일 승인이 된 것이다.
                     Swal.fire({
                         title: 'Email',
@@ -160,7 +153,6 @@ const Join = () => {
         if (newid && newpassword !== '' && newpassword_again !== ''
         && newemail !== '' && newcode !== '' && newpassword === newpassword_again 
         && sendid === 2 && sendemail === 2 && sendcode === 2){
-            //최종 회원가입
             try {
                 const response = await axios.post("http://13.125.16.222/users/signup", {
                     username: newid,
@@ -188,18 +180,17 @@ const Join = () => {
         }
     };
 
-    //여기서 회원가입 가능 여부를 판단해야 한다.
-    const handleJoin = () => {
-        store.dispatch({type:'WELCOME', payload: {
-            number: 6,
-            userId: 5
-        }});
-    };
+    // const handleJoin = () => {
+    //     store.dispatch({type:'WELCOME', payload: {
+    //         number: 6,
+    //         userId: 5
+    //     }});
+    // };
 
     return (
         <div className="join-box">
             <h2>회원가입</h2>
-            <button onClick={handleJoin}></button>
+            {/* <button onClick={handleJoin}></button> */}
             <form onSubmit={handlejoinSubmit}>
                 {/* @@@ */}
                 <div className="newid-container">

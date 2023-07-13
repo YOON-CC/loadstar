@@ -6,7 +6,6 @@ import axios from 'axios';
 const Change_pwd = () => {
 
     const { number, userId } = store.getState();
-    console.log("비밀번호 변경에서 받은 값", number, userId)
 
     //새 비밀번호
     const [newpassword, setnewPassword] = useState(''); //비밀번호
@@ -21,15 +20,13 @@ const Change_pwd = () => {
         setnewPassword_again(event.target.value)
     };
 
-    //보내기 함수
+    //API 호출
     const handleChangeSubmit = async (event) => {
         event.preventDefault();
 
-        //번수값
-
         try {
             const response = await axios.patch('http://13.125.16.222/users/find-password', {
-                userId: userId, // 회원가입에서 받아온 값으로 대체해야 합니다.
+                userId: userId, 
                 password: newpassword,
             });
 
@@ -40,13 +37,12 @@ const Change_pwd = () => {
                     icon: 'success',
                     confirmButtonText: '확인',
                 });
-                console.log('PATCH 요청 성공:', response.data);
+                // console.log('PATCH 요청 성공:', response.data);
                 store.dispatch({type:'HOME'});
             }
 
         } catch (error) {
-            console.error('PATCH 요청 실패:', error);
-            // 에러 처리 작업 추가
+            // console.error('PATCH 요청 실패:', error);
         }
     };
 

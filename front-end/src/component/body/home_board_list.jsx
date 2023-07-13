@@ -106,7 +106,6 @@ const Home_board_list = () => {
 
         setTag_etc_1(0);
         setTag_etc_2(0);
-        // console.log(board_type)
     };
 
     //페이지 받기작업
@@ -119,7 +118,6 @@ const Home_board_list = () => {
     //헤시태그 고르기 버튼 들어가기
 
     const hashtag_Show = () => {
-        // console.log(board_data[0][0])
         setShow(!show);
     };
     // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -141,7 +139,6 @@ const Home_board_list = () => {
             });
         
             if (response.status === 200) {
-                console.log(response.data)
                 //튜플로 합치기 (boardId, 그래프 보여주기, Q&A여부 ,제목, 해시테그)
                 const combinedArray = response.data.map(item => [item.boardId, item.careerImage, item.title, item.hashtags, item.arr]);                
                 
@@ -150,7 +147,6 @@ const Home_board_list = () => {
                     const newItems = combinedArray.filter(item => !existingIds.includes(item[0]));
                     return [...prevTitle, ...newItems];
                 });
-                console.log(board_data)
             }
             } catch (error) {
             // 에러 처리
@@ -185,16 +181,9 @@ const Home_board_list = () => {
             const hash_tag = board_data[i][3];
             const board_Id = board_data[i][0];
             const chartData = board_data[i][4];
-            console.log(chartData)
-            //그 그래프 없으면,, 있으면,, 조건 이렇게 
+
+            //빈 데이터의 경우 continue
             if (chartData.length === 0) {continue};
-            //https://apexcharts.com/javascript-chart-demos/timeline-charts/basic/
-            //https://apexcharts.com/docs/react-charts/
-            // const chartData = [
-            //     { x: '알고리즘', y: [1654009200000, 1675177200000], rangeName: '2v5q1yh8' },
-            //     { x: '알고리즘', y: [1680274800000, 1688137200000], rangeName: 'e0va4tu5' },
-            //     { x: 'CS', y: [1680274800000, 1685545200000], rangeName: 'cxtc10kwf' },
-            //   ];    
             
             const options = {
                 chart: {
@@ -242,8 +231,6 @@ const Home_board_list = () => {
                         <div className="board-list_c1">
 
                             <div className="board-list_c1_img">
-                                {/* <img className="home_header_body_1_graph_img" src="image/그래프_사진.png" alt="그래프 사진" /> */}
-                                {/*여기에 차트 표시*/}
                                 <Chart className="chanchan" options={options} series={series} type="rangeBar" height = "140" width="250"/>
                             </div>
 
@@ -395,9 +382,10 @@ const Home_board_list = () => {
             </div>
         )}
 
-            <div className="board-list-container">
-                {divElements}
-            </div>
+        <div className="board-list-container">
+            {divElements}
+        </div>
+
         </div>
             {/* css스타일 */}
             <style>

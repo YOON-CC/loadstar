@@ -32,7 +32,6 @@ const First_question = () => {
     const handleMypage_user_info = async () => {
 
         //로컬스토리지 추출
-        const user_Id = localStorage.getItem('user_Id');
         const access_token = localStorage.getItem('access-token');
         
         //쿠키에서 세션 추출 
@@ -41,13 +40,6 @@ const First_question = () => {
         const extractedValue = cookieString.substring(cookieString.indexOf(prefix) + prefix.length);
         const endIndex = extractedValue.indexOf("%");
         const refresh_token = extractedValue.slice(0, endIndex);
-        
-
-        //콘솔로 확인
-        console.log("user id입니다. : ", user_Id)
-        console.log("access_token입니다. : ", access_token)
-        
-        console.log("refresh_token입니다. : ",refresh_token);
 
         try {   
             const response = await axios.get("http://13.125.16.222/users/my-page", {
@@ -56,8 +48,6 @@ const First_question = () => {
                     'X-REFRESH-TOKEN': refresh_token
                 }
             });
-          
-            console.log(response.data);
 
             if (response.status === 200) {
                 setMypage_userId(response.data.username);
@@ -82,7 +72,6 @@ const First_question = () => {
     };
 
     useEffect(() => {
-        // 페이지가 로드될 때 한 번만 호출되는 로직
         handleMypage_user_info();
     }, []);
 
@@ -96,9 +85,6 @@ const First_question = () => {
                     <div className="mypage_container_1_box_2" onClick={() => setMypagenum(2)}>이용방법</div>
                     <div className="mypage_container_1_box_3" onClick={() => setMypagenum(3)}>ABOUT</div>
                     <Link to="/" style={{ textDecoration: 'none' }}><div className="mypage_container_1_box_4">나가기</div></Link>
-                    {/* <div className="mypage_container_1_box_4" onClick={function(){
-                            store.dispatch({type:'AFTER_LOGIN'});
-                        }.bind(this)}>나가기</div> */}
                     <div className="mypage_container_1_box_5"><img className="home_header_body_1_logo_img" src="image/logo.png"></img></div>
                 </div>
                 <div className="mypage_container_2">

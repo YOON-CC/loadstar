@@ -1,5 +1,4 @@
-import React, { useState  , Component, useHistory} from "react";
-import Home_header from "./component/header/home_header";
+import React, {Component} from "react";
 import No_login_home_header from "./component/header/no_login_home_header";
 import Home_board_list from "./component/body/home_board_list";
 import Login from "./component/login/login";
@@ -30,7 +29,6 @@ export default class App extends Component{
 
 
   render() {
-    console.log(this.state.number)
 
     if (this.state.number === 0 || this.state.number === 1 || this.state.number === 2 || this.state.number === 3 ||
         this.state.number === 4 || this.state.number === 5 || this.state.number === 6 || this.state.number === 10) {

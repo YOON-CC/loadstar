@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-import store from "../../store";
-import { Link, useNavigate} from 'react-router-dom';
+import React from "react";
+import { useNavigate} from 'react-router-dom';
 
 const Board_delete_animation = () => {
     const navigate = useNavigate();

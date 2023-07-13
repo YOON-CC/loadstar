@@ -1,16 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
+const Mypage_2 = () => {
+    return (
+        <div className="mypage_2_container">
 
-export default class Mypage_2 extends Component{
+        </div>
+    );
+};
 
-    render() { 
-        console.log(this.state)
-
-        return (
-            
-            <div className="mypage_2_container">
-
-            </div>
-        )
-    }
-}
+export default Mypage_2;

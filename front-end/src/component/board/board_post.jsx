@@ -1,5 +1,4 @@
-import React, { useState, Component } from "react";
-import store from "../../store";
+import React, { useState } from "react";
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { Link, useNavigate  } from 'react-router-dom';
@@ -7,8 +6,6 @@ import Home_header from '../header/home_header';
 
 const Board_post = () => {
     const navigate = useNavigate();
-    //유저 아이디
-    const userId = localStorage.getItem('user_Id');
 
     //토큰 받기
     const access_token = localStorage.getItem('access-token');
@@ -18,14 +15,8 @@ const Board_post = () => {
     const endIndex = extractedValue.indexOf("%");
     const refresh_token = extractedValue.slice(0, endIndex);
 
-
-    //그래프 보여주기 체크
-    const [showgraph, setShowgraph] = useState('');
-    console.log("그래프 보여주기 여부",showgraph)
-
     //게시물 종류(참고글 or 질문글)
     const [posttype, setPosttype] = useState(0);
-    console.log("게시글 종류",posttype)
     
     //제목
     const [title, setTitle] = useState(''); 
@@ -76,13 +67,6 @@ const Board_post = () => {
         e1, e2, posttype
     ].filter(tag => tag !== 0);
 
-
-    console.log("유저아이디:", userId, "토큰:",access_token,refresh_token)
-    console.log("title:", title, "content:",content)
-    console.log("showgraph:", showgraph)
-    console.log("hashtag:", allTags)
-
-
     //api 연결
     const handlepostSubmit = async (event) => {
         event.preventDefault();
@@ -110,7 +94,6 @@ const Board_post = () => {
                     icon: 'success',
                     confirmButtonText: '확인',
                 });
-                console.log("성공")
                 navigate('/');
               
             }

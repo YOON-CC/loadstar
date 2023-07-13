@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect} from 'react';
 import ApexCharts from 'apexcharts';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -76,15 +76,14 @@ const ChartComponent = () => {
 
       chart.addEventListener('click', (event, chartContext, config) => {
         console.log('막대를 클릭했습니다!', config.dataPointIndex);
-          // 클릭한 막대의 인덱스를 가져옵니다.
+          // 클릭한 막대의 인덱스를 가져옴
         const dataIndex = config.dataPointIndex;
 
-        // chartData 배열에서 클릭한 막대를 제외한 새로운 배열을 생성합니다.
+        // chartData 배열에서 클릭한 막대를 제외한 새로운 배열을 생성
         const newData = chartData.filter((_, index) => index !== dataIndex);
 
-        // chartData를 업데이트하여 막대가 제거된 차트를 렌더링합니다.
+        // chartData를 업데이트하여 막대가 제거된 차트를 렌더링
         setChartData(newData);
-        // console.log("삭제",chartData[config.dataPointIndex])
       });
 
       return () => {
@@ -197,7 +196,6 @@ const ChartComponent = () => {
     }
   }
 
-
   //다음 넘기기
   const [question, setQuestion] = useState('Q. 알고리즘(코딩테스트) 공부를 하셨습니까?');
 
@@ -253,7 +251,6 @@ const ChartComponent = () => {
         });
       
         if (response.status === 200) {
-          console.log(response.data);
           //그래프 그렸는지 안그렸는지
           if (response.data.arr.length !== 0){// 이전에 그린 기록이 있다.
             setWhether_drawing(true) 
@@ -274,7 +271,6 @@ const ChartComponent = () => {
   //데이터 보내기
   const handleDrawingInfosend = async (event) => {
     event.preventDefault();
-    console.log("보낸다!",chartData)
 
     if (whether_drawing === false){ // 이전에 데이터가 없고, 새로 넣을때
       try {
@@ -289,7 +285,6 @@ const ChartComponent = () => {
         });
         
         if (response.status === 200) {
-          console.log(response.data);
           navigate('/delete');
         }
           
@@ -311,7 +306,6 @@ const ChartComponent = () => {
         });
         
         if (response.status === 200) {
-          console.log(response.data);
           navigate('/delete');
         }
           

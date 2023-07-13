@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import "./search_pwd.css";
 import store from "../../store";
 import Swal from 'sweetalert2';
 import axios from 'axios';
@@ -36,11 +35,10 @@ const Search_pwd = () => {
         setSendcode(1);
     };
 
+    //API 호출
     const handlejoinSubmit = async (event) => {
         event.preventDefault();
         if(sendemail === 1){
-            //이메일 중복확인
-            console.log("서울대학교")
             try {
                 const response = await axios.post("http://13.125.16.222/emails/find-password/send-email", {
                     email: newemail
@@ -49,9 +47,7 @@ const Search_pwd = () => {
                     "Content-Type": "application/json"
                     }
                 });
-        
-                console.log(response.data);
-                if (response.status === 200){ // 이메일 승인이 된 것이다.
+                if (response.status === 200){ 
                     Swal.fire({
                         title: 'Email',
                         text: '이메일을 전송했습니다!',
@@ -68,26 +64,20 @@ const Search_pwd = () => {
                     icon: 'error',
                     confirmButtonText: '확인',
                 });
-
             }
         }
-        //코드 중복확인
         if(sendcode === 1){
-            console.log("부경대학교")
             try {
                 const response = await axios.get("http://13.125.16.222/emails/find-password/check-key", {
-                  params: {
-                    email: newemail,
-                    key: newcode,
-                  },
-                  headers: {
-                    "Content-Type": "application/json"
-                  }
+                    params: {
+                        email: newemail,
+                        key: newcode,
+                    },
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
                 });
-              
-                console.log(response.data);
                 if (response.status === 200) {
-                  // 코드 승인이 된 것이다.
                     Swal.fire({
                         title: 'Code',
                         text: '코드승인이 완료되었습니다!',
@@ -143,11 +133,7 @@ const Search_pwd = () => {
                             }});
                         }.bind(this)}>비밀번호 변경</div>) : (
                         <div className="stop_search_pwd_container_button_2">비밀번호 변경</div>)}
-
-                    {/* <div className="stop_search_pwd_container_button_1" onClick={function(){
-                        store.dispatch({type:'CHANGE_PWD'});
-                    }.bind(this)}>비밀번호 변경</div> */}
-
+                        
                     <div className="stop_search_pwd_container_button_1" onClick={function(){
                         store.dispatch({type:'HOME'});
                     }.bind(this)}>취소</div>
@@ -353,6 +339,67 @@ const Search_pwd = () => {
                         font-size: 20px;
                         color: #4a3b8b;
                         text-align: center;
+                    }
+                    .email-container{
+                        position: relative;
+                        /* background-color: aquamarine; */
+                        height: 60px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                
+                    .email-box_1{
+                        height: 90%;
+                        width: 170px;
+                        font-size: 16px;
+                        color: #4a3b8b;
+                        /* background-color: blue; */
+                    }
+                
+                    .email-input_text{
+                        height: 10px;
+                        width: 100%;
+                        font-size: 13px;
+                        /* background-color: rgb(255, 183, 94); */
+                    }
+                
+                    .email-input{
+                        height: 40%;
+                        width: 100%;
+                        font-size: 12px;
+                        color: #4a3b8b;
+                        border: none;
+                        background: transparent;
+                        border-bottom: 1px solid #4a3b8b;
+                        margin-top: 15px;
+                        outline: none;
+                        /* background-color: rgb(255, 183, 94); */
+                        padding-bottom: 5px;
+                
+                    }
+                
+                    .email-box_2{
+                        /* background-color: blueviolet; */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                    }
+                
+                    .email-box_send{
+                        height: 40px;
+                        width: 50px;
+                        background: linear-gradient(135deg, #13074b, #372978, #13074b);
+                        border-radius: 7px;
+                        border: none;
+                        color: #fff;
+                        font-size: 10px;
+                        font-weight: bold;
+                    }
+                    .email-box_send:hover{
+                        background: linear-gradient(135deg, #05001a, #0d0042, #05001a);
+                        cursor: pointer;
                     }
 
                     .mail_receive_code_container{

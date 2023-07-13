@@ -5,12 +5,12 @@ const loadStateFromLocalStorage = () => {
     try {
         const serializedState = localStorage.getItem('reduxState');
         if (serializedState === null) {
-            return undefined; // 초기 상태를 반환하거나, 다른 기본값을 설정할 수도 있습니다.
+            return undefined;
         }
         return JSON.parse(serializedState);
     } catch (error) {
-        console.error('Failed to load state from local storage:', error);
-        return undefined; // 초기 상태를 반환하거나, 다른 기본값을 설정할 수도 있습니다.
+        // console.error('Failed to load state from local storage:', error);
+        return undefined; 
     }
 };
 
@@ -46,20 +46,20 @@ function reducer(state = { number: 0 }, action) {
     }
 }
 
-// 초기 상태를 불러옵니다.
+// 초기 상태를 불러오기
 const initialState = loadStateFromLocalStorage();
 
-// 리덕스 스토어를 생성합니다.
+// 리덕스 스토어를 생성
 const store = createStore(reducer, initialState);
 
-// 상태값이 변경될 때마다 로컬 스토리지에 저장합니다.
+// 상태값이 변경될 때마다 로컬 스토리지에 저장
 store.subscribe(() => {
     const state = store.getState();
     try {
         const serializedState = JSON.stringify(state);
         localStorage.setItem('reduxState', serializedState);
     } catch (error) {
-        console.error('Failed to save state to local storage:', error);
+        // console.error('Failed to save state to local storage:', error);
     }
 });
 
@@ -67,7 +67,7 @@ export const clearLocalStorage = () => {
     try {
         localStorage.removeItem('reduxState');
     } catch (error) {
-        console.error('Failed to remove item from local storage:', error);
+        // console.error('Failed to remove item from local storage:', error);
     }
 };
 

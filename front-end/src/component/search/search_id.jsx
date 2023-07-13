@@ -8,7 +8,6 @@ const Search_id = () => {
     //아이디표시
     const [showId, setShowId] = useState('당신의 아이디를 찾아드립니다.'); 
 
-
     //이메일
     const [newemail, setnewemail] = useState(''); 
 
@@ -29,12 +28,10 @@ const Search_id = () => {
                     "Content-Type": "application/json"
                 }
             });
-
             if (response.status === 200){
-                console.log(response.data);
+                // console.log(response.data);
                 setShowId(response.data.message)
             }
-
         }
         catch (error) {
             if (error.response && error.response.status === 400) {
@@ -42,7 +39,7 @@ const Search_id = () => {
                 setShowId("해당 이메일로 가입한 아이디가 없습니다.")
             } else {
                 // 네트워크 오류 등의 예외 처리
-                console.error('API 요청 중 오류 발생:', error);
+                // console.error('API 요청 중 오류 발생:', error);
             }    
         }
     }
@@ -68,7 +65,6 @@ const Search_id = () => {
                         store.dispatch({type:'HOME'});
                     }.bind(this)}>확인/돌아가기</div>
                 </div>
-
             </form>
 
             {/* css스타일 */}

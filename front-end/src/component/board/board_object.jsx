@@ -4,15 +4,10 @@ import store from "../../store";
 import axios from 'axios';
 import ApexCharts from 'apexcharts';
 import { Link, useNavigate} from 'react-router-dom';
-/*그래프 그리는 부분 통합, api 통합, css 통합 */
 
 const Board_object = () => {
     /*네비게이트*/
     const navigate = useNavigate();
-
-    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@토큰, 유저아이디@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
     //로컬스토리지 추출
     const user_Id = localStorage.getItem('user_Id');
     const access_token = localStorage.getItem('access-token');
@@ -24,10 +19,6 @@ const Board_object = () => {
     const extractedValue = cookieString.substring(cookieString.indexOf(prefix) + prefix.length);
     const endIndex = extractedValue.indexOf("%");
     const refresh_token = extractedValue.slice(0, endIndex);
-
-    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@그래프 받아오기@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
     //그래프
     const [chartData, setChartData] = useState([]);
@@ -128,8 +119,6 @@ const Board_object = () => {
                 }
             });
           
-            console.log(response.data);
-
             if (response.status === 200) {
                 setBoardview_boardId(response.data.boardId);
                 setBoardview_userId(response.data.userId); // 게시글을 쓴 사용자 유저 인덱스
@@ -170,7 +159,6 @@ const Board_object = () => {
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
     const handleBoardcommentdelete = async (boardview_comment_userId, event) => {
         event.preventDefault();
-        console.log("ㅎㅇ",boardview_comment_userId);
         try {
             const response = await axios.delete(`http://13.125.16.222/comments/${boardview_comment_userId}`,{
                 headers: {
@@ -239,8 +227,6 @@ const Board_object = () => {
                     'X-REFRESH-TOKEN': refresh_token
                 }
             });
-            // console.log(response.data);
-
             if (response.status === 200) {
                 Swal.fire({
                     title: '댓글작성',
@@ -280,7 +266,6 @@ const Board_object = () => {
             });
 
             if (response.status === 200) {
-                console.log("북마크 온!")
                 setBookmark_state(1);
             }
         }
@@ -298,7 +283,6 @@ const Board_object = () => {
             });
             
             if (response.status === 200) {
-                console.log("북마크 해제")
                 setBookmark_state(0);
             }
         }
@@ -362,7 +346,6 @@ const Board_object = () => {
                 confirmButtonText: '확인',
             });
         }
-        console.log(boardedit_title, boardedit_content, send_edit_hashtag)
         try {
             const response = await axios.patch(`http://13.125.16.222/boards/${boardview_boardId}`, {
                 title : boardedit_title,
@@ -393,7 +376,6 @@ const Board_object = () => {
                 icon: 'error',
                 confirmButtonText: '확인',
             });
-            console.error('PATCH 요청 실패:', error);
             // 에러 처리 작업 추가
         }
     };
@@ -477,19 +459,15 @@ const Board_object = () => {
         setSendEditHashtag(selectedHashtagTexts);
     }, [edit_hashtags]);
 
-    console.log(send_edit_hashtag)
-    /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@다양한 함수들@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-    /*높이 조절 함수*/
-    const handleTextareaResize = (event) => {
-        event.target.style.height = 'auto';
-        event.target.style.height = `${event.target.scrollHeight}px`;
-    };
+
+    //네비게이트 자동 실행
     const handleLogout = () => {
         navigate('/');
         store.dispatch({type:"HOME"});
     };
+
+
+
     return (
         <div className="board_object_body">
             {/* 헤더*/}
@@ -567,7 +545,7 @@ const Board_object = () => {
             {/*댓글작성란*/}
             <div className="board_object_commentwrite">
                 <form onSubmit={handleBoardComment}>
-                    <textarea type="text" className="board_object_commentwrite_input" onChange={handleBoardComment_content_change} onInput={handleTextareaResize} placeholder="댓글을 작성해주세요!"></textarea>
+                    <textarea type="text" className="board_object_commentwrite_input" onChange={handleBoardComment_content_change} placeholder="댓글을 작성해주세요!"></textarea>
                 </form>   
             </div>
 
@@ -1873,7 +1851,7 @@ const Board_object = () => {
                     .boardedit_mode_background{
                         position: fixed;
                         background-color: #000000b1;
-                        height: 100vh;
+                        height: 200vh;
                         width: 100%;
 
                         top : 50%;
