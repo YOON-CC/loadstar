@@ -116,7 +116,6 @@ const Join = () => {
         }
         //코드 중복확인
         if(sendcode === 1){
-            console.log("부경대학교")
             try {
                 const response = await axios.get("http://13.125.16.222/emails/check-key", {
                   params: {
@@ -153,6 +152,8 @@ const Join = () => {
         if (newid && newpassword !== '' && newpassword_again !== ''
         && newemail !== '' && newcode !== '' && newpassword === newpassword_again 
         && sendid === 2 && sendemail === 2 && sendcode === 2){
+
+            // console.log(newid, newpassword, newemail)
             try {
                 const response = await axios.post("http://13.125.16.222/users/signup", {
                     username: newid,
@@ -167,7 +168,7 @@ const Join = () => {
                     }
                 });
 
-                if (response.status === 200){
+                if (response.status === 201){
                     console.log(response.data);
                     store.dispatch({type:'WELCOME', payload: {
                         number: 6,
