@@ -75,11 +75,11 @@ const Login = () => {
                     </div>
 
                     <div className="user-forget_container">
-                        <div className="search" onClick={function(){
+                        <div className="login_search_id" onClick={function(){
                             store.dispatch({type:'SEARCH_ID'});
                         }.bind(this)}>아이디찾기</div>
 
-                        <div className="search" onClick={function(){
+                        <div className="login_search_pwd" onClick={function(){
                             store.dispatch({type:'SEARCH_PWD'});
                         }.bind(this)}>비밀번호 찾기</div>
                     </div>

@@ -76,7 +76,6 @@
 
         background: linear-gradient(135deg, #4222cf, #4222cf, #4630a8);
         box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.281);
-
         border-radius: 10px;
         border: none;
         color: #fff;
@@ -95,7 +94,6 @@
 
         background: linear-gradient(135deg, #4222cf, #4222cf, #4630a8);
         box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.281);
-
         border-radius: 10px;
         border: none;
         color: #fff;
@@ -120,54 +118,39 @@
         cursor: pointer;
     }
 
+    .user-forget_container .search{
+        /* background-color: #c3ff00; */
+        position: relative;
+        width: 180px;
+        height: 20px;  
+        margin-top: 5px;
+
+        color: #13074b;
+        font-size: 10px;
+        font-weight: bold;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
     /*비밀번호 변경 비활성화*/
     .user-button_container_login_2 {
         position: relative;
         width: 180px;
         height: 45px;  
 
-        background: rgb(205, 205, 205);
+        background: rgba(0, 0, 0, 0.227);
         border-radius: 10px;
         border: none;
-        color: #acacac;
+        color: #5a5a5a;
         font-size: 13px;
         font-weight: bold;
 
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .login_search_id{
-        /* background-color: #c3ff00; */
-        position: relative;
-        width: 180px;
-        height: 20px;  
-        margin-top: 5px;
-
-        color: #ffffff;
-        font-size: 10px;
-        font-weight: bold;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-    .login_search_pwd{
-        /* background-color: #c3ff00; */
-        position: relative;
-        width: 180px;
-        height: 20px;  
-        margin-top: 5px;
-
-        color: #ffffff;
-        font-size: 10px;
-        font-weight: bold;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
     }
 }
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -194,7 +177,7 @@
     }  
     .login-box h2 {
         font-size: 20px;
-        color: #fff;
+        color: #ffffff;
         text-align: center;
     }
     .login-box .user-box {
@@ -205,10 +188,10 @@
         width: 100%;
         padding: 10px 0;
         font-size: 12px;
-        color: #fff;
+        color: #ffffff;
         margin-bottom: 30px;
         border: none;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid #ffffff;
         outline: none;
         background: transparent;
     }
@@ -218,7 +201,7 @@
         left: 0;
         padding: 10px 0;
         font-size: 10px;
-        color: #fff;
+        color: #ffffff;
         pointer-events: none;
         transition: .5s;
     }
@@ -288,6 +271,23 @@
         cursor: pointer;
     }
 
+    .user-forget_container .search{
+        /* background-color: #c3ff00; */
+        position: relative;
+        width: 180px;
+        height: 20px;  
+        margin-top: 5px;
+
+        color: #13074b;
+        font-size: 10px;
+        font-weight: bold;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
     /*비밀번호 변경 비활성화*/
     .user-button_container_login_2 {
         height: 35px;  
@@ -301,37 +301,5 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .login_search_id{
-        /* background-color: #c3ff00; */
-        position: relative;
-        width: 180px;
-        height: 20px;  
-        margin-top: 5px;
-
-        color: #fff;
-        font-size: 10px;
-        font-weight: bold;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-    .login_search_pwd{
-        /* background-color: #c3ff00; */
-        position: relative;
-        width: 180px;
-        height: 20px;  
-        margin-top: 5px;
-
-        color: #fff;
-        font-size: 10px;
-        font-weight: bold;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
     }
 }
