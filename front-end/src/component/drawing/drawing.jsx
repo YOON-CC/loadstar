@@ -429,7 +429,7 @@ const ChartComponent = () => {
           @media (min-width: 1501px) { /*175 이전*/
               .chart_body{
                   position: relative;
-                  background: linear-gradient(135deg, #2b197d, #4c3b9b, #4c3b9b, #4c3b9b, #2b197d);
+                  background: linear-gradient(135deg, #3d26a7, #3f28a7, #3e2e87, #43328d, rgb(57, 36, 147));
                   height: 100vh;
                   width: 100%;
                   overflow: hidden;
