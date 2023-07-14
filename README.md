@@ -13,7 +13,7 @@
 
 |조윤찬|이선호|강서연|
 |:---:|:---:|:---:|
-|<img width="160px" src="https://avatars.githubusercontent.com/u/87313979?v=4"/>|<img width="160px" src="https://avatars.githubusercontent.com/u/99793526?v=4" /> |<img width="160px" src="https://avatars.githubusercontent.com/u/101854418?v=4"/>|
+|<img width="180px" src="https://avatars.githubusercontent.com/u/87313979?v=4"/>|<img width="180px" src="https://avatars.githubusercontent.com/u/99793526?v=4" /> |<img width="180px" src="https://avatars.githubusercontent.com/u/101854418?v=4"/>|
 |[@YOON-CC](https://github.com/YOON-CC)|[@preferrrr](https://github.com/preferrrr)|[@ddogong](https://github.com/ddogong)|
 |부경대학교 컴퓨터공학과  3학년| 부경대학교 컴퓨터공학과  3학년 | 부경대학교 컴퓨터공학과  3학년 |
 
