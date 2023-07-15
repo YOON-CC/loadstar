@@ -475,7 +475,7 @@ const Board_object = () => {
             {/* 헤더*/}
             <div className="board_object_header">
                 <div className="board_object_header_c1">
-                    <img className="board_object_header_c1_logo" src="/image/logo.png"></img>
+                    <Link to="/"><img className="board_object_header_c1_logo" src="/image/logo.png"></img></Link>
                 </div>
                 <div className="board_object_header_c2">
                     <div className="board_object_header_c2_b1" onClick={handleLogout}>로그아웃</div>

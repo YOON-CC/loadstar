@@ -333,7 +333,7 @@ const ChartComponent = () => {
       {/* 헤더 */}
       <div className="chart_header">
         <div className="chart_header_c1">
-          <img className="chart_header_c1_logo" src="/image/logo.png" alt="Logo" />
+          <Link to="/"><img className="chart_header_c1_logo" src="/image/logo.png" alt="Logo" /></Link>
         </div>
         <div className="chart_header_c2">
           <div className="chart_header_c2_b1" onClick={handleLogout}>로그아웃</div>

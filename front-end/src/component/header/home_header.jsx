@@ -17,7 +17,7 @@ export default class Home_header extends Component{
             <div className="home_header_body">
                 <div className="home_header_body_1">
                     <div className="home_header_body_1_logo">
-                      <img className="home_header_body_1_logo_img" src="/image/logo.png"></img>
+                      <Link to="/"><img className="home_header_body_1_logo_img" src="/image/logo.png"></img></Link>
                     </div>
 
                     <After_login></After_login>
