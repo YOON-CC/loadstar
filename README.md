@@ -1,21 +1,28 @@
-# LoadStar
-<div align="center">
-<img height="300" alt="main_image" src="https://github.com/YOON-CC/loadstar/assets/87313979/fd992d33-447e-4da0-8b7c-cd434614d9d1" >
+<div align="center" >
 
+# 🌟LoadStar
+<img height="300" alt="main_image" src="https://github.com/YOON-CC/loadstar/assets/87313979/fd992d33-447e-4da0-8b7c-cd434614d9d1" >
 </div>
 
-# Introduction
-동업시 발생할 수 있는 여러 문제 상황을 예방할 수 있고 법적 효력을 보장하기 위한 전자 계약서를 보다 쉽게 작성할 수 있는 전자 계약 서비스 플랫폼 Blocker, Blocker는 하이퍼 레저 패브릭을 통해 무결성이 보장되는 블록체인 기반의 전자 계약 서비스를 동업자들에게 제공하여 보다 쉽고 안전하게 계약을 체결하여 동업을 진행할 수 있습니다. 
-> 2022 캡스톤 디자인 - 부경대학교 컴퓨터공학과 <br>
-> 2023/06/01 ~ 2023/07/21
- 
+
+<div align="center" >
+</br>
+LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기위해 여러 사람들의 공부 그래프를 보며, 소통하고 참고하며, 어떤 이에게는 자신의 길을 보여주며 같은 방향을 걸어가고, 또 다른 이에게는 그 길을 바탕으로 새로운 지도를 만들어가는 웹 사이트 입니다.
+
+</br>
+</br>
+
+`2023/05/26 ~ 2023/07/21`
+</div>
+
+
 # Team
 
 |조윤찬|이선호|강서연|
 |:---:|:---:|:---:|
 |<img width="180px" src="https://avatars.githubusercontent.com/u/87313979?v=4"/>|<img width="180px" src="https://avatars.githubusercontent.com/u/99793526?v=4" /> |<img width="180px" src="https://avatars.githubusercontent.com/u/101854418?v=4"/>|
 |[@YOON-CC](https://github.com/YOON-CC)|[@preferrrr](https://github.com/preferrrr)|[@ddogong](https://github.com/ddogong)|
-|부경대학교 컴퓨터공학과  3학년| 부경대학교 컴퓨터공학과  3학년 | 부경대학교 컴퓨터공학과  3학년 |
+|F| 부경대학교 컴퓨터공학과  3학년 | 부경대학교 컴퓨터공학과  3학년 |
 
 # Stacks
 * BlockChain <br>
