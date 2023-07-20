@@ -1,7 +1,7 @@
 <div align="center" >
 
-# 🌟LoadStar
-<img height="300" alt="main_image" src="https://github.com/YOON-CC/loadstar/assets/87313979/fd992d33-447e-4da0-8b7c-cd434614d9d1" >
+# 🎇LoadStar🎇
+![image](https://github.com/YOON-CC/loadstar/assets/87313979/134d5b23-9d17-4dc0-9bc9-27d96ab26e1b)
 </div>
 
 
