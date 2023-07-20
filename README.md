@@ -1,7 +1,8 @@
 <div align="center" >
 
 # 🎇LoadStar🎇
-![image](https://github.com/YOON-CC/loadstar/assets/87313979/134d5b23-9d17-4dc0-9bc9-27d96ab26e1b)
+![image](https://github.com/YOON-CC/loadstar/assets/87313979/ec4aa70c-059b-40c4-abd4-f46f4c18dd29)
+
 </div>
 
 
