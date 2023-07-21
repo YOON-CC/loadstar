@@ -1,6 +1,6 @@
 <div align="center" >
 
-# 🎇LoadStar🎇
+# ⭐LoadStar⭐
 ![image](https://github.com/YOON-CC/loadstar/assets/87313979/ec4aa70c-059b-40c4-abd4-f46f4c18dd29)
 
 </div>
@@ -18,13 +18,13 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 
 </br>
 
-# 🔗Service
+## 🔗Service
 
 
 
 </br>
 
-# 🔗Team
+## 🔗Team
 <div align="center" >
 
 
@@ -40,7 +40,7 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 </br>
 
 
-# 🔗Stacks
+## 🔗Stacks
 
 ### Frontend <br>
 <div display = "flex">
@@ -56,6 +56,7 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 <img src="https://img.shields.io/badge/java-337AB7?style=for-the-badge&logo=java&logoColor=white">
 <img src="https://img.shields.io/badge/spring_boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
 <img src="https://img.shields.io/badge/spring_security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white">
+<img src="https://img.shields.io/badge/spring_data_jpa-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
 </div>
 
 
@@ -64,11 +65,15 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 <img src="https://img.shields.io/badge/visual_studio_code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
 <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/intellij-000000?style=for-the-badge&logo=intellijidea&logoColor=white">
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/aws_ec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white">
+ <img src="https://img.shields.io/badge/redis-DC382D?style=for-the-badge&logo=redis&logoColor=white">
 </div>
 
 </br>
 
-# 🔗개발 환경 세팅
+## 🔗개발 환경 세팅
 ### Frontend <br>
 ```bash
 cd frontend
