@@ -304,7 +304,6 @@ const ChartComponent = () => {
                 'X-REFRESH-TOKEN': refresh_token
             }
         });
-        
         if (response.status === 200) {
           navigate('/delete');
         }
