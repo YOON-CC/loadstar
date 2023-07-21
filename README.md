@@ -33,7 +33,7 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 |:---:|:---:|:---:|
 |<img width="230px" src="https://avatars.githubusercontent.com/u/87313979?v=4"/>|<img width="230px" src="https://avatars.githubusercontent.com/u/99793526?v=4" /> |<img width="230px" src="https://avatars.githubusercontent.com/u/101854418?v=4"/>|
 |[@YOON-CC](https://github.com/YOON-CC)|[@preferrrr](https://github.com/preferrrr)|[@ddogong](https://github.com/ddogong)|
-|Project Manager, Frontend Develop| Backend developer | Project Manager |
+|Project Leader, Frontend Develop| Backend developer | Project Manager |
 
 </div>
 
@@ -52,6 +52,10 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 </div>
 
 ### Backend <br>
+<div display = "flex">
+<img src="https://img.shields.io/badge/java-337AB7?style=for-the-badge&logo=java&logoColor=white">
+</div>
+
 
 ### Development Environment  <br>
 <div display = "flex">
