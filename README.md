@@ -1,6 +1,6 @@
 <div align="center" >
 
-# 🎇LoadStar🎇
+# ⭐LoadStar⭐
 ![image](https://github.com/YOON-CC/loadstar/assets/87313979/ec4aa70c-059b-40c4-abd4-f46f4c18dd29)
 
 </div>
@@ -18,13 +18,13 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 
 </br>
 
-# 🔗Service
+## 🔗Service
 
 
 
 </br>
 
-# 🔗Team
+## 🔗Team
 <div align="center" >
 
 
@@ -40,7 +40,7 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 </br>
 
 
-# 🔗Stacks
+## 🔗Stacks
 
 ### Frontend <br>
 <div display = "flex">
@@ -73,7 +73,7 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 
 </br>
 
-# 🔗개발 환경 세팅
+## 🔗개발 환경 세팅
 ### Frontend <br>
 ```bash
 cd frontend
