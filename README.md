@@ -54,6 +54,8 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 ### Backend <br>
 <div display = "flex">
 <img src="https://img.shields.io/badge/java-337AB7?style=for-the-badge&logo=java&logoColor=white">
+<img src="https://img.shields.io/badge/spring_boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
+<img src="https://img.shields.io/badge/spring_security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white">
 </div>
 
 
