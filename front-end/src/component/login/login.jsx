@@ -22,7 +22,7 @@ const Login = () => {
             event.preventDefault();
 
             try {
-                const response = await axios.post("http://13.125.16.222/users/login", {
+                const response = await axios.post("https://lodestar.shop/users/login", {
                     username: id,
                     password: password
                 }, {
