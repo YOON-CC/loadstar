@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import store from "../../store";
-
+ 
 const Welcome = () => {
     useEffect(() => {
         const { userId } = store.getState();
