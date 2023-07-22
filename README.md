@@ -14,7 +14,7 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 </br>
 
 
-[로드스타 바로가기](https://www.google.com/](https://yoon-cc.github.io/loadstar_v2))
+[로드스타 바로가기](https://yoon-cc.github.io/loadstar_v2)
 
 `2023/05/26 ~ 2023/07/21`
 </div>
