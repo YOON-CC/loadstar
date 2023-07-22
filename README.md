@@ -13,27 +13,24 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 </br>
 </br>
 
+
+[로드스타 바로가기](https://www.google.com/](https://yoon-cc.github.io/loadstar_v2))
+
 `2023/05/26 ~ 2023/07/21`
 </div>
 
 </br>
 
 ## 🔗Service
-
-
-
-</br>
-
-## 🔗Team
 <div align="center" >
 
+| 로그인, 회원가입 기능들 | 게시글 리스트 |
+|:--------------:|:---------------:|
+| ![로그인](https://github.com/YOON-CC/loadstar/assets/87313979/7f2aeaf1-a94e-40ce-9bf6-cac30e55ce83) | ![리스트](https://github.com/YOON-CC/loadstar/assets/87313979/a0cb16f9-5163-4e52-bf04-fb7df294a56f) |
 
- 
-|조윤찬|이선호|강서연|
-|:---:|:---:|:---:|
-|<img width="230px" src="https://avatars.githubusercontent.com/u/87313979?v=4"/>|<img width="230px" src="https://avatars.githubusercontent.com/u/99793526?v=4" /> |<img width="230px" src="https://avatars.githubusercontent.com/u/101854418?v=4"/>|
-|[@YOON-CC](https://github.com/YOON-CC)|[@preferrrr](https://github.com/preferrrr)|[@ddogong](https://github.com/ddogong)|
-|Project Leader, Frontend Develop| Backend developer | Project Manager |
+| 게시글 보기 | 그래프 그리기|
+|:---------------:|:---------------:|
+| ![게시글 보기](https://github.com/YOON-CC/loadstar/assets/87313979/3bc994a8-531a-4b1b-ba3f-202e8f0c6155) | ![그래프그리기](https://github.com/YOON-CC/loadstar/assets/87313979/27c01030-5c3e-43a6-94ac-9a93fed88502) |
 
 </div>
 
@@ -74,6 +71,7 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 
 </br>
 
+
 ## 🔗개발 환경 세팅
 ### Frontend <br>
 ```bash
@@ -87,3 +85,20 @@ cd frontend
 npm install
 npm start
 ```
+
+</br>
+
+## 🔗Team
+<div align="center" >
+
+
+ 
+|조윤찬|이선호|강서연|
+|:---:|:---:|:---:|
+|<img width="230px" src="https://avatars.githubusercontent.com/u/87313979?v=4"/>|<img width="230px" src="https://avatars.githubusercontent.com/u/99793526?v=4" /> |<img width="230px" src="https://avatars.githubusercontent.com/u/101854418?v=4"/>|
+|[@YOON-CC](https://github.com/YOON-CC)|[@preferrrr](https://github.com/preferrrr)|[@ddogong](https://github.com/ddogong)|
+|Project Leader, Frontend Develop| Backend developer | Project Manager |
+
+</div>
+
+</br>
