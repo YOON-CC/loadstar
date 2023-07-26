@@ -72,6 +72,25 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 </br>
 
 
+</br>
+
+## 🔗개발문서관련
+<div align="center" >
+
+|화면설계서|기능명세서|API 명세서|
+|:---:|:---:|:---:|
+|<img width="300px" src="https://github.com/YOON-CC/loadstar/assets/87313979/92dcc27f-9d91-47d7-8490-48e1692d3cff" /> |<img width="300px" src="https://github.com/YOON-CC/loadstar/assets/87313979/9d4c9b9b-36b0-401f-80a6-b976c02da789"/>|<img width="300px" src="https://github.com/preferrrr/LOADSTAR_SERVER/assets/99793526/700fa76a-99a6-4bda-988f-3f56d091c183"/>
+| [GO TO SEE](https://www.figma.com/file/Q8286Co1YssF3PWtL2c9ea/Untitled?type=design&node-id=0%3A1&mode=design&t=sJ68uCRnwB5SCJ8O-1)| [GO TO SEE](https://www.figma.com/file/Q8286Co1YssF3PWtL2c9ea/Untitled?type=design&node-id=148%3A2&mode=design&t=sJ68uCRnwB5SCJ8O-1)|[GO TO SEE](https://docs.google.com/spreadsheets/d/1zNMbE5-97dbYUMXMaAt4ehp7-XVktkDqHnT658MP_u4/edit?pli=1#gid=0)|
+
+ 
+</div>
+
+
+</br>
+
+
+
+
 ## 🔗개발 환경 세팅
 ### Frontend <br>
 ```bash
@@ -80,11 +99,10 @@ npm install
 npm start
 ```
 ### Backend <br>
-```bash
-cd frontend
-npm install
-npm start
-```
+
+[Backend 보러가기](https://github.com/preferrrr/LOADSTAR_SERVER)
+
+
 
 </br>
 
