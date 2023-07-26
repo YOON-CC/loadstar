@@ -1,6 +1,6 @@
 <div align="center" >
 
-# ⭐LoadStar⭐
+# ⭐LoadStar_v1⭐
 ![image](https://github.com/YOON-CC/loadstar/assets/87313979/ec4aa70c-059b-40c4-abd4-f46f4c18dd29)
 
 </div>
