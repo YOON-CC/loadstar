@@ -74,6 +74,16 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 
 </br>
 
+## 🔗아키텍쳐
+<div align="center" >
+
+![image](https://github.com/YOON-CC/loadstar/assets/87313979/6f59e0cc-5ecb-4582-aa84-3db7e4a752e4)
+
+ 
+</div>
+
+</br>
+
 ## 🔗개발문서관련
 <div align="center" >
 
