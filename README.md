@@ -104,7 +104,7 @@ LoadStar는 개발자가 꿈인 사람들이 자신의 진로 방향을 찾기�
 ## 🔗개발 환경 세팅
 ### Frontend <br>
 ```bash
-cd frontend
+cd front-end
 npm install
 npm start
 ```
